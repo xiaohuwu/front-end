@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        p {
+            width: 500px;
+            height: 2.5em;
+            padding: 1em 1em 1em 1em;
+            border: 1px solid black;
+        }
+
+        .one {
+            overflow: auto;
+        }
+
+        .two {
+            overflow: hidden;
+        }
+
+        .three {
+            overflow: visible;
+        }
+      /*no work unless span is block */
+        span{
+            width: 100px;
+            height: 100px;
+            background: blue;
+            margin-bottom: 10px;
+        }
+
+        #syl {
+            color: orange;
+            font-size: 10px;
+        }
+
+        .box {
+            color: green;
+            font-size: 60px;
+        }
+
+        div {
+            color: red;
+            font-size: 60px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<p class="one">
+    我爱学习，学习使我快乐！我爱学习，学习使我快乐！
+    我爱学习，学习使我快乐！我爱学习，学习使我快乐！
+    我爱学习，学习使我快乐！我爱学习，学习使我快乐！
+    我爱学习，学习使我快乐！我爱学习，学习使我快乐！
+</p>
+
+<p class="two">
+    我爱学习，学习使我快乐！我爱学习，学习使我快乐！
+    我爱学习，学习使我快乐！我爱学习，学习使我快乐！
+    我爱学习，学习使我快乐！我爱学习，学习使我快乐！
+    我爱学习，学习使我快乐！我爱学习，学习使我快乐！
+</p>
+
+<p class="three">
+    我爱学习，学习使我快乐！我爱学习，学习使我快乐！
+    我爱学习，学习使我快乐！我爱学习，学习使我快乐！
+    我爱学习，学习使我快乐！我爱学习，学习使我快乐！
+    我爱学习，学习使我快乐！我爱学习，学习使我快乐！
+</p>
+
+<span>我是行内元素1</span>
+<span>我是行内元素2</span>
+
+
+
+<div class="box">
+    我爱学习，身体棒棒！
+</div>
+
+
+<div class="box" id="syl" style="font-size:30px; color:yellow;">
+    实验楼
+</div>
+
+</body>
+
+</html>
