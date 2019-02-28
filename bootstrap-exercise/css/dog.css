@@ -57,16 +57,165 @@ section.search form button {
     outline: none;
 }
 
-ul.one{
+ul.one {
     margin-top: 10px;
     margin-bottom: 5px;
     border-bottom: solid 2px #0266a3;
 }
 
-ul.one li{
+ul.one li {
     padding-bottom: 6px;
     text-align: center;
     width: 80px;
     color: #0266a3;
     display: inline-block;
+}
+
+div.market {
+    background-color: #EBF0F6;
+    width: 200px;
+    height: 220px;
+}
+
+div.market h4 {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    background-color: #0266a3;
+    color: white;
+}
+
+div.market li {
+    position: relative;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 40px;
+}
+
+div.market li span.car {
+    width: 20px;
+    height: 20px;
+    background: url("../images/icon_1.png") no-repeat right;
+    position: absolute;
+    left: 6px;
+    top: 50%;
+    transform: translate(0%, -50%);
+}
+
+p.title {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-top: solid 1px dodgerblue;
+    background-color: #ECF1F7;
+    padding-left: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+.dog_category .detail {
+    width: 720px;
+    border: solid 1px darkgray;
+}
+
+.dog_category .consult {
+    width: 268px;
+    border: solid 1px darkgray;
+}
+
+.dog_category div.item {
+    width: 50%;
+    padding: 20px;
+}
+
+.dog_category div.item button {
+    background-color: #0266a3;
+    padding-left: 16px;
+    padding-right: 16px;
+    outline: none;
+    border: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: white;
+}
+
+div.item img {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.item-left {
+    padding-right: 10px;
+}
+
+div.item p {
+    font-weight: bolder;
+    line-height: 24px;
+    font-size: 14px;
+}
+
+div.item span.red {
+    color: red;
+}
+
+div.item span.line {
+    text-decoration: line-through;
+}
+
+.consult h4 {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    border-bottom: 1px gainsboro solid;
+}
+
+.consult ul li {
+    line-height: 30px;
+    padding-left: 20px;
+    background: url(../images/li_bg.png) no-repeat 10px 6px;
+}
+
+.dog_category hr {
+    margin-left: 2%;
+    margin-right: 2%;
+    width: 96%;
+    height: 1px;
+    clear: both;
+}
+
+section.sale > div.fl {
+    width: 722px;
+}
+section.sale img{
+    display: block;
+}
+section.sale ul{
+    border-bottom:1px solid #CACACA;
+    border-left:1px solid #CACACA;
+    border-right:1px solid #CACACA;
+}
+section.sale ul li{
+    padding: 5px;
+    text-align: center;
+    width: 25%;
+}
+section.sale ul li p{
+    line-height: 20px;
+
+}
+section.sale  p.more{
+    line-height: 20px;
+    color: #00B0E7;
+    text-align: right;
+    border-bottom: 2px solid #00B0E7;
+}
+
+footer{
+    padding: 18px;
+    text-align: center;
+    padding-bottom: 30px;
+}
+footer p{
+    padding-bottom: 10px;
 }
