@@ -1,0 +1,72 @@
+body {
+    font-size: 12px;
+}
+
+nav {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    width: 100%;
+    height: 34px;
+    background-color: #F7F7F7;
+    border-bottom: 1px solid #D8D8D8;
+    color: black;
+}
+
+.container {
+    width: 1000px;
+    margin: 0px auto;
+}
+
+nav ul li {
+    position: relative;
+    float: left;
+    list-style: none;
+    padding-right: 20px;
+}
+
+nav ul li span.arrow {
+    width: 20px;
+    height: 20px;
+    background: url("../images/sj.png") no-repeat right;
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translate(0%, -50%);
+}
+
+section.search form {
+    margin-top: 30px;
+    padding: 3px;
+    background-color: gainsboro;
+    border: solid 1px gainsboro;
+}
+
+section.search form input {
+    padding-left: 5px;
+    float: left;
+    height: 28px;
+    width: 400px;
+}
+
+section.search form button {
+    color: white;
+    float: left;
+    background-color: dodgerblue;
+    height: 28px;
+    border: none;
+    outline: none;
+}
+
+ul.one{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border-bottom: solid 2px #0266a3;
+}
+
+ul.one li{
+    padding-bottom: 6px;
+    text-align: center;
+    width: 80px;
+    color: #0266a3;
+    display: inline-block;
+}
