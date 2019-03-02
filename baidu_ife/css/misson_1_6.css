@@ -24,10 +24,10 @@ header div.title span {
 }
 
 .container {
-    max-width: 1000px;
+    width: 980px;
     background-color: white;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
     margin: 0 auto;
 }
 
@@ -155,4 +155,150 @@ section.paragraph ul li{
 section.paragraph ul li span{
     color: #cc7680;
     font-style: oblique;
+}
+section.paper{
+    margin-top: 20px;
+}
+div.article{
+    width: 410px;
+    font-size: 12px;
+    color: #767777;
+    line-height: 16px;
+}
+div.tech{
+    width: 458px;
+}
+div.article img{
+    float: right;
+    margin-right: 6px;
+}
+
+div.article h4{
+    line-height: 40px;
+    font-size: 40px;
+    color: #11456b;
+    font-weight: bold;
+    font-family: "黑体";
+}
+div.article h4 span{
+    font-style: oblique;
+    color: yellow;
+    margin-right: 10px;
+    font-size: 50px;
+}
+div.tech div.top{
+    position: relative;
+}
+div.tech div.top div{
+    background: #000;
+    opacity: 0.6;
+    position: absolute;
+    bottom: 0px;left: 0px;
+    width: 100%;
+}
+div.tech div.top div p{
+    width: 100%;
+    color: #cccccc;
+    padding-left: 20px;
+    margin-left: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-left: solid 2px green;
+}
+
+div.tech div.top div p span{
+    font-size: 12px;
+    font-style: oblique;
+    color: green;
+}
+
+ul li{
+    list-style: none;
+}
+
+div.tech div.bottom{
+  margin-top: 20px;
+  background: #eeeed6;
+    padding: 10px;
+}
+
+div.tech div.bottom li{
+    padding-left: 30px;
+    line-height: 30px;
+    background: url(../imgs/triangle.png) 5px center no-repeat;
+}
+
+div.tech div.bottom li span{
+    font-size: 12px;
+    font-style: oblique;
+}
+
+div.word > .fl {
+
+    margin-top: 10px;
+    margin-left: -10px;
+    padding: 10px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background: #d45d5c;
+    width: 260px;
+    color: white;
+}
+
+div.word .fr{
+    width: 170px;
+}
+
+div.zero{
+  width: 75px!important;
+  font-size: 110px;
+  margin-top: -10px!important;
+  border-right:solid 2px white;
+  margin-right: 10px;
+  line-height: 86px;
+  height: 86px;
+}
+
+div.one{
+    width: 155px!important;
+}
+p.hello{
+    font-size: 12px;
+    font-style: oblique;
+}
+div.world1{
+    margin-top: 30px;
+    font-size: 14px;
+    color: #5a5b5b;
+    font-family: "黑体";
+    font-style: oblique;
+    line-height: 16px;
+    text-indent: 3em;
+}
+footer{
+    border-top: solid 1px darkgrey;
+    padding-bottom: 20px;
+    text-align: right;
+    font-size: 12px;
+    color: #d45d5c;
+}
+div.world1{
+    position: relative;
+}
+span.start {
+    position: absolute;
+    left: -79px;
+    top: 13px;
+    font-size: 64px;
+    color: #d45d5c;
+}
+
+span.end {
+    position: absolute;
+    left: 23px;
+    bottom: -22px;
+    font-size: 64px;
+    color: #d45d5c;
 }
