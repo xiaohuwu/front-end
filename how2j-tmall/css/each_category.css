@@ -1,0 +1,59 @@
+.homepageCategoryProducts{
+    background-color: #F5F5F5;
+    padding: 50px 21px 50px 10px;
+    margin-top: 30px!important;
+}
+
+div.eachHomepageCategoryProducts{
+    margin-top: 10px;
+    padding-left: 10px;
+}
+div.left-mark{
+  width: 0px;
+  height: 20px;
+  display: inline-block;
+  border: solid 2px #19C8A9;
+    margin-left: 12px;
+}
+
+/* title 文字是怎么居中的 */
+
+span.categoryTitle{
+    margin-left: 20px;
+    display: inline-block;
+    font-size: 20px;
+    position: relative;
+    top: -2px;
+    clear: right;
+}
+div.productItem{
+    margin-top: 12px;
+    padding: 10px;
+    background-color: white;
+    float: left;
+    width: 24%;
+    height:180px;
+    margin-left: 1%;
+    border: solid 1px white;
+}
+div.productItem a{
+    color: #666666;
+}
+
+div.productItem span{
+    display: block;
+    padding: 3px 0px 3px 0px;
+}
+
+span.productPrice{
+    color: red;
+}
+
+div.productItem a:hover{
+    text-decoration: none;
+}
+div.productItem:hover{
+    opacity: 0.8;
+    cursor: pointer;
+    border: solid 1px darkred;
+}

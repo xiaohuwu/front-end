@@ -1,0 +1,49 @@
+.container{
+    width: 980px;
+    margin: 40px auto;
+}
+div.categoryWithCarousel{
+    position: relative;
+}
+div.categoryMenu{
+    width: 200px;
+    background-color: #e2e2e3;
+}
+
+div.productsAsideCategorys{
+    position: absolute;
+    left: 245px;
+    top:0px;
+}
+div.categoryMenu .eachCategory{
+    padding: 0px 10px 0px 10px;
+}
+div.categoryMenu a {
+    color: #000;
+    line-height: 25px;
+}
+
+div.productsAsideCategorys div.row {
+    border-bottom: dashed 1px darkgrey;
+    padding: 15px;
+}
+
+div.productsAsideCategorys div.row a{
+    color: #999;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+div.categoryMenu div.eachCategory a{
+    width: 70%;
+    display: inline-block;
+}
+
+div.categoryMenu div.eachCategory:hover{
+    background-color: white;
+}
+
+div.categoryMenu div.eachCategory a:hover{
+    color: rgb(135, 206, 250);
+    text-decoration: none;
+}
