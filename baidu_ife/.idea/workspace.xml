@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4022e83-d616-4c5f-ab3c-0570a9c82b52" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../bootstrap-exercise/css/how2j_basic.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bootstrap-exercise/how2j_basic.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../how2j-tmall/css/common.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../how2j-tmall/css/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../how2j-tmall/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clear.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../how2j-tmall/footer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bootstrap-exercise/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../bootstrap-exercise/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../how2j-tmall/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../how2j-tmall/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../how2j-tmall/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/../how2j-tmall/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../how2j-tmall/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../how2j-tmall/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,49 +25,23 @@
     <favorites_list name="baidu_ife" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.3713813">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/mission_1_6.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="3762">
-                  <caret line="171" selection-start-line="171" selection-end-line="171" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/css/misson_1_6.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="404">
-                  <caret line="297" column="10" selection-start-line="297" selection-start-column="10" selection-end-line="297" selection-end-column="10" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/mission_1_6.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="132">
-                  <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="66" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/clear.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-22">
+              <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -89,10 +62,11 @@
         <option value="$PROJECT_DIR$/css/common.css" />
         <option value="$PROJECT_DIR$/mission_1_6.html" />
         <option value="$PROJECT_DIR$/css/misson_1_6.css" />
+        <option value="$PROJECT_DIR$/clear.html" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-64" />
     <option name="y" value="242" />
     <option name="width" value="1380" />
@@ -110,11 +84,6 @@
             <path>
               <item name="baidu_ife" type="b2602c69:ProjectViewProjectNode" />
               <item name="baidu_ife" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="baidu_ife" type="b2602c69:ProjectViewProjectNode" />
-              <item name="baidu_ife" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -183,18 +152,18 @@
       <workItem from="1551410236598" duration="10375000" />
       <workItem from="1551496499426" duration="5329000" />
       <workItem from="1551580591260" duration="26000" />
-      <workItem from="1551583207885" duration="627000" />
+      <workItem from="1551583207885" duration="1837000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16357000" />
+    <option name="totallyTimeSpent" value="17567000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1376" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1376" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15844545" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11883408" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -206,7 +175,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" visible="true" weight="0.18657938" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" visible="true" weight="0.21931261" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -254,8 +223,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mission_1_6.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="66" />
+        <state relative-caret-position="403">
+          <caret line="171" selection-start-line="171" selection-end-line="171" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clear.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-22">
+          <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
         </state>
       </provider>
     </entry>

@@ -1,0 +1,52 @@
+#footer_ensure{
+    margin: 20px auto;
+    width: 980px;
+}
+#footer_desc a{
+    color: #999;
+}
+#footer_desc a:hover{
+    color: red;
+}
+#footer_desc .descColumn{
+    float: left;
+    width: 20%;
+    padding: 10px;
+}
+#footer_desc .descColumn span.descColumnTitle{
+    display: block;
+    width: 100%;
+    font-weight: bolder;
+    text-align: center;
+    line-height: 1.6;
+}
+
+#footer_desc .descColumn a{
+    display: block;
+    text-align: center;
+    line-height: 1.5;
+}
+div.footer-end{
+    padding: 0px 80px 20px 80px;
+}
+
+div.copyright{
+    background-color: black;
+    padding: 10px;
+    border-top: 1px solid red;
+}
+div.copyright a{
+    color: white;
+    margin-right: 8px;
+}
+div.copyright span{
+    color: #A4A4A4;
+}
+
+div.white_link span.slash{
+    color: white;
+}
+
+div.white_link a,div.white_link span{
+    margin-right: 8px;
+}

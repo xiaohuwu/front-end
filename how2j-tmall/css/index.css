@@ -9,7 +9,7 @@ nav.top{
     color: darkgrey;
     border-bottom:1px solid  #e7e7e7;
 }
-nav.top a{
+a{
     color:darkgrey;
 }
 span.glyphicon{
@@ -22,8 +22,106 @@ nav.top > a, nav.top > span{
 nav span.pull-right .order{
     margin-right: 20px;
 }
+
 /* teacher add */
 nav.top a:hover{
     color: #C40000;
     text-decoration: none;
+}
+
+.container{
+    min-width: 600px;
+    margin: 0px auto;
+}
+
+section.search{
+    position: relative;
+}
+section.search img{
+    position: absolute;
+    left: 100px;
+    top: 0px;
+}
+
+section.search div.searchDiv{
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+}
+
+section.search{
+  margin-top: 10px;
+  position: relative;
+}
+section.search img{
+    position: absolute;
+    left: 0px;
+    top: -30px;
+}
+
+div.searchDiv{
+    margin-top: 50px;
+}
+
+div.searchDiv input{
+    padding-left: 10px;
+    width: 300px;
+    height: 40px;
+    border: solid 2px red;
+    float: left;
+}
+
+div.searchDiv button{
+    float: left;
+    height: 40px;
+    outline: none;
+    color: white;
+    padding: 0px 10px 0px 10px;
+    text-align: center;
+    background-color: red;
+    border: none;
+    font-size: 20px;
+}
+
+div.searchBelow{
+    clear: both;
+}
+
+div.searchBelow > span,div.searchBelow a{
+    margin-right: 10px;
+}
+
+div.categoryWithCarousel{
+    margin-top: 70px;
+}
+
+div.headbar div.head,div.headbar div.rightMenu{
+    float: left;
+}
+div.headbar{
+    background-color: #DD2727;
+    height: 40px;
+}
+div.headbar img{
+    height: 30px;
+}
+div.headbar div.head{
+    width: 200px;
+    background-color: #C60A0A;
+    height: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    font-weight: bolder;
+    margin-left: 20px;
+}
+
+div.rightMenu span a{
+    padding: 10px;
+    color: white;
+    font-size: 14px;
+    font-weight: bolder;
+}
+div.rightMenu{
+    padding-top: 5px;
 }

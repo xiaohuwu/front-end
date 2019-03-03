@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clear float</title>
+    <style type="text/css">
+        .container{
+            margin: 30px auto;
+            width:600px;
+            height: 300px;
+        }
+        .p{
+            border:solid 3px #a33;
+        }
+        .c{
+            width: 100px;
+            height: 100px;
+            background-color: #060;
+            margin: 10px;
+            float: left;
+        }
+     /*:after 选择器在被选元素的内容后面插入内容*/
+        .floatfix:after{
+            content:".";
+            display:block;
+            height:0;
+            visibility:hidden;
+            clear:left;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="p floatfix">
+        <div class="c"></div>
+        <div class="c"></div>
+        <div class="c"></div>
+    </div>
+</div>
+</body>
+</html>
