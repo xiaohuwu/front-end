@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4022e83-d616-4c5f-ab3c-0570a9c82b52" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bootstrap-exercise/css/how2j_basic.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bootstrap-exercise/how2j_basic.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../how2j-tmall/css/common.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../how2j-tmall/css/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../how2j-tmall/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/misson_1_6.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/misson_1_6.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mission_1_6.html" beforeDir="false" afterPath="$PROJECT_DIR$/mission_1_6.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bootstrap-exercise/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../bootstrap-exercise/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -29,8 +32,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/mission_1_6.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="319">
-                  <caret line="171" lean-forward="true" selection-start-line="171" selection-end-line="171" />
+                <state relative-caret-position="3762">
+                  <caret line="171" selection-start-line="171" selection-end-line="171" />
                 </state>
               </provider>
             </entry>
@@ -38,8 +41,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/css/misson_1_6.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="342">
-                  <caret line="301" column="20" lean-forward="true" selection-start-line="301" selection-start-column="20" selection-end-line="301" selection-end-column="20" />
+                <state relative-caret-position="404">
+                  <caret line="297" column="10" selection-start-line="297" selection-start-column="10" selection-end-line="297" selection-end-column="10" />
                 </state>
               </provider>
             </entry>
@@ -47,12 +50,12 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/mission_1_6.html">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="132">
-                  <caret line="6" column="66" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="66" />
+                  <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="66" />
                 </state>
               </provider>
             </entry>
@@ -89,11 +92,11 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="y" value="106" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-64" />
+    <option name="y" value="242" />
     <option name="width" value="1380" />
-    <option name="height" value="788" />
+    <option name="height" value="774" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -101,7 +104,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -118,6 +120,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -178,21 +181,22 @@
       <option name="presentableId" value="Default" />
       <updated>1551410234535</updated>
       <workItem from="1551410236598" duration="10375000" />
-      <workItem from="1551496499426" duration="5065000" />
+      <workItem from="1551496499426" duration="5329000" />
+      <workItem from="1551580591260" duration="26000" />
+      <workItem from="1551583207885" duration="627000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15440000" />
+    <option name="totallyTimeSpent" value="16357000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1376" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1376" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15844545" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15844545" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -202,7 +206,8 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info active="true" anchor="bottom" id="Event Log" order="9" side_tool="true" visible="true" weight="0.101472996" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" visible="true" weight="0.18657938" />
+      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -242,15 +247,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/misson_1_6.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="301" column="20" lean-forward="true" selection-start-line="301" selection-start-column="20" selection-end-line="301" selection-end-column="20" />
+        <state relative-caret-position="404">
+          <caret line="297" column="10" selection-start-line="297" selection-start-column="10" selection-end-line="297" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mission_1_6.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
-          <caret line="6" column="66" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="66" />
+          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="66" />
         </state>
       </provider>
     </entry>
