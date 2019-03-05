@@ -18,7 +18,7 @@ front-end
 ⋅⋅⋅(This is contrary to the typical GFM line break behaviour, where trailing spaces are not required.)
 
 * item one
-* item two
+1) item two
    1) sublist
    2) sublist
 
