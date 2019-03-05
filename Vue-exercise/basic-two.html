@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+</head>
+<style>
+    *{
+        margin: 0px;
+        margin: 0px;
+    }
+    h4 {
+        margin-left: -10px;
+        margin-right: -10px;
+        border-bottom:  1px gainsboro solid;
+        margin-bottom: 10px;
+        padding: 0px 10px 5px 5px;
+    }
+    .item{
+        padding: 10px;
+        border: solid 1px lightgray;
+        margin: 10px;
+    }
+</style>
+<body>
+<div id="div1" class="item">
+    <h4> v-on:click 事件 </h4>
+    <div> <input v-model="name" type="text" > </div>
+    <p>{{name}}</p>
+    <button v-on:click="count">点击</button>
+</div>
+
+
+
+<script>
+    //准备数据
+    var gareen = {"name":"盖伦","hp":616};
+    //通过vue.js 把数据和对应的视图关联起来
+   var one =  new Vue({
+        el: '#div1',
+        data: {
+            name: "xiaohu"
+        },
+        methods:{
+            count:function () {
+                alert(this.name);
+            }
+        }
+    })
+
+
+</script>
+</body>
+</html>

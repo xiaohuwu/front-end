@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+</head>
+<style>
+    *{
+        margin: 0px;
+        margin: 0px;
+    }
+    h4 {
+        margin-left: -10px;
+        margin-right: -10px;
+        border-bottom:  1px gainsboro solid;
+        margin-bottom: 10px;
+        padding: 0px 10px 5px 5px;
+    }
+    .item{
+        padding: 10px;
+        border: solid 1px lightgray;
+        margin: 10px;
+    }
+</style>
+<body>
+<div id="div1" class="item">
+    <h4> v-on:click 事件 </h4>
+    <div> 一共点击了 {{clickNumber}} </div>
+    <button v-on:click="count">点击</button>
+</div>
+
+<div id="div2" class="item">
+    <h4> v-if </h4>
+    <button v-on:click="toggle">切换隐藏显示</button>
+    <div v-if="show"> 默认这一条是看得见的</div>
+</div>
+
+<div id="div3" class="item">
+    <h4> v-if else-if else </h4>
+    <button v-on:click="call">适合的职业</button>
+    <div v-if="number>98">偏远山区农民</div>
+    <div v-else-if="number>80">企业</div>
+    <div v-else-if="number>70">企业</div>
+    <div v-else-if="number>60">偏远山区农民</div>
+    <div v-else>流浪汉</div>
+</div>
+
+<div id="div4" class="item">
+    <h4> v-for 遍历  </h4>
+    <table>
+        <tr>
+            <td>index</td>
+            <td>name</td>
+            <td>hp</td>
+        </tr>
+        <tr v-for="item,index in data">
+            <td>{{index}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.hp}}</td>
+        </tr>
+    </table>
+</div>
+
+<div id="div6" class="item">
+    <h4> v-bind 做属性绑定 </h4>
+    <a  v-bind:href="href" >http://12306</a>
+</div>
+
+
+
+<script>
+    //准备数据
+    var gareen = {"name":"盖伦","hp":616};
+    //通过vue.js 把数据和对应的视图关联起来
+   var one =  new Vue({
+        el: '#div1',
+        data: {
+            clickNumber: 10
+        },
+        methods:{
+            count:function () {
+                this.clickNumber++;
+            }
+        }
+    })
+
+    var two =  new Vue({
+        el: '#div2',
+        data: {
+            show: true
+        },
+        methods:{
+            toggle:function () {
+                 this.show = !this.show;
+            }
+        }
+    })
+
+    var three =  new Vue({
+        el: '#div3',
+        data: {
+            number: 1000
+        },
+        methods:{
+            call:function () {
+                this.number = Math.random() * 100;
+            }
+        }
+    })
+
+    var data = [
+        {name:"盖伦",hp:341},
+        {name:"提莫",hp:225},
+        {name:"安妮",hp:427},
+        {name:"死歌",hp:893}
+    ];
+
+    var four =  new Vue({
+        el: '#div4',
+        data: {
+            data: data
+        },
+        methods:{
+            call:function () {
+                this.number = Math.random() * 100;
+            }
+        }
+    })
+    var four =  new Vue({
+        el: '#div6',
+        data: {
+            href: "http://12306"
+        },
+        methods:{
+            call:function () {
+                this.number = Math.random() * 100;
+            }
+        }
+    })
+
+</script>
+
+
+</body>
+</html>
