@@ -1,5 +1,5 @@
 
-<style type="text/css">
+<style>
 
 body{  
       font-size: 12px;
