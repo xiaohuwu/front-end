@@ -17,6 +17,11 @@ front-end
 ⋅⋅⋅Note that this line is separate, but within the same paragraph.⋅⋅
 ⋅⋅⋅(This is contrary to the typical GFM line break behaviour, where trailing spaces are not required.)
 
-* Unordered list can use asterisks
-  1. Or minuses
-  2. Or pluses
++ World Cup 2014
+  1. Germany
+  2. Argentina
+  3. Netherlands
++ Rugby World Cup 2015
+  1. New Zealand
+  2. Australia
+  3. South Africa
