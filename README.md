@@ -18,5 +18,5 @@ front-end
 ⋅⋅⋅(This is contrary to the typical GFM line break behaviour, where trailing spaces are not required.)
 
 * Unordered list can use asterisks
-* Or minuses
-* Or pluses
+  * Or minuses
+  * Or pluses
