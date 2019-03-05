@@ -1,5 +1,5 @@
 # front-end
-================
+
 front-end
 ---------
 ### [bootstrap 基本栅格系统](https://htmlpreview.github.io/?https://github.com/xiaohuwu/front-end/blob/master/bootstrap-exercise/basic.html)
@@ -18,5 +18,5 @@ front-end
 ⋅⋅⋅(This is contrary to the typical GFM line break behaviour, where trailing spaces are not required.)
 
 * Unordered list can use asterisks
-Or minuses
-Or pluses
++ Or minuses
+- Or pluses
