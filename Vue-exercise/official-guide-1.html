@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>official-guide-1</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+
+
+<div id='example-3'>
+    <input
+            type="checkbox"
+            v-model="toggle"
+            v-bind:true-value="a"
+            v-bind:false-value="b">
+
+</div>
+
+
+
+
+<script>
+
+  var  vm =  new Vue({
+        el: '#example-3',
+        data: {
+            toggle:"xiaohu",
+            a:"xiaohu",
+            b:"ya"
+        }
+    })
+
+</script>
+
+
+
+</body>
+</html>
