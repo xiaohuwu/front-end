@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+</head>
+<style>
+
+    div.product{
+        float:left;
+        border:1px solid lightGray;
+        width:200px;
+        margin:10px;
+        cursor: pointer;
+    }
+
+    input{
+        margin-left: 10px;
+    }
+
+    *{
+        margin: 0px;
+        margin: 0px;
+    }
+
+    h4 {
+        margin-left: -10px;
+        margin-right: -10px;
+        border-bottom:  1px gainsboro solid;
+        margin-bottom: 10px;
+        padding: 0px 10px 5px 5px;
+    }
+
+    .item{
+        padding: 10px;
+        border: solid 1px lightgray;
+        margin: 10px;
+        overflow: auto;
+    }
+
+</style>
+<body>
+
+<div id="div2" class="item">
+
+    <product v-for="item in products" v-bind:product="item"> </product>
+
+</div>
+
+
+</body>
+
+<script>
+    new Vue({
+        el: '#div2',
+        components:{
+            'product':{
+                props:['product'],
+                template:'<div class="product" v-on:click="increaseSale" > {{ product.name }} 销量  {{ product.sale }} </div>',
+                methods:{
+                    increaseSale:function () {
+                        this.product.sale++;
+                    }
+                }
+            }
+        },
+        data:{
+             products:[
+                 {"name":"MAXFEEL休闲男士手包真皮手拿包大容量信封包手抓包夹包软韩版潮","sale":"18"},
+                 {"name":"宾度 男士手包真皮大容量手拿包牛皮个性潮男包手抓包软皮信封包","sale":"28"},
+                 {"name":"唯美诺新款男士手包男包真皮大容量小羊皮手拿包信封包软皮夹包潮","sale":"48"}
+             ]
+        }
+    })
+</script>
+</html>
