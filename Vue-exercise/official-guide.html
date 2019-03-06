@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+
+<div id="app">
+    {{ message }}
+</div>
+
+
+<div id="app2">
+    <span v-bind:title="message">  {{ message }}  </span>
+</div>
+
+
+<div id="app3">
+    <span v-if="seen" >  v-if 判断 </span>
+</div>
+
+<div id="app3">
+    <span v-if="seen" >  v-if 判断 </span>
+</div>
+
+<script>
+
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue!'
+        }
+    })
+
+    var app_2 = new Vue({
+        el: '#app2',
+        data: {
+            message: '属性绑定'
+        }
+    })
+
+    var app3 = new Vue({
+        el: '#app3',
+        data: {
+            seen: true
+        }
+    })
+
+
+    var app4 = new Vue({
+        el: '#app4',
+        data: {
+            seen: true
+        }
+    })
+
+</script>
+
+
+
+</body>
+</html>
