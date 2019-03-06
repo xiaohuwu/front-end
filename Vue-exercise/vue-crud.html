@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://how2j.cn/study/vue.min.js"></script>
+    <style type="text/css">
+        td{
+            border:1px solid gray;
+        }
+
+        table{
+            border-collapse:collapse;
+        }
+
+        div#app{
+            margin:20px auto;
+            width:400px;
+            padding:20px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div id="app">
+    <table>
+        <thead>
+            <tr>
+                <td> 英雄名称  </td>
+                <td> 血量  </td>
+                <td>  操作  </td>
+
+            </tr>
+        </thead>
+        <tbody>
+        <tr v-for="hero in data.heros ">
+            <td> {{ hero.name }} </td>
+            <td> {{ hero.hp }} </td>
+            <td>
+                <a @click="edit(hero.id)" href="#" > 编辑  </a>
+                 <a @click="deletes(hero.id)" href="#" > 删除 </a>
+            </td>
+        </tr>
+
+
+       <tr>
+           <td colspan="3">
+               英雄名称:
+               <input type="text"  v-model="hero4Add.name" />
+               <br>
+               血量：
+               <input type="number" v-model="hero4Add.hp" />
+               <br>
+               <button type="button"  v-on:click="add" >增加</button>
+           </td>
+       </tr>
+
+
+      <tr>
+          <td colspan="3" v-show="need_edit">
+              英雄名称:
+              <input type="text"  v-model="hero4Edit.name" />
+              <br>
+              血量：
+              <input type="number" v-model="hero4Edit.hp" />
+              <br>
+              <button type="button"  v-on:click="update" >修改</button>
+          </td>
+      </tr>
+
+
+        </tbody>
+
+    </table>
+
+</div>
+
+
+
+<script type="text/javascript">
+    //Model
+    var data = {
+        heros: [
+            { id: 1, name: '盖伦', hp: 318},
+            { id: 2, name: '提莫', hp: 320},
+            { id: 3, name: '安妮', hp: 419},
+            { id: 4, name: '死歌', hp: 325},
+            { id: 5, name: '米波', hp: 422},
+        ],
+        hero4Add:{name: '',hp: 0 },
+        hero4Edit:{name: '',hp: 0 ,id:0},
+        need_edit: false
+    };
+
+    //ViewModel
+    var vue = new Vue({
+        el: '#app',
+        data: data,
+        methods:{
+            add:function () {
+                this.heros.push(this.hero4Add);
+            },
+            deletes:function (id) {
+               for(var index = 0; index < this.heros.length;index++) {
+                   if(this.heros[index].id==id){
+                       this.heros.splice(index,1);
+                   }
+               }
+            },
+            edit:function (id) {
+                this.need_edit = true
+                for(var index = 0; index < this.heros.length;index++) {
+                    if(this.heros[index].id==id){
+                        this.hero4Edit.name=this.heros[index].name;
+                        this.hero4Edit.hp=this.heros[index].hp;
+                        this.hero4Edit.id=this.heros[index].id;
+                    }
+                }
+            },
+            update:function () {
+                this.need_edit = false
+                for(var index = 0; index < this.heros.length;index++) {
+                    if(this.heros[index].id==this.hero4Edit.id){
+                        this.heros[index].name = this.hero4Edit.name;
+                        this.heros[index].hp = this.hero4Edit.hp;
+                    }
+                }
+            }
+        }
+    });
+
+
+</script>
+
+</body>
+
+
+</html>

@@ -22,18 +22,91 @@
         border: solid 1px lightgray;
         margin: 10px;
     }
+
+
+   table tr td{
+         border:1px solid gray;
+         padding:10px;
+
+     }
+
+   table{
+        border-collapse:collapse;
+        width:800px;
+        table-layout:fixed;
+    }
+
+   tr.firstLine{
+        background-color: lightGray;
+    }
+
+
 </style>
 <body>
+
 <div id="div1" class="item">
-    <h4> v-on:click 事件 </h4>
+    <h4> v-model 双向绑定 </h4>
     <div> <input v-model="name" type="text" > </div>
     <p>{{name}}</p>
     <button v-on:click="count">点击</button>
 </div>
 
 
+<div id="div2">
+    <h4> 动态属性 属性的值不是固定的 而是通用其他属性 动态计算出来的 </h4>
+    <table align="center" >
+        <tr class="firstLine">
+            <td>人民币</td>
+            <td>美元</td>
+        </tr>
+        <tr>
+            <td align="center" colspan="2">
+                汇率： <input type="number" v-model="exchange" />
+            </td>
+        </tr>
+
+        <tr>
+
+            <td align="center">
+                ￥: <input type="number"  v-model="rmb" />
+            </td>
+            <td align="center">
+                {{ (rmb / exchange).toFixed(2) }}
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+<div id="div3">
+    <h4> computed 方式 《也可以用 methods 的方式  但是他没有缓存》 </h4>
+    <table align="center" >
+        <tr class="firstLine">
+            <td>人民币</td>
+            <td>美元</td>
+        </tr>
+        <tr>
+            <td align="center" colspan="2">
+                汇率： <input type="number" v-model="exchange" />
+            </td>
+        </tr>
+
+        <tr>
+
+            <td align="center">
+                ￥: <input type="number"  v-model="rmb" />
+            </td>
+            <td align="center">
+                {{ dollar }}
+            </td>
+        </tr>
+    </table>
+
+</div>
+
 
 <script>
+
     //准备数据
     var gareen = {"name":"盖伦","hp":616};
     //通过vue.js 把数据和对应的视图关联起来
@@ -45,6 +118,27 @@
         methods:{
             count:function () {
                 alert(this.name);
+            }
+        }
+    })
+
+    var two =  new Vue({
+        el: '#div2',
+        data: {
+            rmb: 0,
+            exchange:6.7
+        }
+    })
+
+    var three =  new Vue({
+        el: '#div3',
+        data: {
+            rmb: 0,
+            exchange:6.7
+        },
+        computed:{
+            dollar:function () {
+                return (this.rmb / this.exchange).toFixed(2);
             }
         }
     })
