@@ -3,18 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title>official-guide-1</title>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-</head>
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.js"></script>
 
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+</head>
+<style>
+
+    div.good{
+        height: 200px;
+        width: 5px;
+        background-color: green;
+    }
+
+</style>
 <body>
 
 
-<div id='example-3'>
-    <input
-            type="checkbox"
-            v-model="toggle"
-            v-bind:true-value="a"
-            v-bind:false-value="b">
+<div id='example-1' class="item">
+    <h4> Class 与 Style 绑定 </h4>
+    <div v-bind:class="{good:active}">
+      ddd
+    </div>
+</div>
+
+
+<div id='example-2' class="item">
+    <h4> Class 与 Style 绑定 且数据源是动态属性 </h4>
+    <div v-bind:class="classObject">
+        ddd
+    </div>
+</div>
+
+
+
+<div id="dynamic-component-demo" class="demo">
+
+<button v-for="item in tabs" class="dynamic-component-demo-tab-button"  @click="tab(item)" v-bind:class="['tab-button', { active: currentTab === tab }]">
+     {{ item }}
+</button>
+<component v-bind:is="currentTabComponent"> </component>
 
 </div>
 
@@ -22,17 +49,73 @@
 
 
 <script>
-
-  var  vm =  new Vue({
-        el: '#example-3',
+    Vue.component('tab-home', { template: '<div>Home component</div>' })
+    Vue.component('tab-posts', { template: '<div>Posts component</div>' })
+    Vue.component('tab-archive', { template: '<div>Archive component</div>' })
+    new Vue({
+        el: '#dynamic-component-demo',
         data: {
-            toggle:"xiaohu",
-            a:"xiaohu",
-            b:"ya"
+            currentTab: 'Home',
+            tabs: ['Home', 'Posts', 'Archive']
+        },
+        computed: {
+            currentTabComponent: function () {
+                return 'tab-' + this.currentTab.toLowerCase()
+            }
+        },
+        methods:{
+            tab:function (item) {
+                this.currentTab = item;
+            }
         }
     })
+</script>
+
+
+
+
+
+<script>
+
+
+
+
+
+
+
+    Vue.component('my-component', {
+        template: '<p class="foo bar">Hi</p>'
+    })
+
+
+    var one =  new Vue({
+        el: "#example-1",
+        data:{
+            active:true
+        }
+    });
+
+    var two =  new Vue({
+        el: "#example-2",
+        data:{
+            isActive:true,
+            error:null
+        },
+        computed:{
+            classObject:function () {
+                return{
+                    active:this.isActive && !this.error,
+                    'text-danger': this.error
+                }
+            }
+        }
+
+    });
 
 </script>
+
+
+
 
 
 

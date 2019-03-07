@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+
+</head>
+<body>
+
+
+<div id='example-1' class="item">
+
+    <h4> style 属性的绑定 </h4>
+    <my-component class="baz boo"></my-component>
+    <div v-bind:style="[baseStyles, overridingStyles]"> dsfafdasdf</div>
+
+</div>
+
+
+<div id='example-2' class="item">
+    <h4> 组件基础 </h4>
+    <div id="components-demo">
+        <button-counter></button-counter>
+
+        <button-counter></button-counter>
+        <button-counter></button-counter>
+
+
+
+        <blog-post title="My journey with Vue"></blog-post>
+        <blog-post title="Blogging with Vue"></blog-post>
+        <blog-post title="Why Vue is so fun"></blog-post>
+
+
+    </div>
+
+</div>
+
+
+<div id='example-3' class="item">
+    <h4> 通过 props 属性向 组件传值  </h4>
+
+        <blog-post title="My journey with Vue"></blog-post>
+        <blog-post title="Blogging with Vue"></blog-post>
+        <blog-post title="Why Vue is so fun"></blog-post>
+</div>
+
+
+
+
+
+<div id="blog-posts-events-demo" class="item">
+    <h4> 监听子组件事件 </h4>
+
+
+    <div :style="{ fontSize: postFontSize + 'px' }">
+        <blog-post
+
+                v-for="post in posts"
+                v-bind:key="post.id"
+                v-bind:post="post"
+                v-on:enlarge-text="onEnlargeText"
+        ></blog-post>
+    </div>
+
+</div>
+
+
+
+
+</body>
+
+<script type="text/javascript">
+
+    Vue.component('my-component', {
+        template: '<p class="foo bar">Hi</p>'
+    })
+
+
+    Vue.component('blog-post', {
+        props: ['post'],
+        template: `
+    <div class="blog-post">
+      <h3>{{ post.title }}</h3>
+      <button @click="$emit('enlarge-text',1)">
+        Enlarge text
+      </button>
+      <div v-html="post.content"></div>
+    </div>
+  `
+    })
+
+    // 定义一个名为 button-counter 的新组件  组件里面的属性 只能通过 function
+    Vue.component('button-counter', {
+        data: function () {
+            return {
+                count: 0
+            }
+        },
+        template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+    })
+
+    new Vue({
+        el: '#blog-posts-events-demo',
+        data: {
+            postFontSize: 12,
+            posts: [
+                { id: 1, title: 'My journey with Vue' , content: 'My journey with Vue'},
+                { id: 2, title: 'Blogging with Vue' , content: 'My journey with Vue'},
+                { id: 3, title: 'Why Vue is so fun' , content: 'My journey with Vue'}
+            ]
+        },
+        methods:{
+            onEnlargeText:function (enlargeAmount) {
+                this.postFontSize+=enlargeAmount;
+            }
+        }
+    })
+
+
+    var three =  new Vue({
+        el: "#example-3"
+    });
+
+    var two =  new Vue({
+        el: "#components-demo"
+    });
+
+    var one =  new Vue({
+        el: "#example-1",
+        data:{
+            styleObject: {
+                color: 'red',
+                fontSize: '13px'
+            },
+            overridingStyles:{
+                color: 'yellow',
+                fontSize: '13px'
+            }
+        }
+    });
+
+
+
+
+</script>
+
+
+</html>
