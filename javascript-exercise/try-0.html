@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h2>What Can JavaScript Do?</h2>
+<p>JavaScript can change HTML attribute values.</p>
+<p>In this case JavaScript changes the value of the src (source) attribute of an image.</p>
+<button onclick="changeLight('0')">Turn on the light</button>
+<img id="myImage" src="img/pic_bulboff.gif" style="width:100px">
+<button onclick="changeLight('1')">Turn off the light</button>
+
+</body>
+
+<script>
+
+   /**
+    * js 输出 相关的语法 可用于调试
+    * alert();
+    * console.log()
+    * document.write();
+    *
+   */
+
+
+    function changeLight(type) {
+        var img =  document.getElementById("myImage");
+        if(type=='0'){
+            img.src = 'img/pic_bulbon.gif';
+        }else{
+            img.src = 'img/pic_bulboff.gif';
+        }
+    }
+    /* note javascript cannot add event to 集合 */
+
+    var p =  document.getElementsByTagName("p");
+    for(var index = 0;index < p.length;index++){
+        p[index].onmouseover = function () {
+            this.style.fontSize='20px';
+        }
+        p[index].onmouseleave = function () {
+            this.style.fontSize='14px';
+            this.innerHTML="onmouseleave";
+        }
+    }
+
+
+   /**
+    * 对象的两种访问形式
+    * @type {{name: string, age: number}}
+    * object.key
+    * object[key]
+    */
+
+   var fruit = prompt("Which fruit to buy?" , "apple");
+
+   let bag = {
+       [fruit]: 5,  // the name of the property is taken from the variable fruit
+   };
+
+   var  user  = {
+        name: "小虎",
+        age: 20
+   }
+
+    var key = prompt("What do you want to know about the user",'name');
+    console.log(user[key]);
+
+
+
+</script>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    var elements = [
+        'Hydrogen',
+        'Helium',
+        'Lithium',
+        'Beryllium'
+    ];
+
+    let array = elements.map((element) => {
+        return element.length;
+    });
+
+    console.log("array", array);
+    var cats = [];
+    cats[30] = ['Dusty'];
+    console.log("length", cats);
+
+
+    /*  对象和属性  */
+    var mycar = new Object();
+    mycar.make = "Ford";
+    mycar.model = "Mustang";
+    mycar["year"] = 1969;
+    console.log("mycar", JSON.stringify(mycar));
+
+    function showProps(obj, objName) {
+        result = "";
+        for (var i in obj) {
+            if (obj.hasOwnProperty(i)) {
+                result += objName + "." + i + " = " + obj[i] + "\t"
+            }
+        }
+        return result;
+    }
+
+    var result = showProps(mycar, "mycar");
+    console.log("result", result);
+
+    /* crate array */
+
+    var arrray = new Array(3);
+    array = Array(3);
+    array = [];
+
+    /*遍历数组*/
+
+    var colors = ['red', 'green', 'blue'];
+    for(var i = 0;i< colors.length;i++){
+        console.log('[color]',colors[i]);
+    }
+
+    colors.forEach(function (item,index) {
+        console.log('[item]',item+":"+index);
+    })
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
