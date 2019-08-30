@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+
+
+<div id="app">
+    <input type="text" v-model="inputValue">
+    <button v-on:click="addItem">添加</button>
+    <ul>
+        <li v-for="item in list">{{ item }}</li>
+    </ul>
+</div>
+<script>
+    var app = new Vue({
+        el:'#app',
+        data:{
+            list:[],
+            inputValue:''
+        },
+        methods:{
+            addItem:function () {
+                this.list.push(this.inputValue)
+                this.inputValue = ''
+            }
+        }
+    })
+    console.log(app.$data)
+</script>
+
+
+
+</body>
+</html>
