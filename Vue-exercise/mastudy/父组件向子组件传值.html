@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="../lib/vue-2.4.0.js"></script>
+
+
+</head>
+<body>
+
+
+<div id="app">
+    <com1 :parentmsg="msg"></com1>
+</div>
+
+</body>
+</html>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            msg: "hello world"
+        },
+        components: {
+            com1: {
+                data() {
+                    return {
+                        key: 123
+                    }
+                },
+                props: ["parentmsg"],
+                template: '<h1 @click="change"> 这是子组价的值---{{parentmsg}}</h1>',
+            }
+        }
+
+    });
+
+
+</script>

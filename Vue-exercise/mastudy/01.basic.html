@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 1. 导入Vue的包 -->
+    <script src="../lib/vue-2.4.0.js"></script>
+</head>
+<body>
+  <div id="app">
+      <p>
+          {{ message }}
+      </p>
+      <p v-text="message1"> ===</p>
+      <p v-html="message2"> ===</p>
+
+      <!-- v-bind: 是 Vue中，提供的用于绑定属性的指令 -->
+      <input type="button" :value="message1"  :title="message1 + '123'" @click="show">
+
+  </div>
+</body>
+</html>
+
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            message:"hello Vue",
+            message1: "hello",
+            message2: '<h1> 我是H1我骄傲！</h1>'
+        },
+        methods:{
+            show:function () {
+                alert("I am show!");
+            }
+        }
+    });
+</script>
