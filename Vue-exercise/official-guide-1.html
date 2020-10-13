@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>official-guide-1</title>
@@ -38,9 +38,10 @@
 
 <div id="dynamic-component-demo" class="demo">
 
-<button v-for="item in tabs" class="dynamic-component-demo-tab-button"  @click="tab(item)" v-bind:class="['tab-button', { active: currentTab === tab }]">
+<button v-for="item in tabs" class="dynamic-component-demo-tab-button"  @click="tab(item)" v-bind:class="['tab-button', { active: currentTab == item }]">
      {{ item }}
 </button>
+
 <component v-bind:is="currentTabComponent"> </component>
 
 </div>
