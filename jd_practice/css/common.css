@@ -1,0 +1,125 @@
+@font-face {
+    font-family: 'iconfont';  /* project id 993141 */
+    src: url('//at.alicdn.com/t/font_993141_tyn4gquauc.eot');
+    src: url('//at.alicdn.com/t/font_993141_tyn4gquauc.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_993141_tyn4gquauc.woff2') format('woff2'),
+    url('//at.alicdn.com/t/font_993141_tyn4gquauc.woff') format('woff'),
+    url('//at.alicdn.com/t/font_993141_tyn4gquauc.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_993141_tyn4gquauc.svg#iconfont') format('svg');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.test{
+    border: 1px solid red;
+}
+body {
+    font-size: 12px;
+}
+
+header {
+    background: #EAEAEA;
+    height: 30px;
+    line-height: 30px;
+    color: #333;
+}
+
+header a {
+    color: #28a3ef;
+    text-decoration: none;
+}
+
+header a:hover {
+    color: #28a3ef;
+    text-decoration: underline;
+}
+
+.color-blue {
+    color: #28a3ef;
+}
+
+header ul li {
+    display: inline-block;
+}
+
+header ul li.line {
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 12px;
+    width: 1px;
+    background: #666;
+    position: relative;
+    top: 3px;
+}
+
+.arrow_down {
+    margin-left: -2px;
+    padding-top: 1px;
+    color: #666;
+    font-size: 12px;
+    vertical-align:middle;
+}
+
+.search{
+    padding-top: 30px;
+}
+
+.logo{
+    width: 175px;
+    height: 55px;
+}
+
+.search .middle{
+    margin-top: 10px;
+    margin-left: 300px;
+    margin-right: 300px;
+}
+.search .middle input{
+    padding-left: 10px;
+    width: 502px;
+    height: 32px;
+    border: solid 2px #c81523;
+    outline: none;
+}
+.middle form{
+    height: 40px;
+}
+.middle button{
+    border: none;
+    outline: none;
+    background:#c81523 ;
+    height: 32px;
+    width: 70px;
+    color: white;
+}
+
+.cart{
+    position: relative;
+    margin-top: 10px;
+    border: 1px solid #dfdfdf;
+    padding: 5px 10px;
+}
+.icon_cart{
+    color: #c81523;
+}
+.cart span.number{
+    position: absolute;
+    top: -15px;
+    right: 4px;
+    padding: 2px 4px;
+    background:#c81523;
+    border-radius: 10px 10px 10px 0px;
+    color: white;
+}
+.color-red{
+    color: #c81523;
+}
+.hot_word .word{
+    margin-right: 30px;
+}
