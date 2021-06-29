@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="./js/vue.js"></script>
+<script src="./js/vue-router.js"></script>
+<script src="./js/axios.min.js"></script>
+<body>
+<div id="app">
+    <h1>Hello App!</h1>
+    <p>
+        <button @click ="getList"> 查找 </button>
+        <!-- 使用 router-link 组件来导航. -->
+        <!-- 通过传入 `to` 属性指定链接. -->
+        <!-- <router-link> 默认会被渲染成一个 `<a>` 标签 -->
+        <router-link to="/">首页</router-link>
+        <router-link to="/student">会员管理</router-link>
+        <router-link to="/teacher">讲师管理</router-link>
+    </p>
+    <!-- 路由出口 -->
+    <!-- 路由匹配到的组件将渲染在这里 -->
+    <router-view></router-view>
+</div>
+</body>
+</html>
+<script>
+    const Welcome = {template: '<div>欢迎</div>'};
+    const Student = {template: '<div>student list</div>'};
+    const Teacher = {template: '<div>teacher list</div>'};
+    // 2. 定义路由
+    // 每个路由应该映射一个组件。
+    const routes = [
+        {path: '/', redirect: '/welcome'}, //设置默认指向的路径
+        {path: '/welcome', component: Welcome},
+        {path: '/student', component: Student},
+        {path: '/teacher', component: Teacher}
+    ];
+    const router = new VueRouter({
+        routes
+    });
+    axios.defaults.baseURL = 'http://localhost:8001';
+
+    var app = new Vue({
+        el: '#app',
+        router,
+        methods: {
+            getList() {
+                //vm = this
+                axios.get('/admin/ucenter/member')
+                    .then(response => {
+                        console.log(response)
+                        this.memberList = response.data.data.items
+                    })
+                    .catch(error => {
+                        console.log(error)
+                    })
+            }
+        }
+    });
+</script>

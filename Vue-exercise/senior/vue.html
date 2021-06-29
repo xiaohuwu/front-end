@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>千锋练习</title>
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="(item,index) in list " @click="clickMe(index)" :class="item.active? 'red' : '' ">
+            {{item.name}}
+        </li>
+    </ul>
+</div>
+</body>
+</html>
+<style>
+    .red {
+        background: red;
+    }
+</style>
+//可优化
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            list: [
+                {name: "11", active: false},
+                {name: "22", active: false},
+                {name: "33", active: false},
+                {name: "44", active: false},
+            ]
+        },
+        methods: {
+            clickMe: function (index) {
+                for (let k = 0; k < this.list.length; k++) {
+                    this.list[k].active = false;
+                }
+                console.log(JSON.stringify(this.list))
+                this.list[index].active = true;
+            }
+        }
+    })
+
+</script>

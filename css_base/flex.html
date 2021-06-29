@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+    .flex-container {
+        display: flex;
+        /*在主轴上的对齐方式*/
+        /*justify-content: space-around;*/
+        /*主轴*/
+        /*flex-direction: column;*/
+        /*次轴上的对齐方式*/
+        justify-content: space-around;
+        flex-wrap: wrap;
+        background: orange;
+        align-content: center;
+    }
+
+    .flex-container > div {
+        /*display: flex;*/
+        padding: 20px;
+        color: white;
+        background: gainsboro;
+        flex: 1;
+        width: 25%;
+        min-width: 25%;
+        max-width: 25%;
+    }
+
+</style>
+<body>
+<div class="flex-container">
+    <div> one</div>
+
+    <div> two<br>
+        two<br>
+
+    </div>
+    <div> three<br>
+        three<br>
+        three<br>
+    </div>
+    <div> four<br>
+        four<br>
+        four<br>
+        four<br>
+    </div>
+    <div> five<br>
+        five<br>
+        five<br>
+        five<br>
+        five<br>
+    </div>
+    <div> sixe <br>
+        sixe <br>
+        sixe <br>
+        sixe <br>
+        sixe <br>
+        sixe <br>
+    </div>
+
+    <div>
+        seven
+    </div>
+
+    <div>
+        eight
+    </div>
+</div>
+</body>
+</html>

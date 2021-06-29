@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./lib/vue-2.4.0.js"></script>
+    <link rel="stylesheet" href="./lib/bootstrap-3.3.7.css">
+</head>
+<body>
+
+<div id="app">
+   id: <input v-model="input.id" /> name: <input v-model="input.name"/> <button @click="add" class="button">添加</button>
+
+    <input v-model="search" class=""/>  <button @click="search_item" class="button">搜索</button>
+    <table class="table">
+        <thead>
+         <td>id</td>
+         <td>name</td>
+         <td>ctime</td>
+         <td>operation</td>
+        </thead>
+        <tr v-for="(item,index) in brands">
+            <td v-for="fild in item"> {{ fild }} </td>
+            <td> <button @click="delete_item(index)">删除</button></td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
+
+<script>
+   app =  new Vue({
+        el: "#app",
+        data: {
+            brands: [
+                {id: 1,name:"宝马",Ctime: "2020-10-12"},
+                {id: 2,name:"奔驰",Ctime: "2020-10-12"}
+            ],
+            input:{id:"",
+                name:""
+            },
+            search: ""
+        },
+        computed:{
+
+        },
+       watch:{
+           search:function () {
+               sub_list =[];
+               for(let k= 0;k<this.brands.length;k++){
+                   if(this.brands[k].name.indexOf(this.search)>-1){
+                       sub_list.push(this.brands[k]);
+                   }
+               }
+               this.brands = sub_list;
+           }
+       },
+        methods: {
+            add: function () {
+                this.input["Ctime"] = new Date();
+                this.brands.push(this.input)
+                this.input= {id:"", name:""}
+            },
+            delete_item: function (index) {
+                let ts = this.brands.splice(index,1);
+                console.log("ts:",ts);
+            },
+            search_item: function () {
+                let that = this
+                 this.brands.filter(function (item) {
+                    if(that.search == ""){
+                        return true
+                    }
+                    return item == that.search
+                })
+            }
+        }
+    });
+
+</script>
+
+<style type="text/css">
+    .red {
+        background: red;
+        width: 200px;
+        height: 200px;
+    }
+
+    .blue {
+        background: blue;
+        width: 200px;
+        height: 200px;
+    }
+</style>

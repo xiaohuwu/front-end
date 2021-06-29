@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="./js/vue.js"></script>
+<script src="./js/vue-router.js"></script>
+<script src="./components/Navbar.js"></script>
+
+<div id="app">
+
+    <h1 v-bind:title="message">
+        {{content}}
+    </h1>
+
+    {{message}}
+
+    <!--     通过属性单向绑定-->
+    <br/>
+    <p>属性绑定 </p>
+    <input name="keyWord" :value="searchMap.keyWord"/>
+    <br/>
+    <p>属性双向绑定</p>
+    <input name="keyWord" v-model="searchMap.keyWord"/>
+
+
+    <button v-on:click="search()">查询</button>
+    <p>您要查询的是:{{searchMap.keyWord}}</p>
+    <p><a v-bind:href="result.site" target="_blank">{{result.title}}</a></p>
+
+    <p>事件修饰符，阻止默认冒泡行为 </p>
+    <form action="save" v-on:submit.prevent="onSubmit">
+        <label for="username">
+            <input type="text" id="username" v-model="user.username">
+            <button type="submit">保存</button>
+        </label>
+    </form>
+    <p> 基本的if else </p>
+    <p v-if="ok"> ok </p>
+    <p v-else>else </p>
+
+    <ul>
+        <li v-for="item in userList">{{item.username}}---{{item.age}}</li>
+    </ul>
+
+    <p> Vue for in </p>
+    <table border="1">
+        <tr v-for="item in userList">
+            <td> {{item.id}}</td>
+            <td> {{item.username}}</td>
+            <td> {{item.age}}</td>
+        </tr>
+    </table>
+
+    <Navbar></Navbar>
+
+</div>
+
+</body>
+</html>
+<script type="module" src="./main.js"></script>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue!',
+            content: "this is content",
+            searchMap: {
+                keyWord: '尚硅谷'
+            },
+            user: {
+                name: ""
+            },
+            result: {},
+            ok: true,
+            userList: [
+                {id: 1, username: 'helen', age: 18},
+                {id: 2, username: 'peter', age: 28},
+                {id: 3, username: 'andy', age: 38}
+            ]
+        },
+        methods: {
+            search: function () {
+                console.log('search');
+                this.result = {
+                    "title": "尚硅谷",
+                    "site": "http://www.atguigu.com"
+                }
+            },
+            onSubmit() {
+                if (this.user.username) {
+                    console.log('提交表单')
+                } else {
+                    alert('请输入用户名')
+                }
+            }
+        },
+
+        beforeCreate: function () {
+            // `this` 指向 vm 实例
+            console.log('beforeCreate')
+        },
+        beforeMount: function () {
+            // `this` 指向 vm 实例
+            console.log('beforeMount')
+        },
+        created: function () {
+            // `this` 指向 vm 实例
+            console.log('created')
+        },
+        mounted: function () {
+            // `this` 指向 vm 实例
+            console.log('mounted')
+        },
+        // components: {
+        //     'Navbar': {
+        //         template: '<ul><li>首页</li><li>学员管理</li></ul>'
+        //     }
+        // }
+    })
+</script>
