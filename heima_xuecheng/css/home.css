@@ -1,0 +1,256 @@
+body {
+    background-color: #f3f5f7;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    padding: 30px;
+}
+
+header img.logo {
+    width: 195px;
+    height: 42px;
+    float: left;
+}
+
+header ul {
+    margin-left: 40px;
+}
+
+header ul li {
+    float: left;
+}
+
+header ul li a {
+    display: inline-block;
+    width: 100%;
+    line-height: 42px;
+    height: 42px;
+    font-size: 18px;
+    color: black;
+    padding-right: 20px;
+}
+
+
+header ul li a:hover {
+    text-decoration: underline;
+}
+
+header form {
+    margin-left: 20px;
+    margin-right: 50px;
+}
+
+form input {
+    height: 42px;
+    width: 320px;
+    border: 1px #00a4ff solid;
+}
+
+form button {
+    background: url("../img/btn.png");
+    width: 50px;
+    background-size: cover;
+    height: 42px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+header img.person {
+    margin-right: 10px;
+}
+
+div.banner {
+    height: 420px;
+    width: 100%;
+    background-color: #1c036c;
+}
+
+div.banner .container {
+    background: url("../img/banner2.png");
+    background-size: contain;
+    height: 100%;
+}
+
+div.banner .fl ul {
+    width: 200px;
+    height: 100%;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+div.banner .fl ul li a {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    color: white;
+    width: 100%;
+    display: block;
+}
+
+.desc {
+    margin-top: 100px;
+    width: 230px;
+    background-color: #f3f5f7;
+}
+
+.desc h5 {
+    height: 48px;
+    background-color: #9bceea;
+    line-height: 48px;
+    text-align: center;
+    color: white;
+}
+
+.desc ul {
+    margin-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.desc .item {
+    width: 100%;
+    padding: 14px 0;
+    background-color: #f3f5f7;
+    border-bottom: 1px solid #ccc;
+}
+
+.desc p.content {
+    font-size: 12px;
+    color: #a5a5a5;
+}
+
+.desc button {
+    display: inline-block;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    border: 1px solid #00a4ff;
+    color: #00a4ff;
+    padding: 6px;
+    margin-bottom: 10px;
+}
+
+.recommended {
+    margin-top: 10px;
+    box-shadow: 0 2px 3px 3px rgb(0 0 0 / 10%);
+    padding: 15px;
+}
+
+.recommended ul li {
+    float: left;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-right: 2px #DDDDDD solid;
+}
+
+.recommended ul li.first {
+    color: #00a4ff;
+    font-weight: bolder;
+}
+
+span.interest {
+    color: #00a4ff;
+}
+
+div.course_title {
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+span.category {
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+span.more {
+    font-size: 12px;
+    color: #a5a5a5;
+}
+
+.course_list img {
+    width: 100%;
+}
+
+.course_list ul li {
+    float: left;
+    width: 18.5%;
+    background-color: white;
+    margin-right: 1.5%;
+    margin-bottom: 20px;
+}
+
+.course_list ul li p {
+    padding: 20px;
+}
+
+.course_list ul li p.second {
+    font-size: 12px;
+}
+
+.course_list ul li p.second span {
+    color: #ff7c2d;
+}
+
+footer {
+    font-size: 12px;
+    color: #666;
+    padding-top: 20px;
+    background-color: white;
+    padding-bottom: 200px;
+}
+
+div.course_list ul{
+    width: 1220px;
+}
+
+footer .fl {
+    width: 35%;
+    font-size: 12px;
+    color: #666;
+}
+
+footer .fl p {
+    margin-top: 20px;
+}
+
+footer button {
+    margin-top: 20px;
+    border: #00a4ff 1px solid;
+    width: 120px;
+    padding: 12px;
+    color: #00a4ff;
+    background-color: white;
+}
+
+footer ul {
+    margin-left: 50px;
+    float: right;
+}
+
+footer ul li.first {
+    font-size: 16px;
+    color: #050505;
+}
+
+footer ul li {
+    padding: 3px;
+}
+
+div.head {
+    position: relative;
+}
+
+img.hot {
+    position: absolute;
+    width: 30px;
+    height: 20px;
+    top: 5px;
+    right: -5px;
+}
