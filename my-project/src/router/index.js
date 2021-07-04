@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import Test from '@/components/Test'
 import Blogs from '@/components/Blogs'
 import List from '@/components/TodoList'
+import CartList from '@/components/CartList.vue'
 
 Vue.use(Router)
 
@@ -31,8 +32,13 @@ export default new Router({
     },
     {
       path: '/list',
-      name: 'to_do_list',
+      name: 'to_do_list1',
       component: List
+    },
+    {
+      path: '/cart_list',
+      name: 'cart_list',
+      component: CartList
     }
   ]
 })

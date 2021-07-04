@@ -3,7 +3,7 @@
 <!--    <img src="./assets/logo.png">-->
     <router-view/>
   </div>
-</template>
+</template>xe
 
 <script>
 export default {

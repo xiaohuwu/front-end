@@ -22,6 +22,7 @@
     <router-link to="/test">练习</router-link>
     <router-link to="/list">练习 list</router-link>
     <router-link to="/blog">练习blog</router-link>
+    <router-link to="/cart_list">练习购物车</router-link>
 
 
     <input v-model="sex" type="radio" value="0"/> 男
