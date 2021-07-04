@@ -32,12 +32,14 @@ header ul li a {
     height: 42px;
     font-size: 18px;
     color: black;
-    padding-right: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 12px;
 }
 
-
 header ul li a:hover {
-    text-decoration: underline;
+    color: #00a4ff;
+    border-bottom: 2px solid #00a4ff;
 }
 
 header form {
