@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    {
+        // 只在块级作用域有效
+        var girl = "xiaogeg"
+    }
+  //对 console.log进行简写 方便以后调用
+  const {['log']: log} = console
+
+    console.log("girl", girl)
+    const SCHOOL = "硅谷";
+    const a = 100;
+    //数组的解构复制
+    const arr = ["小宝", "小虎"]
+    let  [bao, hu] = arr
+    console.log("bao", bao)
+    console.log("hu", hu)
+
+    let zhao = {
+        name: "赵本山",
+        age: 67,
+        xiaoping: function (){
+            alert("小品");
+        }
+    }
+    let {xiaoping} = zhao
+    //之前是用 zhao.xiaoping
+    xiaoping();
+
+    let str = `我是一个模板字符串`
+    console.log("str",str)
+    // 可以直接使用换行符
+    let more_line = `我很长
+                     我需要换行
+                   `
+    log("more_line",more_line)
+
+    //模板字符串字符串拼接
+    let  name = "gege"
+    let ping = `${name} 我是你的眼`
+    console.log("ping",ping)
+
+    let school = "尚硅谷"
+
+    const dog_name = "小狗"
+    const dog_age = 18
+    // const dog = {
+    //     dog_name,
+    //     dog_age,
+    //     change: function () {
+    //         log("i will change you")
+    //     }
+    // }
+
+    //等价上面的函数
+    const dog = {
+        dog_name,
+        dog_age,
+        change() {
+            log("i will change you")
+        }
+    }
+
+    log("dog",dog);
+
+    let fn  = (a,b) =>{
+        console.log("a",a,"b",b);
+    }
+
+    fn(3,4)
+
+    //箭头函数 适用于 回调场景下的函数调用=
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
