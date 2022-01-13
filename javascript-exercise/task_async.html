@@ -1,0 +1,58 @@
+<script>
+    function ajax(url, success, fail) {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open('GET', url);
+        xmlhttp.send();
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                success && success(xmlhttp.responseText);
+            } else {
+                // 这里的 && 符号，意思是：如果传了 fail 参数，就调用后面的 fail()；如果没传 fail 参数，就不调用后面的内容。因为 fail 参数不一定会传。
+                fail && fail(new Error('接口请求失败'));
+            }
+        };
+    }
+
+    // 第一步：model层的接口封装
+    function request1(url) {
+        return     new Promise((resolve, reject) => {
+            ajax(url, (res) => {
+                res = JSON.parse(res);
+                // 这里的 res 是接口的返回结果。返回码 retCode 是动态数据。
+                if (res.retCode == 0) {
+                    // 接口请求成功时调用
+                    resolve('request success' + res);
+                } else {
+                    // 接口请求失败时调用
+                    reject({ retCode: -1, msg: 'network error' });
+                }
+            })
+        });
+    }
+    // 接await对象 返回的结果
+    async function queryData() {
+        const response = await request1("http://localhost:3000/elderlies");
+        response.then((item)=>{
+            console.log("item1223",item);
+        });
+    }
+    queryData();
+
+
+    async function queryData() {
+        const response = await request1("http://localhost:3000/elderlies");
+        let result =  await response;
+        console.log("result",result);
+    }
+    // queryData();
+
+
+    var str = '';
+    for (var i = 1; i <= 10; i++) { // 外层循环控制行数
+        for (var j = i; j <= 10; j++) { // 里层循环打印的个数不一样  j = i
+            str = str + '#';
+        }
+        str += '\n';
+    }
+    console.log(str);
+</script>
