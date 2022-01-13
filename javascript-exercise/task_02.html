@@ -1,5 +1,23 @@
-
 <script type="module" src="hello.js"></script>
 <script type="module" src="user.js"></script>
 <script type="module" src="user.js"></script>
 <script type="module" src="user.js"></script>
+
+<div id="divA">This is <span>some</span> text!</div>
+
+<script>
+obj = {name: "xiaohu",age:24}
+function findProperty(obj){
+    for (let  item in obj){
+        console.log("name,",item,'value',obj[item]);
+    }
+}
+findProperty(obj);
+
+
+arr = [2,4,6,8]
+for(let item of arr){
+    console.log("item",item)
+}
+
+</script>
