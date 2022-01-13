@@ -9,7 +9,7 @@
 </body>
 
 
-<script>
+<script type="module">
 
   function test(resolve1, reject) {
     var timeOut = Math.random() * 2;
@@ -35,6 +35,10 @@
     console.log('失败：' + reason);
   });
 
-
+ import {sayHi} from "./sayHi.js";
+ sayHi("xiaohuge")
 </script>
+
+
+
 </html>
