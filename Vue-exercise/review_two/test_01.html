@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<link>
+<meta charset="UTF-8">
+<title>Title</title>
+<script src="https://cdn.staticfile.org/vue/2.2.2/vue.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+</head>
+
+<body>
+<div id="div1" class="item">
+    <h4> v-on:click 事件 </h4>
+    <div> 一共点击了 {{clickNumber}}</div>
+    <button v-on:click="count">点击</button>
+</div>
+<div id="div2" class="item">
+    <h4> v-if </h4>
+    <button v-on:click="toggle">切换隐藏显示</button>
+    <div v-if="show"> 默认这一条是看得见的</div>
+</div>
+<div id="div3" class="item">
+    <h4> v-if-else </h4>
+    <button v-on:click="call">适合的职业</button>
+    <div v-if="score > 90"> A</div>
+    <div v-else-if="score > 80"> B</div>
+    <div v-else-if="score > 70"> C</div>
+    <div v-else> D</div>
+</div>
+<div id="div4" class="item">
+    <h4> v-for 遍历 </h4>
+    <table>
+        <tr>
+            <td>index</td>
+            <td>name</td>
+        </tr>
+        <tr v-for="item in items">
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+        </tr>
+    </table>
+</div>
+<div id="div6" class="item">
+    <h4> v-bind 做属性绑定 </h4>
+    <a v-bind:href="href1">百度</a>
+</div>
+</body>
+</html>
+
+<script>
+    var app = new Vue({
+        el: '#div1',
+        data: {
+            clickNumber: 1
+        },
+        methods: {
+            count() {
+                this.clickNumber += 1;
+            }
+        }
+    })
+    var app = new Vue({
+        el: '#div2',
+        data: {
+            show: true
+        },
+        methods: {
+            toggle() {
+                this.show = !this.show;
+            }
+        }
+    })
+    var app = new Vue({
+        el: '#div3',
+        data: {
+            score: 80
+        },
+        methods: {
+            call() {
+                this.score = Math.random() * 100;
+            }
+        }
+    })
+    var app = new Vue({
+        el: '#div4',
+        data: {
+            items: [
+                {id: 1, name: "小虎"},
+                {id: 2, name: "哥哥"},
+            ]
+        },
+        methods: {}
+    })
+
+    var app = new Vue({
+        el: '#div6',
+        data: {
+            href1: "www.baidu.com"
+        },
+        methods: {}
+    })
+
+</script>

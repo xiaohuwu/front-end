@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<style>
+    table tr td, table tr th {
+        border: solid 1px gray;
+
+    }
+
+    table tr:hover td {
+        background: orange;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+</style>
+
+<table class="table table-bordered" style="width:100%">
+    <tr>
+        <th style="width:200px;"></th>
+        <th style="width:25%"><%= @eval_log.elderly&.name %></th>
+        <th style="width:25%"></th>
+        <th style="width:25%"><%= @eval_log.elderly&.identify_sn %></th>
+    </tr>
+</table>
+
+
+<table style="width:100%">
+    <tr>
+        <th>Month</th>
+        <th>Savings</th>
+    </tr>
+    <tr>
+        <td style="width:70%">January</td>
+        <td style="width:30%">$100</td>
+    </tr>
+    <tr>
+        <td>February</td>
+        <td>$80</td>
+    </tr>
+</table>
+
+
+</body>
+</html>

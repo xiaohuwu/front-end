@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>to do list</title>
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.js"></script>
+</head>
+<body>
+<div id="todo_name">
+    <input name="todo_name" v-model="todo_name" v-on:keyup.enter="addItem">
+    <input value="新增" type="submit" v-on:click="addItem"><br>
+    <input name="search_name" v-model="search_name">
+    <button v-on:click="search">搜索</button>
+    <ul>
+        <li v-for="(item,index) in items">{{item}}
+            <button @click="delete_item(index)"> 删除</button>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
+
+<script>
+    var app;
+    app = new Vue({
+        el: '#todo_name',
+        data: {
+            items: [],
+            todo_name: '',
+            search_name: ''
+        },
+        methods: {
+            addItem() {
+                this.items.push(this.todo_name);
+            },
+            search() {
+                let res = [];
+                if (this.search_name === '') {
+                    return
+                } else {
+                    for (let i = 0; i < this.items.length; i++) {
+                        if (this.items[i].indexOf(this.search_name) !== -1) {
+                            res.push(this.items[i]);
+                        }
+                    }
+                }
+                this.items = res;
+            },
+            delete_item(index) {
+                this.items.splice(index, 1);
+            },
+        }
+    });
+
+</script>

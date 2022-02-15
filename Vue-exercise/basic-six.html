@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.js"></script>
 </head>
 <body>
 
@@ -17,13 +17,13 @@
 </div>
 <script>
     var app = new Vue({
-        el:'#app',
-        data:{
-            list:[],
-            inputValue:''
+        el: '#app',
+        data: {
+            list: [],
+            inputValue: ''
         },
-        methods:{
-            addItem:function () {
+        methods: {
+            addItem: function () {
                 this.list.push(this.inputValue)
                 this.inputValue = ''
             }
@@ -32,7 +32,6 @@
     console.log(app.$data)
     console.log(app.$el)
 </script>
-
 
 
 </body>
