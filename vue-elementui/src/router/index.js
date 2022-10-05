@@ -1,4 +1,5 @@
 import Router from 'vue-router'
+import Vue from 'vue'
 import index from '@/components/ArticleList/index.vue'
 
 Vue.use(Router)
