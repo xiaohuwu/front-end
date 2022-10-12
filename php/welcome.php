@@ -13,6 +13,11 @@ foreach ($cars as $car) {
     echo $car."<br/>";
 }
 
+
+$x = 5985;
+var_dump(is_int($x));
+
+
 ?>
 
 </body>
