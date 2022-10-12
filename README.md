@@ -5,5 +5,4 @@
 #### [bootstrap 表单 ](https://htmlpreview.github.io/?https://github.com/xiaohuwu/front-end/blob/master/bootstrap-exercise/form.html)
 #### [bootstrap 按钮 ](https://htmlpreview.github.io/?https://github.com/xiaohuwu/front-end/blob/master/bootstrap-exercise/button.html)
 #### [css practice from shiyanlou ](https://htmlpreview.github.io/?https://github.com/xiaohuwu/front-end/blob/master/bootstrap-exercise/dog.html)
-
-
+#### php -S localhost:8080 -t ./php  run php server
