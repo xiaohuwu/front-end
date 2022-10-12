@@ -8,9 +8,13 @@ $biscuit=$_POST['biscuit'];
 
 $apple = (float)$apple * 2.6;
 
-error_log("Failed to connect to database!", 1);
+$path = $_SERVER["SCRIPT_FILENAME"];
 
-error_log("Error message\n", 3, "./php.log");
+# 打印日志到控制台
+file_put_contents("php://stdout", "Requested: $path\n");
+
+# 打印日志到文件
+//error_log("Error message\n", 3, "./php.log");
 
 $pig =(float)$pig * 13.2;
 $biscuit =(float)$biscuit * 21;
