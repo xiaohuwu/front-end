@@ -4,51 +4,50 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="https://cdn.staticfile.org/vue/2.2.2/vue.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <script src="./js/test_1.js"></script>
 </head>
 <style>
 </style>
 <body>
 
-<div id="div2" >
-    <input v-model="message" >
+<div id="div2">
+    <input v-model="message">
     <p>{{foor1}}</p>
     <ul>
         <li v-for="item in names">
             {{item}}
         </li>
     </ul>
-    <task>task1</task>
-    <task>task2</task>
-    <task>task3</task>
 
-
-
-    <h1>new task</h1>
+   <task-list>
+   </task-list>
+    <h1>computed demo </h1>
     <ul>
         <li v-for="item in tasks" v-text="item.name"></li>
     </ul>
-
+    <message  title="title1" body="body1"> </message>
+    <message  title="title2" body="body2"> </message>
 </div>
 
 
 </body>
 
 <script>
- app =    new Vue({
+    app = new Vue({
         el: '#div2',
-        data:{
+        data: {
             message: "this is message",
             foor1: "foor12",
-            names: ["wu","xian","hu"],
-            values: [{name:"java",complete_ed: true},
-                     {name:"python",complete_ed: false},
-                      {name:"ruby",complete_ed: true},
+            names: ["wu", "xian", "hu"],
+            values: [{name: "java", complete_ed: true},
+                {name: "python", complete_ed: false},
+                {name: "ruby", complete_ed: true},
             ],
         },
-        computed:{
+        computed: {
             tasks: function () {
-              return  this.values.filter((item)=>{
+                return this.values.filter((item) => {
                     return item.complete_ed;
                 })
             }
