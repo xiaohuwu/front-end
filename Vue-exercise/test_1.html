@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.js"></script>
+    <script src="./js/test_1.js"></script>
+</head>
+<style>
+</style>
+<body>
+
+<div id="div2" >
+    <input v-model="message" >
+    <p>{{foor1}}</p>
+    <ul>
+        <li v-for="item in names">
+            {{item}}
+        </li>
+    </ul>
+    <task>task1</task>
+    <task>task2</task>
+    <task>task3</task>
+
+
+
+    <h1>new task</h1>
+    <ul>
+        <li v-for="item in tasks" v-text="item.name"></li>
+    </ul>
+
+</div>
+
+
+</body>
+
+<script>
+ app =    new Vue({
+        el: '#div2',
+        data:{
+            message: "this is message",
+            foor1: "foor12",
+            names: ["wu","xian","hu"],
+            values: [{name:"java",complete_ed: true},
+                     {name:"python",complete_ed: false},
+                      {name:"ruby",complete_ed: true},
+            ],
+        },
+        computed:{
+            tasks: function () {
+              return  this.values.filter((item)=>{
+                    return item.complete_ed;
+                })
+            }
+        }
+    })
+</script>
+</html>
