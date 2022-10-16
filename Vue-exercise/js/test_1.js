@@ -14,13 +14,13 @@ Vue.component('task', {
 
 
 Vue.component('message', {
-    props: ['title','body'],
-    data(){
+    props: ['title', 'body'],
+    data() {
         return {
             isShow: true
         }
     },
-    methods:{
+    methods: {
         close: function () {
             this.isShow = false
         }
@@ -37,6 +37,26 @@ Vue.component('message', {
      </div>
    </div>
     `
+})
+
+Vue.component('modal', {
+    props: ['title', 'body'],
+    template:
+        `
+    <div class="container ">
+     <div class="modal is-active">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <div class="box">
+         <slot></slot>
+    </div>
+  </div>
+  <button class="modal-close is-large" aria-label="close" @click="$emit('close')"></button>
+</div>
+    
+</div>
+  
+  `
 })
 
 

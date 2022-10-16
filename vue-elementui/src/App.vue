@@ -1,15 +1,17 @@
 <template>
   <div id="app">
+    <message> this is a message </message>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
 
+import Message from "./components/Message";
 export default {
   name: 'App',
   components: {
-
+    'message': Message
   }
 }
 </script>

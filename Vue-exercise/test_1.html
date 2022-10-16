@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="https://cdn.staticfile.org/vue/2.2.2/vue.js"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <script src="./js/test_1.js"></script>
 </head>
 <style>
@@ -20,14 +20,25 @@
         </li>
     </ul>
 
-   <task-list>
-   </task-list>
+    <task-list>
+    </task-list>
     <h1>computed demo </h1>
     <ul>
         <li v-for="item in tasks" v-text="item.name"></li>
     </ul>
-    <message  title="title1" body="body1"> </message>
-    <message  title="title2" body="body2"> </message>
+    <message title="title1" body="body1"></message>
+    <message title="title2" body="body2"></message>
+
+    <h1> componet1 </h1>
+    <h2>创建模态框（Modal）</h2>
+    <!-- 按钮触发模态框 -->
+    <button class="btn btn-primary btn-lg" @click="isShow = true">开始演示模态框</button>
+    <!-- 模态框（Modal） -->
+    <modal v-if="isShow" @close="isShow = false">
+        <ul>
+            <li> this is my test</li>
+        </ul>
+    </modal>
 </div>
 
 
@@ -44,6 +55,7 @@
                 {name: "python", complete_ed: false},
                 {name: "ruby", complete_ed: true},
             ],
+            isShow: false
         },
         computed: {
             tasks: function () {
