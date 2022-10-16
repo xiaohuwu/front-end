@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <message> this is a message </message>
+    <counter></counter>
     <router-view></router-view>
   </div>
 </template>
@@ -8,10 +9,13 @@
 <script>
 
 import Message from "./components/Message";
+import Counter from "./components/Counter";
+
 export default {
   name: 'App',
   components: {
-    'message': Message
+    'message': Message,
+    'counter': Counter
   }
 }
 </script>
