@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+
+    let [a, b, c] = [1, 2, 3];
+    console.log(a, b, c);
+
+    const person = {
+        name: "jack",
+        age: 21,
+        language: ['java', 'js', 'css']
+    }
+    let {name, age, language} = person;
+
+    console.log(name, b, c);
+
+    console.log("模版字符串测试123", `${name} hello world`);
+
+    let arr = ['1', '20', '-5', '3'];
+    arr = arr.map((item) => {
+        return item * 2
+    })
+    console.log("arr", arr);
+
+
+    //1、查出当前用户信息
+    //2、按照当前用户的id查出他的课程
+    //3、按照当前课程id查出分数
+    // $.ajax({
+    //     url: "mock/user.json",
+    //     success(data) {
+    //         console.log("查询用户：", data);
+    //         $.ajax({
+    //             url: `mock/user_corse_${data.id}.json`,
+    //             success(data) {
+    //                 console.log("查询到课程：", data);
+    //                 $.ajax({
+    //                     url: `mock/corse_score_${data.id}.json`,
+    //                     success(data) {
+    //                         console.log("查询到分数：", data);
+    //                     },
+    //                     error(error) {
+    //                         console.log("出现异常了：" + error);
+    //                     }
+    //                 });
+    //             },
+    //             error(error) {
+    //                 console.log("出现异常了：" + error);
+    //             }
+    //         });
+    //     },
+    //     error(error) {
+    //         console.log("出现异常了：" + error);
+    //     }
+    // });
+
+    // new Promise(function (resolve, reject) {
+    //     return $.ajax({
+    //         url: `mock/user.json`,
+    //         success(data) {
+    //             resolve(data);
+    //         },
+    //         error(error) {
+    //             reject(error);
+    //         }
+    //     });
+    // }).then((data) => {
+    //     return new Promise(function (resolve, reject) {
+    //         return $.ajax({
+    //             url: `mock/user_corse_${data.id}.json`,
+    //             success(data) {
+    //                 resolve(data);
+    //             },
+    //             error(error) {
+    //                 reject(error);
+    //             }
+    //         });
+    //     })
+    // }).then((data) => {
+    //      $.ajax({
+    //         url: `mock/corse_score_${data.id}.json`,
+    //         success(data) {
+    //             console.log(data);
+    //         },
+    //         error(error) {
+    //             console.log(data);
+    //         }
+    //     });
+    // })
+    function getData(url, param = {}) {
+        return new Promise(function (resolve, reject) {
+            return $.ajax({
+                url: url,
+                data: param,
+                success(data) {
+                    resolve(data);
+                },
+                error(error) {
+                    reject(error);
+                }
+            });
+        })
+    }
+
+    getData(`mock/user.json`).then((data) => {
+        return getData(`mock/user_corse_${data.id}.json`)
+    }).then((data) => {
+        return getData(`mock/corse_score_${data.id}.json`)
+    }).then((data) => {
+        console.log("score data", data);
+    }).catch((error) => {
+        console.log("error", error);
+    })
+</script>
