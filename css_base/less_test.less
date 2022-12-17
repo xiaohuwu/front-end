@@ -1,0 +1,15 @@
+@base: #fff;
+
+.wh(@width, @height) {
+  width: @width;
+  height: @height;
+}
+
+.box {
+  color: @base;
+  background: black;
+  .wh(100px, 100px);
+  span{
+    color: red;
+  }
+}
