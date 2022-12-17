@@ -18,7 +18,7 @@
     let [a, b, c] = [1, 2, 3];
     console.log(a, b, c);
 
-    const person = {
+    let person = {
         name: "jack",
         age: 21,
         language: ['java', 'js', 'css']
@@ -100,28 +100,58 @@
     //         }
     //     });
     // })
-    function getData(url, param = {}) {
-        return new Promise(function (resolve, reject) {
-            return $.ajax({
-                url: url,
-                data: param,
-                success(data) {
-                    resolve(data);
-                },
-                error(error) {
-                    reject(error);
-                }
-            });
-        })
-    }
+    // function getData(url, param = {}) {
+    //     return new Promise(function (resolve, reject) {
+    //         return $.ajax({
+    //             url: url,
+    //             data: param,
+    //             success(data) {
+    //                 resolve(data);
+    //             },
+    //             error(error) {
+    //                 reject(error);
+    //             }
+    //         });
+    //     })
+    // }
+    //
+    // getData(`mock/user.json`).then((data) => {
+    //     return getData(`mock/user_corse_${data.id}.json`)
+    // }).then((data) => {
+    //     return getData(`mock/corse_score_${data.id}.json`)
+    // }).then((data) => {
+    //     console.log("score data", data);
+    // }).catch((error) => {
+    //     console.log("error", error);
+    // })
 
-    getData(`mock/user.json`).then((data) => {
-        return getData(`mock/user_corse_${data.id}.json`)
-    }).then((data) => {
-        return getData(`mock/corse_score_${data.id}.json`)
-    }).then((data) => {
-        console.log("score data", data);
-    }).catch((error) => {
-        console.log("error", error);
-    })
+     person = {
+        name: "jack",
+        age: 21,
+        language: ['java', 'js', 'css']
+    }
+    //解构赋值
+    let say =  ({name}) => {
+        console.log("hello world", name);
+    }
+    say(person);
+
+    function  add(a, b=0) {
+        return a + b;
+    }
+   console.log("add", add(1));
+
+
+    function show(...value){
+        console.log("show", value);
+    }
+    show(1,2,3,4,5,6,7,8,9,10);
+
+    let p1 = { name: "Amy", age: 15 }
+    let p2 = { ...p1 }
+    console.log("p2", p2);
+    let p3 = {sex: '男'}
+    let p4 = {...p1, ...p3}
+    console.log("p4", p4);
+
 </script>
