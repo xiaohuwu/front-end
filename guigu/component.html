@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <button v-on:click="count++">我被点击了 {{count}} 次</button>
+
+    每个对象都是独立统计的
+    <counter></counter>
+    <counter></counter>
+    <counter></counter>
+    <counter></counter>
+    <counter></counter>
+
+    <button-counter></button-counter>
+</div>
+</body>
+</html>
+
+
+<script>
+    //1、全局声明注册一个组件 // counter标签，代表button
+    // 把页面中<counter>标签替换为指定的template，而template中的数据用data填充
+    Vue.component("counter", {
+        template: `<button v-on:click="count++">我被点击了 {{count}} 次</button>`,
+        data() {// 如果 Vue 没有这条规则，点击一个按钮就可能会像如下代码一样影响到其它所有实例：
+            return {
+                count: 1 // 数据
+            }
+        }
+    });
+
+    //2、局部声明一个组件
+    const buttonCounter = {
+        template: `<button v-on:click="count++">我被点击了 {{count}} 次~~~</button>`,
+        data() {
+            return {
+                count: 1
+            }
+        }
+    };
+
+    new Vue({
+        el: "#app",
+        data: {
+            count: 1
+        },
+        components: { // 要用的组件
+            'button-counter': buttonCounter
+        }
+    })
+</script>

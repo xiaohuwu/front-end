@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.js"></script>
+
+    <style>
+
+        * {
+            margin: 0px;
+            margin: 0px;
+        }
+
+        h4 {
+            margin-left: -10px;
+            margin-right: -10px;
+            border-bottom: 1px gainsboro solid;
+            margin-bottom: 10px;
+            padding: 0px 10px 5px 5px;
+        }
+
+        .item {
+            padding: 10px;
+            border: solid 1px lightgray;
+            margin: 10px;
+        }
+
+        .border {
+            border: solid 1px red;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    Vue.component('blog-post', {
+        props: ['post'],
+        template: `
+          <div class="blog-post">
+          <h3>{{ post.title }}</h3>
+          <div v-html="post.content"></div>
+          </div>
+        `
+    })
+
+</script>
+<div id="div1" class="item">
+    <input v-model="msg" type="text"/>
+    <a :href="href">百度</a>
+    <div v-html="html" :class="obj"></div>
+
+    <input type="checkbox" v-model="language" value="Java"> java<br/>
+    <input type="checkbox" v-model="language" value="Ruby"> Ruby<br/>
+    <input type="checkbox" v-model="language" value="Excel"> Excel<br/>
+    <div>{{language}}</div>
+
+
+    <input type="radio" v-model="dinner" value="Java">早<br/>
+    <input type="radio" v-model="dinner" value="Ruby">中<br/>
+    <input type="radio" v-model="dinner" value="Excel">晚<br/>
+    <div>{{dinner}}</div>
+    <button @click="num++">点赞</button>
+    <button v-on:click="cancel">取消</button>
+    <div>{{num}}</div>
+
+
+    <div style="border: 1px solid red;padding: 20px;" v-on:click.once="hello">
+        大div
+        <div style="border: 1px solid blue;padding: 20px;" @click="hello">
+            小div <br/>
+        </div>
+    </div>
+
+    <ul>
+        <li v-for="item in users" v-if="item.age == 18">{{item.name}}-{{item.age}}</li>
+    </ul>
+
+
+
+    <blog-post
+            v-for="post in posts"
+            v-bind:key="post.id"
+            v-bind:post="post">
+    </blog-post>
+
+</div>
+</body>
+</html>
+
+<script>
+
+    var one = new Vue({
+        el: '#div1',
+        data: {
+            clickNumber: 10,
+            msg: "this is msg",
+            href: "http://www.baidu.com",
+            html: "<h1>this is h1</h1>",
+            language: [],
+            dinner: '',
+            obj: ['border'],
+            num: 0,
+            users: [
+                {name: "xiaohu", age: 18},
+                {name: "gege", age: 20}
+            ],
+            posts: [
+                {id: 1, title: 'My journey with Vue'},
+                {id: 2, title: 'Blogging with Vue'},
+                {id: 3, title: 'Why Vue is so fun'}
+            ]
+        },
+        methods: {
+            cancel: function () {
+                this.num = 0;
+            },
+            hello: function () {
+                console.log("hello")
+            },
+        }
+    })
+</script>
