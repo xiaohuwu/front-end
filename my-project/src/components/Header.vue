@@ -10,7 +10,8 @@
     props:["addItems"],
     methods:{
       addItem(obj){
-        this.addItems(obj.target.value)
+        console.log("addItem");
+        this.$emit("addItems",obj.target.value)
       }
     }
   }

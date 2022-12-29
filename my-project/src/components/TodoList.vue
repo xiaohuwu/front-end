@@ -1,7 +1,7 @@
 <template>
   <div class="todo-container">
     <div class="todo-wrap">
-      <Header :addItems="addItem"></Header>
+      <Header @addItems="addItem"></Header>
       <List :list="list">
       </List>
     </div>

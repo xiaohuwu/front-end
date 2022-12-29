@@ -129,11 +129,12 @@
         el: '#div3',
         data: {
             rmb: 0,
-            exchange:6.7
+            exchange:6.7,
+            dollar: 0
         },
-        computed:{
-            dollar:function () {
-                return (this.rmb / this.exchange).toFixed(2);
+        watch:{
+            rmb:function () {
+                this.dollar =  (this.rmb / this.exchange).toFixed(2);
             }
         }
     })
