@@ -5,6 +5,7 @@ import Test from '@/components/Test'
 import Blogs from '@/components/Blogs'
 import List from '@/components/TodoList'
 import CartList from '@/components/CartList.vue'
+import DoList from '@/components/DoList.vue'
 
 Vue.use(Router)
 
@@ -24,6 +25,11 @@ export default new Router({
       path: '/to_do_list',
       name: 'to_do_list',
       component: Test
+    },
+    {
+      path: '/do_list',
+      name: 'do_list',
+      component: DoList
     },
     {
       path: '/blog',
