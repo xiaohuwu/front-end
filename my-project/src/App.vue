@@ -2,9 +2,9 @@
   <div id="app">
     <div class="todo-container">
       <div class="todo-wrap">
-        <MyHeader/>
-        <MyList/>
-       <MyFooter/>
+        <MyHeader :addTodo = "addTodo" :todo_length = "todos.length"/>
+        <MyList :todos = "todos" :doCheck = "doCheck" :delItem="delItem"/>
+       <MyFooter :todos = "todos" :done_count="done_count()" :all_count="todos.length"/>
       </div>
     </div>
   </div>
@@ -17,6 +17,31 @@ import MyFooter from './components/MyFooter.vue';
 
 export default {
     name: "App",
+    data(){
+        return{
+           todos:[
+            {id:1,title:"吃饭",done:true},
+            {id:2,title:"喝酒",done:false},
+            {id:3,title:"开车",done:true}
+          ] 
+        }
+    },
+    methods:{
+        addTodo: function(obj){
+            this.todos.unshift(obj);
+        },
+        done_count: function(){
+         return   this.todos.filter((item)=>{return item.done}).length
+        },
+        doCheck(obj_id){
+          let   todo =    this.todos.find((item)=>{return item.id == obj_id})
+           todo.done = !todo.done;
+        },
+        delItem(obj_id){
+          let   index =    this.todos.findIndex((item)=>{return item.id == obj_id})
+          this.todos.splice(index,1);
+        }
+    },
     components: { MyHeader, MyFooter,MyList }
 };
 </script>
@@ -124,6 +149,10 @@ li button {
   float: right;
   display: none;
   margin-top: 3px;
+}
+
+li:hover button{
+  display: block!important;;
 }
 
 li:before {
