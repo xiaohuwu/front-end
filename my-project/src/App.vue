@@ -4,7 +4,9 @@
       <div class="todo-wrap">
         <MyHeader :addTodo = "addTodo" :todo_length = "todos.length"/>
         <MyList :todos = "todos" :doCheck = "doCheck" :delItem="delItem"/>
-       <MyFooter :todos = "todos" :done_count="done_count()" :all_count="todos.length"/>
+       <MyFooter :todos = "todos"
+             :all_check = "all_check"
+             :del_done="del_done"/>
       </div>
     </div>
   </div>
@@ -30,9 +32,6 @@ export default {
         addTodo: function(obj){
             this.todos.unshift(obj);
         },
-        done_count: function(){
-         return   this.todos.filter((item)=>{return item.done}).length
-        },
         doCheck(obj_id){
           let   todo =    this.todos.find((item)=>{return item.id == obj_id})
            todo.done = !todo.done;
@@ -40,6 +39,15 @@ export default {
         delItem(obj_id){
           let   index =    this.todos.findIndex((item)=>{return item.id == obj_id})
           this.todos.splice(index,1);
+        },
+        del_done(){
+          let   todos =    this.todos.filter((item)=>{return !item.done})
+          this.todos = todos;
+        },
+        all_check(checked){
+           this.todos.forEach((item)=>{
+            item.done = checked;
+          }); 
         }
     },
     components: { MyHeader, MyFooter,MyList }
