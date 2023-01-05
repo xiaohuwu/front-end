@@ -28,6 +28,9 @@
             ] 
           }
       },
+      mounted: function(){
+          console.log("this",this);
+      },
       methods:{
           addTodo: function(obj){
               this.todos.unshift(obj);

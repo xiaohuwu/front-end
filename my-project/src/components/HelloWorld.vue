@@ -19,12 +19,13 @@
     <p>我名字正着写：{{name}}</p>
     <p>计算出我名字倒着写：{{reverseName}}</p>
     <p>{{now}}</p>
-    <router-link to="/test">练习</router-link>
-    <router-link to="/list">练习 list</router-link>
-    <router-link to="/blog">练习blog</router-link>
-    <router-link to="/cart_list">练习购物车</router-link>
-    <router-link to="/do_list">练习TodoList</router-link>
-
+    <router-link to="/test">练习</router-link><br/>
+    <router-link to="/list">练习 list</router-link><br/>
+    <router-link to="/blog">练习blog</router-link><br/>
+    <router-link to="/cart_list">练习购物车</router-link><br/>
+    <router-link to="/do_list">练习TodoList</router-link><br/>
+    <router-link to="/vuex">vuex示例</router-link><br/>
+    <router-link to="/person_list">vuex人员列表</router-link><br/>
 
     <input v-model="sex" type="radio" value="0"/> 男
     <input v-model="sex" type="radio" value="1"/> 女
