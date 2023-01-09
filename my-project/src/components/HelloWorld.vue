@@ -16,7 +16,8 @@
     </form>
 
     <h3>计算属性</h3>
-    <p>我名字正着写：{{name}}</p>
+    <p ref="hBox">{{name}}</p>
+    <button @click="bigger">点击变大</button>
     <p>计算出我名字倒着写：{{reverseName}}</p>
     <p>{{now}}</p>
     <router-link to="/test">练习</router-link><br/>
@@ -26,6 +27,7 @@
     <router-link to="/do_list">练习TodoList</router-link><br/>
     <router-link to="/vuex">vuex示例</router-link><br/>
     <router-link to="/person_list">vuex人员列表</router-link><br/>
+    <router-link to="/slot1">作用域插槽</router-link><br/>
 
     <input v-model="sex" type="radio" value="0"/> 男
     <input v-model="sex" type="radio" value="1"/> 女
@@ -56,7 +58,7 @@
         msg: 'hello',
         checkedNames: [],
         url: 'http://www.baidu.com',
-        name: '小虎哥',
+        name: '',
         sex: '',
         checked: '',
         radio_checked: false,
@@ -89,6 +91,12 @@
       },
       postTitle:function () {
         console.log('postTitle')
+      },
+      bigger: function(){
+        this.name= "小虎哥"
+        this.$nextTick(()=>{
+          console.log("height:", this.$refs.hBox.offsetHeight);
+        });
       }
     },
     components:{

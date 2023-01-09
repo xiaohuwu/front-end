@@ -8,6 +8,8 @@ import CartList from '@/components/CartList.vue'
 import DoList from '@/components/DoList.vue'
 import Vuex from '@/components/Vuex.vue'
 import VueDemo from '@/components/VuexDemo.vue'
+import slotDemo from '@/components/slotDemo.vue'
+
 
 Vue.use(Router)
 
@@ -52,6 +54,11 @@ export default new Router({
       path: '/cart_list',
       name: 'cart_list',
       component: CartList
+    },
+    {
+      path: '/slot1',
+      name: 'slot1',
+      component: slotDemo
     },
     {
       path: '/vuex',
