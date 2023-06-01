@@ -26,7 +26,7 @@
                     // 接口请求失败时调用
                     reject({ retCode: -1, msg: 'network error' });
                 }
-            })
+            },null)
         });
     }
     //如果本应该 return的，但是实际没有return 最后只会是 undefined

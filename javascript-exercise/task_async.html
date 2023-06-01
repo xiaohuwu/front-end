@@ -24,27 +24,27 @@
                     resolve('request success' + res);
                 } else {
                     // 接口请求失败时调用
-                    reject({ retCode: -1, msg: 'network error' });
+                     reject({ retCode: -1, msg: 'network error' });
                 }
             })
         });
     }
     // 接await对象 返回的结果
-    async function queryData() {
-        const response = await request1("http://localhost:3000/elderlies");
-        response.then((item)=>{
-            console.log("item1223",item);
-        });
-    }
-    queryData();
+    // async function queryData() {
+    //     const response = await request1("http://localhost:3000/posts");
+    //     response.then((item)=>{
+    //         console.log("item1223",item);
+    //     });
+    // }
+    // queryData();
 
 
     async function queryData() {
-        const response = await request1("http://localhost:3000/elderlies");
+        const response = await request1("http://localhost:3000/posts");
         let result =  await response;
         console.log("result",result);
     }
-    // queryData();
+    queryData();
 
 
     var str = '';

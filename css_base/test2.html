@@ -39,23 +39,43 @@
     //     $(this).attr("id",'666')
     // });
 
-
-    let p = new Promise((resolve, reject) => {
-        //做一些异步操作
-        setTimeout(function(){
-            var num = Math.ceil(Math.random()*10); //生成1-10的随机数
-            if(num<=5){
+    let p = new Promise((resolve, reject) =>{
+        setTimeout(function (){
+            var num = Math.ceil(Math.random()*10);
+            if (num <= 5) {
                 resolve(num);
+            }else{
+                reject(num);
             }
-            else{
-                reject('数字太大了');
-            }
-        }, 2000);
+        });
     });
-    p.then((data) => {
+
+
+    p.then((data)=>{
             console.log('resolved',data);
-        },(err) => {
-            console.log('rejected',err);
-        }
-    );
+        },
+        (error)=>{
+            console.log('error',error);
+        })
+
+
+
+    // let p = new Promise((resolve, reject) => {
+    //     //做一些异步操作
+    //     setTimeout(function(){
+    //         var num = Math.ceil(Math.random()*10); //生成1-10的随机数
+    //         if(num<=5){
+    //             resolve(num);
+    //         }
+    //         else{
+    //             reject('数字太大了');
+    //         }
+    //     }, 2000);
+    // });
+    // p.then((data) => {
+    //         console.log('resolved',data);
+    //     },(err) => {
+    //         console.log('rejected',err);
+    //     }
+    // );
 </script>
