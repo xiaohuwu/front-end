@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="container">
+    <div class="item">1</div>
+    <div class="item two">2</div>
+    <div class="item">3</div>
+</div>
+
+</body>
+</html>
+
+<style>
+    .container {
+        align-content: flex-end;
+        flex-wrap: wrap;
+        flex-direction: row;
+        width: 30%;
+        height: 500px;
+        display: flex;
+        background: pink;
+    }
+
+    .item {
+        flex: 1;
+        margin-right: 15px;
+        line-height: 100px;
+        text-align: center;
+        background: green;
+        height: 100px;
+        width: 120px;
+    }
+
+    .two {
+        flex: 2;
+    }
+</style>

@@ -5,74 +5,72 @@
     <title>Title</title>
 </head>
 <body>
-
-
 </body>
 </html>
 
-<script type="module" src="main.js">
-
+<script type="module">
+    import  m3 from "./js/m1.js";
+    console.log(m3.school);
 </script>
 
-<script>
-    //自学参考:http://es6.ruanyifeng.com/
+<!--<script>-->
+<!--    //自学参考:http://es6.ruanyifeng.com/-->
+<!--    {-->
+<!--        var a = 0;-->
+<!--        let b = 2;-->
+<!--    }-->
+<!--    console.log("a==", a);-->
+<!--    // console.log("b==",b);-->
+<!--    const c = 3.14;-->
+<!--    // c = 3.5;-->
 
-    {
-        var a = 0;
-        let b = 2;
-    }
-    console.log("a==", a);
-    // console.log("b==",b);
-    const c = 3.14;
-    // c = 3.5;
+<!--    // 解结构赋值-->
+<!--    let [d, e, f] = [10, 11, 12]-->
+<!--    console.log("d:", d)-->
+<!--    console.log("e:", e)-->
+<!--    console.log("f:", f)-->
 
-    // 解结构赋值
-    let [d, e, f] = [10, 11, 12]
-    console.log("d:", d)
-    console.log("e:", e)
-    console.log("f:", f)
+<!--    let user = {name: 'gege', age: 16};-->
+<!--    console.log("user", user)-->
 
-    let user = {name: 'gege', age: 16};
-    console.log("user", user)
+<!--    let {name, age} = {name: 'gege', age: 16};-->
+<!--    console.log("name", name);-->
+<!--    console.log("age", age);-->
 
-    let {name, age} = {name: 'gege', age: 16};
-    console.log("name", name);
-    console.log("age", age);
+<!--    let persion = {-->
+<!--        age: function getAge() {-->
+<!--            return "hello world";-->
+<!--        }-->
+<!--    }-->
+<!--    console.log("persion age:", persion.age());-->
 
-    let persion = {
-        age: function getAge() {
-            return "hello world";
-        }
-    }
-    console.log("persion age:", persion.age());
+<!--    var persion1 = {-->
+<!--        getAge() {-->
+<!--            return "hello world=====";-->
+<!--        }-->
+<!--    };-->
+<!--    console.log("persion age:", persion1.getAge());-->
+<!--    // console.log("persion sayHi:", persion1.sayHi());-->
 
-    var persion1 = {
-        getAge() {
-            return "hello world=====";
-        }
-    };
-    console.log("persion age:", persion1.getAge());
-    // console.log("persion sayHi:", persion1.sayHi());
+<!--    //对象复制-->
+<!--    var persion1 = {name:"xiaohu",age:20}-->
+<!--    var someone = {...persion1}-->
+<!--    console.log("someone", someone);-->
 
-    //对象复制
-    var persion1 = {name:"xiaohu",age:20}
-    var someone = {...persion1}
-    console.log("someone", someone);
+<!--    var name1 = {name:"gege"}-->
+<!--    var age1 = {age:20}-->
+<!--    var persion11 = {...name1,...age1}-->
+<!--    console.log("persion11", persion11);-->
 
-    var name1 = {name:"gege"}
-    var age1 = {age:20}
-    var persion11 = {...name1,...age1}
-    console.log("persion11", persion11);
+<!--    //箭头函数-->
+<!--    var function1 = function (a) {-->
+<!--        return a-->
+<!--    }-->
+<!--   console.log("function1(66)",  function1(66));-->
 
-    //箭头函数
-    var function1 = function (a) {
-        return a
-    }
-   console.log("function1(66)",  function1(66));
+<!--    var function2 = a => {-->
+<!--        return a;-->
+<!--    };-->
+<!--    console.log("function2",  function2(888));-->
 
-    var function2 = a => {
-        return a;
-    };
-    console.log("function2",  function2(888));
-
-</script>
+<!--</script>-->
