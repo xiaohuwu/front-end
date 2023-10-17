@@ -67,6 +67,25 @@
     //     }
     // });
 
+
+
+
+
+    function getData(url,param={}) {
+        return new Promise(function (resolve, reject) {
+            return $.ajax({
+                url: url,
+                data: param,
+                success(data) {
+                    resolve(data);
+                },
+                error(error) {
+                    reject(error);
+                }
+            });
+        });
+    }
+
     // new Promise(function (resolve, reject) {
     //     return $.ajax({
     //         url: `mock/user.json`,
