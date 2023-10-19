@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<link>
+<meta charset="UTF-8">
+<title>Title</title>
+<script src="https://cdn.staticfile.org/vue/2.2.2/vue.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+</head>
+
+<body>
+<div id="div1" class="item">
+    <h4> v-on:click 事件 </h4>
+    <div> 一共点击了{{count}}</div>
+    <button v-on:click="count1">点击</button>
+
+</div>
+
+<div id="div2" class="item">
+    <h4> v-if: 条件语句 </h4>
+    <button v-on:click="change">点击</button>
+    <div v-if="show"> 默认这条能看见</div>
+</div>
+
+
+<div id="div3" class="item">
+    <table style="border: solid 1px red;">
+        <tr v-for="item in list">
+            <td> {{item.name}}</td>
+            <td> {{item.age}}</td>
+        </tr>
+    </table>
+</div>
+
+
+<div id="div4" class="item">
+    <h4> 通过v-bind进行属性绑定 </h4>
+    <a v-bind:href="href">http://12306.com</a>
+</div>
+
+<div id="div5" class="item">
+    <h4> 通过v-model 双向绑定 </h4>
+    <input v-model="name">
+</div>
+
+
+<div id="div6" class="item">
+    <h4> 计算属性 </h4>
+    <table>
+        <tr>
+            <td>人民币</td>
+            <td>美元</td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                汇率：<input type="text" v-model="rate">
+            </td>
+
+        </tr>
+
+        <tr>
+            <td>人民币 <input type="text" v-model="rmb"></td>
+            <td>美元 <input type="text" v-model="doller"></td>
+        </tr>
+
+    </table>
+</div>
+
+</body>
+</html>
+
+<script>
+    new Vue({
+        el: '#div2',
+        data: {
+            show: true
+        },
+        methods: {
+            change: function () {
+                this.show = !this.show;
+            }
+        }
+    })
+
+
+    new Vue({
+        el: '#div3',
+        data: {
+            list: [{name: "ge", age: 20},
+                {name: "hu", age: 21},
+                {name: "re", age: 22},
+            ]
+        },
+        methods: {}
+    })
+
+
+    new Vue({
+        el: '#div4',
+        data: {
+            href: 'http://www.baidu.com'
+        },
+        methods: {}
+    })
+
+    let div5 = new Vue({
+        el: '#div5',
+        data: {
+            name: 'gege'
+        },
+        methods: {}
+    })
+
+    let div6 = new Vue({
+        el: '#div6',
+        data: {
+            rate: 6,
+            rmb: 0,
+            doller: 0,
+        },
+        // computed: {
+        //     doller: function () {
+        //         return (this.rmb / this.rate).toFixed(1);
+        //     }
+        // },
+        watch: {
+            rmb: function (val) {
+                this.doller = (this.rmb / this.rate).toFixed(1);
+            }
+        },
+        methods: {}
+    })
+</script>
