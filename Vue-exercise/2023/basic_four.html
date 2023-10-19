@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://how2j.cn/study/js/jquery/2.0.0/jquery.min.js"></script>
+    <script src="../lib/vue-2.4.0.js"></script>
+</head>
+
+<style type="text/css">
+    td {
+        border: 1px solid gray;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    div#app {
+        margin: 20px auto;
+        width: 400px;
+        padding: 20px;
+    }
+</style>
+
+<body>
+<div id="app">
+
+    <table id="heroListTable">
+        <thead>
+        <tr>
+            <th>英雄名称</th>
+            <th>血量</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="hero in heros ">
+            <td>{{hero.name}}</td>
+            <td>{{hero.hp}}</td>
+            <td><a href="javascript:void(0)" @click="edit(hero)">编辑</a>
+                <a href="javascript:void(0)" @click="del(hero)">删除</a>
+            </td>
+        </tr>
+
+        <td colspan="3">
+            英雄名称:
+            <input type="text" v-model="hero4Add.name"/>
+            <br>
+            血量：
+            <input type="number" v-model="hero4Add.hp"/>
+            <br>
+            <button type="button" v-on:click="add">增加</button>
+        </td>
+        </tbody>
+    </table>
+
+
+    <div id="div4Update">
+
+        英雄名称:
+        <input type="text" v-model="hero4Update.name"/>
+        <br>
+        血量：
+        <input type="number" v-model="hero4Update.hp"/>
+        <input type="hidden" v-model="hero4Update.id"/>
+        <br>
+        <button type="button" v-on:click="update(hero4Update)">修改</button>
+        <button type="button" v-on:click="cancel">取消</button>
+
+    </div>
+
+</div>
+
+</body>
+</html>
+
+<script type="text/javascript">
+    $("#div4Update").hide();
+    var data = {
+        heros: [
+            {id: 1, name: '盖伦', hp: 318},
+            {id: 2, name: '提莫', hp: 320},
+            {id: 3, name: '安妮', hp: 419},
+            {id: 4, name: '死歌', hp: 325},
+            {id: 5, name: '米波', hp: 422},
+        ],
+        hero4Add: {id: 0, name: '', hp: '0'},
+        hero4Update: {id: 0, name: '', hp: '0'}
+    };
+    var maxId = 5;
+    for (let i = 0; i < data.heros.length; i++) {
+        if (data.heros[i].id > maxId) {
+            maxId = data.heros[i].id;
+        }
+    }
+    let div5 = new Vue({
+        el: '#app',
+        data: data,
+        methods: {
+            add: function () {
+                maxId++;
+                this.hero4Add["id"] = maxId;
+                this.heros.push(this.hero4Add);
+                this.hero4Add = {id: 0, name: '', hp: '0'}
+            },
+            edit: function (item) {
+                this.hero4Update = item
+                $("#heroListTable").hide();
+                $("#div4Update").show();
+            },
+            update: function (hero4Update) {
+                let index = this.heros.findIndex((new_item) => {
+                    return new_item.id === hero4Update.id
+                })
+                this.heros.splice(index, 1, hero4Update)
+                this.hero4Update = {id: 0, name: '', hp: '0'}
+                $("#heroListTable").show();
+                $("#div4Update").hide();
+            },
+            cancel: function () {
+                $("#heroListTable").show();
+                $("#div4Update").hide();
+            },
+            del: function (item) {
+                let index = this.heros.findIndex((new_item) => {
+                    return new_item.id === item.id
+                })
+                this.heros.splice(index, 1);
+            }
+        }
+
+    })
+</script>

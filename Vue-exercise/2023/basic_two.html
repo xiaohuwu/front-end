@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<link>
+<meta charset="UTF-8">
+<title>Title</title>
+<script src="https://cdn.staticfile.org/vue/2.2.2/vue.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+</head>
+<body>
+
+<style>
+    div.product {
+        float: left;
+        border: 1px solid lightGray;
+        width: 200px;
+        margin: 10px;
+        cursor: pointer;
+    }
+
+    div.product:hover {
+        border: 1px solid #c40000;
+
+    }
+
+    div.price {
+        color: #c40000;
+        font-weight: bold;
+        font-size: 1.2em;
+        margin: 10px;
+    }
+
+    div.productName {
+        color: gray;
+        font-size: 0.8em;
+        margin: 10px;
+    }
+
+    div.sale {
+        float: left;
+        width: 100px;
+        border: 1px solid lightgray;
+        border-width: 1px 0px 0px 0px;
+        color: gray;
+        font-size: 0.8em;
+        padding-left: 10px;
+    }
+
+    div.review {
+        overflow: hidden;
+        border: 1px solid lightgray;
+        border-width: 1px 0px 0px 1px;
+        color: gray;
+        font-size: 0.8em;
+        padding-left: 10px;
+    }
+</style>
+
+
+<div id="tempalate" style="display:none">
+    <div class="product" v-on:click="increaseSales">
+        <div class="price">
+            ¥ {{product.price}}
+        </div>
+        <div class="productName">
+            {{product.name}}
+        </div>
+        <div class="sale"> 月成交 {{product.sale}} 笔</div>
+        <div class="review"> 评价 {{product.review}}</div>
+    </div>
+</div>
+
+<div id="div7">
+    <product v-for="item in products" :product="item" @increment="add"></product>
+</div>
+</body>
+
+<script>
+    var tempalateDiv = document.getElementById("tempalate").innerHTML;
+    let div7 = new Vue({
+        el: '#div7',
+        data: {
+            products: [
+                {"name": "MAXFEEL休闲男士手包真皮手拿包大容量信封包手抓包夹包软韩版潮", "sale": "18", "price": "20"},
+                {"name": "宾度 男士手包真皮大容量手拿包牛皮个性潮男包手抓包软皮信封包", "sale": "35", "price": "25"},
+                {"name": "唯美诺新款男士手包男包真皮大容量小羊皮手拿包信封包软皮夹包潮", "sale": "29", "price": "25"}
+            ]
+        },
+        methods: {
+            add(data) { // add 处理increment事件
+                console.log("data", data)
+            },
+        },
+        components: {
+            'product': {
+                methods: {
+                    increaseSales: function () {
+                        this.product.sale++
+                        this.$emit('increment', this.product.sale) // 自定义事件
+                    }
+                },
+                props: ['product'],
+                template: tempalateDiv,
+            }
+        }
+    })
+
+
+</script>
