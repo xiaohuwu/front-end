@@ -2,7 +2,7 @@ module.exports = {
   pages: {
     index: {
       //入口
-      entry: '25_src_求和案例_getters/main.js',
+      entry: '27_src_求和案例_mapMutations与mapActions/main.js',
     },
   },
 	lintOnSave:false, //关闭语法检查
