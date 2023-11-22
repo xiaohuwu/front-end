@@ -1,24 +1,49 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
   <h2>一个人的信息</h2>
-  <div>{{name}}</div>
-  <div><button @click="hello">say hello</button></div>
+  <div>{{ name }}</div>
+  姓: <input type="text" v-model="person.firstName">
+  <br/>
+  名: <input type="text" v-model="person.lastName">
+  <br/>
+  <div><input type="text" v-model="person.fullName"></div>
+  <div>
+    <button @click="hello">say hello</button>
+  </div>
 </template>
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
-import {h} from 'vue';
+import {computed, reactive, ref} from 'vue';
+
 export default {
   name: 'App',
-  setup(){
-    let name = 'Hello World'
+  setup() {
+    let name = ref("xiaohbu")
+    let person = reactive({
+      firstName: "吴小",
+      lastName: "虎"
+    })
+    person.fullName = computed({
+      get() {
+        return person.firstName + "," + person.lastName;
+      },
+      set(val) {
+        var split = val.split(",");
+        person.firstName = split[0];
+        person.lastName = split[1];
+      }
+    })
+
     function hello() {
-      alert(`hello ${name}`)
+      name.value = "Hello"
     }
-    // return {name,hello}
-    return () => h("h1", "Hello")
+
+    return {name, hello, person}
+    // return () => h("h1", "Hello")
   }
 }
+
 </script>
 
 <style>

@@ -30,3 +30,104 @@
         margin-right: 10px;
     }
 </style>
+
+<script>
+    // function hello(){
+    //     return new Promise((resolve) => {
+    //         setTimeout(() => {
+    //             resolve('hello')
+    //         }, 1000)
+    //     })
+    // }
+    // async function  hi(){
+    //     var promise = await hello();
+    //     return promise;
+    // }
+    //  var promise = hi();
+    // console.log("promise",promise);
+
+    // try {
+    //     let str = '{"name": "xiaohu"}'
+    //     let obj = JSON.parse(str)
+    //     console.log("obj",obj.name);
+    // }catch (e) {
+    //     console.error( "Invalid JSON data!" );
+    // }
+
+
+    // const promise = new Promise((resolve, reject) => {
+    //     setTimeout(() => {
+    //         resolve(3);
+    //     }, 1000);
+    // });
+    //
+    // const promis2 = new Promise((resolve, reject) => {
+    //     setTimeout(() => {
+    //         resolve(2);
+    //     }, 1000);
+    // });
+
+
+    // function Star(uname, age) {
+    //     this.uname = uname;
+    //     this.age = age;
+    //     this.sing = function () {
+    //         console.log("sing")
+    //     };
+    // }
+    //
+    // let one = new Star("xiao", 18);
+    // let two = new Star("xiao", 20);
+    //
+    // console.log(one.uname )
+    // const  arr = [1,2,3]
+    // Array.prototype.sum = function () {
+    //     return this.reduce((one, two) => {
+    //         return one + two;
+    //     });
+    // };
+    // var sum = arr.sum();
+    // console.log("sum",sum)
+    //
+    //
+    // function Person(){
+    //
+    // }
+    // let p = new Person();
+    // Person.prototype.hello = function (){
+    //     console.log("hello boy")
+    // }
+    // console.log("p", p);
+    // console.log("Person.prototype.__proto__", Person.prototype.__proto__.constructor);
+    // console.log("666",p.__proto__ === Person.prototype);
+    // console.log(p.__proto__ === Person.prototype); //相等则表明 p的对象原型指向了 Person 的原型对象。
+
+
+    function month_bill_pro(price, bill_begin, bill_end, month_days) {
+        var differenceInTime = bill_end.getDate() - bill_begin.getDate();
+        var fee_days = differenceInTime + 1;
+        let amount = fee_days * price / month_days
+        console.log("fee_days",fee_days,"amount",amount)
+        return amount;
+    }
+    function  getamount(start_day,die_day,price){
+        var bill_begin = new Date(start_day);
+        var stay_back_date = new Date(die_day);
+        let amount = 0
+        while (bill_begin <= stay_back_date) {
+            let bill_end = new Date(bill_begin.getFullYear(), bill_begin.getMonth() + 1, 0);
+            let  month_days = bill_end.getDate();
+            if(bill_end > stay_back_date){
+                bill_end = new Date(stay_back_date)
+            }
+            console.log("bill_begin",bill_begin.toLocaleDateString(),"bill_end",bill_end.toLocaleDateString(),"month_days",month_days)
+            console.log("stay_back_date",stay_back_date.toLocaleDateString())
+            amount += month_bill_pro(price, bill_begin, bill_end, month_days)
+            bill_begin = new Date(bill_end.setDate(bill_end.getDate() + 1)) ;
+        }
+        return Math.round(amount * 100) / 100;
+    }
+    var amount = getamount('2023-10-01','2023-10-01',7480);
+    console.log("amount",amount)
+
+</script>
