@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            font-size: 12px;
+            background: lightgray;
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            display: flex;
+            height: 100px;
+            background: white;
+        }
+
+        header .logo {
+            width: 200px;
+            box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px, rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header .logo img {
+            width: 40px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        header nav {
+
+            flex: 1;
+            box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px, rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+        }
+
+        .left_nav {
+            position: fixed;
+            top: 100px; /* 下移以适应 header 的高度 */
+            background: white;
+            width: 200px;
+            height: 100%;
+            bottom: 0px;
+            left: 0px;
+            z-index: -1;
+        }
+
+        .left_nav {
+            box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px, rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+        }
+
+        .left_nav ul li {
+            padding: 15px;
+            border-bottom: 1px solid lightgray;
+        }
+
+        .content {
+            margin-top: 100px; /* 为 header 留出空间 */
+            margin-left: 200px; /* 为 left_nav 留出空间 */
+            overflow: auto;
+            height: calc(100vh - 100px); /* 减去 header 的高度 */
+            display: flex;
+
+        }
+
+        .content .left {
+            flex: 3;
+
+        }
+
+        .content .left .row {
+            display: flex;
+            margin-bottom: 10px;
+            height: 100px;
+        }
+
+        .content .left .line {
+            margin-bottom: 10px;
+            display: flex;
+            height: 100px;
+            background: white;
+            margin-left: 5px;
+        }
+
+        .content .left .row .item {
+            background: white;
+            flex: 1;
+            margin: 5px;
+        }
+
+        .content .right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .right .banner {
+            height: 150px;
+            background: white;
+            margin: 5px;
+        }
+
+        .right .ad {
+            height: 300px;
+            background: white;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="logo">
+        <img src="https://kangwenchang.com/logo.png" alt="">
+        <span>小虎</span>
+    </div>
+    <nav>
+
+    </nav>
+</header>
+<div class="container">
+    <div class="left_nav">
+        <ul>
+            <li>导航</li>
+            <li>导航</li>
+            <li>导航</li>
+            <li>导航</li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="left">
+            <div class="row">
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+            </div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+
+
+        </div>
+        <div class="right">
+            <div class="banner">
+
+            </div>
+            <div class="ad">
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

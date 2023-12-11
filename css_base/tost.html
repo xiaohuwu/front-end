@@ -16,6 +16,7 @@
         border-radius: 8px;
         font-size: 16px;
     }
+
     div.phone_tost > span {
         text-align: left;
         display: inline-block;
@@ -24,11 +25,6 @@
         margin-bottom: 18px;
     }
 
-    div.phone_tost > span img{
-        vertical-align: middle;
-        position: relative;
-        bottom: 2px;
-    }
     div.phone_parent {
         width: 64px;
         height: 64px;
@@ -40,31 +36,37 @@
         border-radius: 50%;
         position: relative;
     }
+
     div.phone_parent img {
         position: absolute;
         top: 50%;
-        left:50%;
-        transform: translate(-50%,-50%);
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
+
     .phone_tost header {
         font-size: 18px;
         position: relative;
         color: #DEEBFF;
     }
+
     .phone_tost header img:hover {
         cursor: pointer;
     }
+
     .phone_tost .hint {
         width: 2px;
         height: 2px;
         border-radius: 2px;
     }
+
     .phone_tost div.name {
         text-align: center;
         margin-bottom: 18px;
         color: white;
         font-size: 24px;
     }
+
     .dot {
         margin-top: 12px;
         margin-right: 4px;
@@ -74,25 +76,42 @@
         border-radius: 100%;
         background: #43DE7C;
     }
-    .phone_tost .elderly_name{
+
+    .phone_tost .elderly_name {
         line-height: 15px;
         padding-right: 20px;
         border-right: 2px #292E48 solid;
     }
-    .phone_tost .elderly_phone{
+
+    .phone_tost .elderly_phone {
         padding-left: 20px;
     }
+
     .fr {
         float: right;
+    }
+
+
+    div.phone_tost > span img {
+        vertical-align: middle;
+        margin-right: 5px;
+    }
+    span.location {
+        vertical-align: middle;
     }
 </style>
 
 
 <div class="phone_tost">
-    <header> <div class="dot"></div> <div class="hint"></div> 来电提醒 <img src="./img/close.png" alt="" class="fr"></header>
+    <header>
+        <div class="dot"></div>
+        <div class="hint"></div>
+        来电提醒 <img src="./img/close.png" alt="" class="fr"></header>
     <div class="phone_parent"><img src="./img/phone.png"></div>
     <div class="name"><span class="elderly_name">李云龙</span><span class="elderly_phone">1858971796</span></div>
+
     <span><img src="./img/location.png"><span class="location">成功高新区</span></span>
+
     <span><img src="./img/family_member.png"> 紧急联系人:<span class="family_name">李莉娟</span>
     <span class="family_phone">18589717969</span> </span>
 </div>

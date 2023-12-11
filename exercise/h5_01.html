@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=li:nth-child(3){background:#fff}, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    html,
+    body,
+    ul,
+    li,
+    ol,
+    dl,
+    dd,
+    dt,
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    form,
+    fieldset,
+    legend,
+    img {
+        margin: 0;
+        padding: 0;
+    }
+
+    fieldset,
+    img {
+        border: none;
+    }
+
+    img {
+        display: block;
+    }
+
+    address,
+    caption,
+    cite,
+    code,
+    dfn,
+    th,
+    var {
+        font-style: normal;
+        font-weight: normal;
+    }
+
+    ul,
+    ol,
+    li {
+        list-style: none;
+    }
+
+    body {
+        color: #333;
+        font: 12px/20px "SimSun", "宋体", "Arial Narrow", HELVETICA;
+        background: #fff;
+        /* overflow-y:scroll;*/
+        overflow-x: hidden;
+    }
+
+    a {
+        color: #666;
+        text-decoration: none;
+    }
+
+    a:visited {
+        color: #666;
+    }
+
+    a:hover,
+    a:active,
+    a:focus {
+        color: #ff8400;
+        text-decoration: underline;
+    }
+
+    body {
+        max-width: 540px;
+        min-width: 320px;
+        margin: 0 auto;
+        font: normal 14px/1.5 Tahoma, "Lucida Grande", Verdana, "Microsoft Yahei", STXihei, hei;
+        color: #000;
+        background: #f2f2f2;
+        overflow-x: hidden;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    ul li {
+        font-style: none;
+    }
+
+    .container {
+        width: 540px;
+        margin: 0px auto;
+        /* border: 1px solid red; */
+    }
+
+    .banner img {
+        width: 100%;
+        height: auto;
+    }
+
+    .local-nav {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        background: white;
+        border-radius: 5px;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+    }
+
+    .local-nav li [class^="local-nav-icon"] {
+        width: 32px;
+        height: 32px;
+        background-color: pink;
+        background: url(../flex/flex-box/imgs/localnav_bg.png) no-repeat 0 0;
+        background-size: 32px auto;
+    }
+
+
+    .local-nav li .local-nav-icon-icon2 {
+        background-position: 0 -32px;
+    }
+
+    .local-nav li .local-nav-icon-icon3 {
+        background-position: 0 -64px;
+    }
+
+    .local-nav li .local-nav-icon-icon4 {
+        background-position: 0 -96px;
+    }
+
+    .local-nav li .local-nav-icon-icon5 {
+        background-position: 0 -128px;
+    }
+
+
+    ul li>a {
+        align-items: center;
+        justify-content: space-around;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .test {
+        border: solid 1px red;
+    }
+
+    .nav {
+        margin-top: 3px;
+        margin-bottom: 3px;
+        border-radius: 5px;
+        overflow: hidden;
+        background: white;
+    }
+
+    .nav-common:nth-child(1) {
+        background: -webkit-linear-gradient(left, #FA5A55, #FA994D);
+    }
+
+    .nav-common {
+        color: white;
+        display: flex;
+        height: 88px;
+    }
+
+
+    .nav-common:nth-child(2) {
+        background: -webkit-linear-gradient(left, #4B90ED, #53BCED);
+        margin: 3px 0px;
+    }
+
+    .nav-common:nth-child(3) {
+        background: -webkit-linear-gradient(left, #34C2A9, #6CD559);
+    }
+
+
+
+    .nav-items {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-items a {
+        flex: 1;
+        text-align: center;
+        line-height: 44px;
+        color: #fff;
+        font-size: 14px;
+        /* 文字阴影 */
+        text-shadow: 1px 1px rgba(0, 0, 0, .2);
+    }
+
+
+    .nav-items:nth-child(1) a {
+        border: 0;
+        background: url(../imgs/WechatIMG77.png) no-repeat bottom center;
+        background-size: 60px 60px;
+    }
+
+    .nav-items:nth-child(-n+2) {
+        border-right: 1px solid #fff;
+    }
+
+    .nav-items a:nth-child(1) {
+        border-bottom: 1px solid #fff;
+    }
+
+    .subnav-entry {
+        padding: 5px 0;
+        display: flex;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        background: white;
+        flex-wrap: wrap;
+        border-radius: 5px;
+    }
+
+    .subnav-entry li {
+        flex: 20%;
+    }
+
+    .subnav-entry-icon {
+        width: 28px;
+        height: 28px;
+        background-color: pink;
+        margin-top: 4px;
+        background: url(../imgs/subnav-bg.png) no-repeat;
+        background-size: 28px auto;
+    }
+
+    .row {
+        display: flex;
+    }
+
+    .row a {
+        flex: 1;
+        border-bottom: 1px solid #eee;
+    }
+
+    .row a:nth-child(1) {
+        border-right: 1px solid #eee;
+    }
+
+    .row a img {
+        width: 100%;
+    }
+</style>
+
+
+<body>
+    <div class="container">
+        <div class="banner">
+            <img src="../flex/flex-box/imgs/focus.jpeg" alt="">
+        </div>
+
+        <ul class="local-nav">
+            <li>
+                <a href="#" title="景点·玩乐">
+                    <span class="local-nav-icon-icon1"></span>
+                    <span>景点·玩乐</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#" title="景点·玩乐">
+                    <span class="local-nav-icon-icon2"></span>
+                    <span>景点·玩乐</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#" title="景点·玩乐">
+                    <span class="local-nav-icon-icon3"></span>
+                    <span>景点·玩乐</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" title="景点·玩乐">
+                    <span class="local-nav-icon-icon4"></span>
+                    <span>景点·玩乐</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" title="景点·玩乐">
+                    <span class="local-nav-icon-icon5"></span>
+                    <span>景点·玩乐</span>
+                </a>
+            </li>
+        </ul>
+
+
+        <div class="nav">
+
+            <div class="nav-common">
+
+                <div class="nav-items">
+                    <a href="#"></a>
+                </div>
+
+                <div class="nav-items">
+                    <a href="#">海外酒店</a>
+                    <a href="#">特价酒店</a>
+                </div>
+
+                <div class="nav-items">
+                    <a href="#">海外酒店</a>
+                    <a href="#">特价酒店</a>
+                </div>
+            </div>
+            <div class="nav-common">
+
+                <div class="nav-items">
+                    <a href="#">海外酒店</a>
+                </div>
+
+                <div class="nav-items">
+                    <a href="#">海外酒店</a>
+                    <a href="#">特价酒店</a>
+                </div>
+
+                <div class="nav-items">
+                    <a href="#">海外酒店</a>
+                    <a href="#">特价酒店</a>
+                </div>
+            </div>
+
+            <div class="nav-common">
+
+                <div class="nav-items">
+                    <a href="#">海外酒店</a>
+                </div>
+
+                <div class="nav-items">
+                    <a href="#">海外酒店</a>
+                    <a href="#">特价酒店</a>
+                </div>
+
+                <div class="nav-items">
+                    <a href="#">海外酒店</a>
+                    <a href="#">特价酒店</a>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+        <ul class="subnav-entry">
+            <li>
+                <a href="#">
+                    <span class="subnav-entry-icon"></span>
+                    <span>电话费</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="subnav-entry-icon"></span>
+                    <span>电话费</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="subnav-entry-icon"></span>
+                    <span>电话费</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="subnav-entry-icon"></span>
+                    <span>电话费</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="subnav-entry-icon"></span>
+                    <span>电话费</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="subnav-entry-icon"></span>
+                    <span>电话费</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="subnav-entry-icon"></span>
+                    <span>电话费</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="subnav-entry-icon"></span>
+                    <span>电话费</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="subnav-entry-icon"></span>
+                    <span>电话费</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="subnav-entry-icon"></span>
+                    <span>电话费</span>
+                </a>
+            </li>
+
+        </ul>
+
+
+
+
+
+        <div class="sales-bd">
+            <div class="row">
+                <a href="#">
+                    <img src="../flex/flex-box/upload/pic1.jpg" alt="">
+                </a>
+                <a href="#">
+                    <img src="../flex/flex-box/upload/pic2.jpg" alt="">
+
+                </a>
+            </div>
+            <div class="row">
+                <a href="#">
+                    <img src="../flex/flex-box/upload/pic3.jpg" alt="">
+                </a>
+                <a href="#">
+                    <img src="../flex/flex-box/upload/pic4.jpg" alt="">
+
+                </a>
+            </div>
+            <div class="row">
+                <a href="#">
+                    <img src="../flex/flex-box/upload/pic5.jpg" alt="">
+                </a>
+                <a href="#">
+                    <img src="../flex/flex-box/upload/pic6.jpg" alt="">
+
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>
