@@ -67,17 +67,17 @@
     flex: 1;
 }
 
-.header .site-list > ul {
+.header .site-list>ul {
     align-items: center;
 }
 
-.header .site-list > ul > li > a {
+.header .site-list>ul>li>a {
     padding: 26px 10px 38px;
     color: #333;
 }
 
 
-.header .site-list > ul > li > a:hover {
+.header .site-list>ul>li>a:hover {
     color: #ff6700;
 }
 
@@ -130,12 +130,12 @@
     height: auto;
 }
 
-.header .site-list > ul > li.site-category {
+.header .site-list>ul>li.site-category {
     position: relative;
     z-index: 3;
 }
 
-.header .site-list > ul .category-list {
+.header .site-list>ul .category-list {
     position: absolute;
     left: -53px;
     top: 93px;
@@ -143,7 +143,7 @@
     background: rgba(0, 0, 0, 0.6);
 }
 
-.header .site-list > ul .category-list a {
+.header .site-list>ul .category-list a {
     display: block;
     height: 42px;
     line-height: 42px;
@@ -151,14 +151,14 @@
     padding-left: 30px;
 }
 
-.header .site-list > ul .category-list a span {
+.header .site-list>ul .category-list a span {
     float: right;
     margin-right: 16px;
     font-size: 16px;
     line-height: 42px;
 }
 
-.category-list > ul {
+.category-list>ul {
     width: 234px;
     height: 420px;
     padding: 20px 0;
@@ -240,7 +240,7 @@
 
 .content-sub .content-channel ul li a {
     font-size: 12px;
-    color: rgba(255,255,255,0.7);
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .channel-list li a {
@@ -250,4 +250,196 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.content-banner img {
+    width: 100%;
+    height: auto;
+}
+
+.content-desc {
+    background: #f5f5f5;
+    padding-top: 20px;
+}
+
+.content-desc .box-hd {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 58px;
+}
+
+.content-desc .box-hd h2 {
+    font-size: 22px;
+    font-weight: 200;
+    color: #333;
+}
+
+.content-desc .box-hd .more a {
+    font-size: 16px;
+    color: #424242;
+}
+
+.content-desc .box-hd .more a i {
+    width: 12px;
+    height: 12px;
+    padding: 4px;
+    margin-left: 8px;
+    border-radius: 50%;
+    background-color: #b0b0b0;
+    color: #fff;
+    font-size: 12px;
+    vertical-align: 2px;
+}
+
+.box-bd .row-l a img {
+    width: 234px;
+    height: 614px;
+    margin-right: 4px;
+}
+
+.box-bd .row {
+    display: flex;
+}
+
+.box-bd ul {
+    flex-wrap: wrap;
+}
+
+.box-bd ul li {
+    flex: 1;
+    position: relative;
+    height: 300px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    background-color: white;
+    text-align: center;
+}
+
+.box-bd .row-r ul li .figure a img {
+    width: 160px;
+    height: 160px;
+}
+
+.box-bd .row-r ul li .title a {
+    color: #333;
+}
+
+.box-bd .row-r ul li .desc {
+    height: 18px;
+    font-size: 12px;
+    text-align: center;
+    color: #b0b0b0;
+    margin: 0 10px 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.box-bd .row-r ul li .price {
+    text-align: center;
+    color: #ff6700;
+}
+
+.flag {
+    color: white;
+    background: lightgreen;
+    padding: 4px 10px;
+    font-size: 12px;
+    position: absolute;
+    left: 50%;
+    top: 0px;
+    transform: translateX(-50%);
+}
+
+.figure {
+    margin-top: 30px;
+}
+
+footer {
+    background: white;
+}
+
+.footer-service {
+    padding: 27px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.footer-service li {
+    text-align: center;
+    margin-left: 20px;
+    height: 25px;
+    font-size: 16px;
+    line-height: 25px;
+    border-right: 1px solid #e0e0e0;
+}
+
+.footer-service li a {
+    color: #424242;
+}
+
+.col-contact {
+    width: 252px;
+    border-left: 1px solid #e0e0e0;
+    text-align: center;
+}
+
+.footer-links {
+    display: flex;
+}
+
+.col-links {
+    flex: 1;
+}
+
+.footer .footer-links {
+    padding: 40px 0;
+}
+
+.footer .footer-links dl dt {
+    margin-bottom: 26px;
+    font-size: 14px;
+    color: #424242;
+}
+
+.footer .footer-links dl dd {
+    font-size: 12px;
+    margin-top: 10px;
+    color: #757575;
+    cursor: pointer;
+}
+
+.footer .footer-links .col-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.footer .footer-links .col-contact .iphone {
+    margin-bottom: 5px;
+    font-size: 22px;
+    color: #ff6700;
+}
+
+.footer .footer-links .col-contact p {
+    margin-bottom: 16px;
+    font-size: 12px;
+}
+
+.footer .footer-links .col-contact a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 30px;
+    border: solid 1px red;
+    color: red;
+    font-size: 12px;
+
+}
+
+.footer .footer-links .col-contact a:hover {
+    background: red;
+    color: white;
 }
