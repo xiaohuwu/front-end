@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div id="tabs">
+    <button class="tab">标签1</button>
+    <button class="tab">标签2</button>
+    <button class="tab">标签3</button>
+</div>
+
+<div id="tab1" class="tab-content">
+    <h3>标签1内容</h3>
+    <p>这里是标签1的内容...</p>
+</div>
+<div id="tab2" class="tab-content" style="display:none">
+    <h3>标签2内容</h3>
+    <p>这里是标签2的内容...</p>
+</div>
+<div id="tab3" class="tab-content" style="display:none">
+    <h3>标签3内容</h3>
+    <p>这里是标签3的内容...</p>
+</div>
+
+
+</body>
+</html>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var tabs = document.getElementsByClassName("tab");
+        var tabContent = document.getElementsByClassName("tab-content");
+
+        for (let i = 0; i < tabs.length; i++) {
+            tabs[i].setAttribute('index', i);
+            tabs[i].addEventListener("click", function () {
+                // 隐藏所有标签内容
+                for (let j = 0; j < tabContent.length; j++) {
+                    tabContent[j].style.display = "none";
+                    tabs[j].classList.remove("active");
+                }
+                // 显示当前选中的标签内容，并添加"active"类
+                var index = this.getAttribute("index");
+                tabContent[index].style.display = "block";
+                this.classList.add("active");
+            });
+        }
+    });
+
+
+</script>
+
+<style>
+    .tab-content {
+        display: none; /* 默认隐藏所有内容 */
+        padding: 10px;
+    }
+
+    .tab {
+        cursor: pointer;
+    }
+
+    .active {
+        color: blue; /* 激活的标签颜色 */
+    }
+
+</style>
