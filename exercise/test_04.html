@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<div class="container">
+    <img id="image" src="./xiao_mi/images/figure2.jpg" alt="Your Image">
+    <div id="lens" class="lens"></div>
+</div>
+
+
+</body>
+</html>
+
+<style>
+    .container {
+        width: 400px;
+        height: auto;
+        position: relative;
+    }
+
+    #image {
+        width: 100%;
+        height: auto;
+    }
+
+    .lens {
+        position: absolute;
+        border: 1px solid #000;
+        width: 200px;
+        height: 200px;
+    }
+
+</style>
+
+<script>
+    const image = document.getElementById('image');
+    const lens = document.getElementById('lens');
+
+    lens.style.backgroundImage = `url('${image.src}')`;
+    lens.style.backgroundSize = `${image.width * 2}px ${image.height * 2}px`;
+
+    image.addEventListener('mousemove', moveLens);
+    lens.addEventListener('mousemove', moveLens);
+    window.addEventListener('resize', () => {
+        lens.style.backgroundSize = `${image.width * 2}px ${image.height * 2}px`;
+    });
+
+    function moveLens(e) {
+        const pos = getCursorPos(e);
+        let x = pos.x - (lens.offsetWidth / 2);
+        let y = pos.y - (lens.offsetHeight / 2);
+
+        if (x > image.width - lens.offsetWidth) {
+            x = image.width - lens.offsetWidth;
+        }
+        if (x < 0) {
+            x = 0;
+        }
+        if (y > image.height - lens.offsetHeight) {
+            y = image.height - lens.offsetHeight;
+        }
+        if (y < 0) {
+            y = 0;
+        }
+
+        lens.style.left = x + 'px';
+        lens.style.top = y + 'px';
+        lens.style.backgroundPosition = `-${x * 2}px -${y * 2}px`;
+    }
+
+    function getCursorPos(e) {
+        const a = image.getBoundingClientRect();
+        let x = e.pageX - a.left;
+        let y = e.pageY - a.top;
+        x -= window.pageXOffset;
+        y -= window.pageYOffset;
+        return {x: x, y: y};
+    }
+
+
+</script>

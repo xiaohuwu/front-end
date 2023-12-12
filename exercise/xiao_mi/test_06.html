@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    ul {
+        width: 100%;
+        height: 10vh;
+        display: flex;
+    }
+
+    ul li {
+        flex: 1;
+        text-align: center;
+    }
+
+    .line {
+        width: 33%;
+        height: 2px;
+        background: red;
+        transition: all 0.3s ease;
+    }
+</style>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+<div class="line"></div>
+</body>
+</html>
+
+<script>
+    document.querySelectorAll('ul li').forEach(function (li, index) {
+        li.addEventListener('click', function () {
+            // 获取当前点击的li元素的位置和宽度
+            var left = li.offsetLeft;
+            var width = li.offsetWidth;
+
+            // 获取.line元素并更新其位置和宽度
+            var line = document.querySelector('.line');
+            line.style.width = width + 'px';
+            line.style.transform = 'translateX(' + left + 'px)';
+        });
+    });
+
+</script>
