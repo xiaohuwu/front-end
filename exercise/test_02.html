@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<!--    <style>-->
+<!--        p {-->
+<!--            border: solid 1px red;-->
+<!--        }-->
+<!--    </style>-->
+</head>
+<body>
+<div class="marquee">
+    <p style="color: black;">这是一些滚动的文字！这是一些滚动的文字！</p>
+    <p style="color: black;">这是一些滚动的文字！这是一些滚动的文字！</p>
+</div>
+
+</body>
+</html>
+
+
+<style>
+    .marquee {
+        overflow: hidden;
+        white-space: nowrap;
+        box-sizing: border-box;
+        position: relative;
+        width: 100%; /* 设置一个固定的宽度 */
+    }
+
+    .marquee p {
+        display: inline-block;
+        margin: 0;
+        line-height: 1.5;
+        white-space: nowrap; /* 确保文本不会折行 */
+        position: relative; /* 改为相对定位 */
+        left: 100%; /* 初始位置在容器的右侧外 */
+        animation: scrollText 10s linear infinite;
+    }
+
+    @keyframes scrollText {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-100%); }
+    }
+
+
+</style>
