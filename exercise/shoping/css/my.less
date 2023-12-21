@@ -1,0 +1,341 @@
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?tomleg');
+    src: url('../fonts/icomoon.eot?tomleg#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?tomleg') format('truetype'),
+        url('../fonts/icomoon.woff?tomleg') format('woff'),
+        url('../fonts/icomoon.svg?tomleg#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+.arrow-icon::after {
+    content: '\e91e';
+    font-family: 'icomoon';
+    margin-left: 6px;
+}
+
+.w {
+    width: 1200px;
+    margin: 0px auto;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.shortcut {
+    background: #f1f1f1;
+    height: 31px;
+
+    .w {
+        display: flex;
+        height: 100%;
+        justify-content: space-between;
+        align-items: center;
+
+        .fl {
+            ul {
+                display: flex;
+                align-items: center;
+
+                li {
+                    margin-right: 5px;
+
+                    &:last-child {
+                        a {
+                            &:last-child {
+                                color: red;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .fr {
+            ul {
+                display: flex;
+                align-items: center;
+
+                li {
+                    &:nth-child(even) {
+                        width: 1px;
+                        height: 12px;
+                        background-color: #666;
+                        margin: 0 15px 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.header {
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 30px;
+
+    .logo {
+        a {
+            display: block;
+            width: 171px;
+            height: 61px;
+            background: url(../images/logo.png) no-repeat;
+
+        }
+    }
+
+    .middle {
+        .search {
+            width: 538px;
+            height: 36px;
+            display: flex;
+
+            input {
+                flex: 1;
+                border: 2px solid #b1191a;
+                padding-left: 10px;
+            }
+
+            button {
+                width: 80px;
+                height: 100%;
+                background: #b1191a;
+                color: white;
+            }
+
+        }
+
+        .hotwords {
+            padding-top: 8px;
+
+            a {
+                display: inline-block;
+                padding: 3px 8px;
+
+                &:first-child {
+                    color: #b1191a;
+                }
+            }
+        }
+
+    }
+
+
+    .shopcar {
+        position: relative;
+        width: 140px;
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+        border: 1px solid #dfdfdf;
+        background-color: #f7f7f7;
+
+        i {
+            position: absolute;
+            top: -10px;
+            border-radius: 6px;
+            background: #b1191a;
+            height: 16px;
+            width: 16px;
+            line-height: 16px;
+            border-bottom-left-radius: 0;
+            color: white;
+            right: 20px;
+        }
+    }
+
+}
+
+.nav {
+    border-bottom: 2px solid red;
+    height: 47px;
+
+    .w {
+        display: flex;
+
+        .dropdown {
+            width: 210px;
+            height: 100px;
+            position: relative;
+
+            .dt {
+                text-align: center;
+                line-height: 45px;
+                font-size: 16px;
+                color: white;
+                background-color: #b1191a;
+            }
+
+            .dd {
+                position: absolute;
+                left: 0px;
+                top: 45px;
+                width: 210px;
+                background: #c81623;
+                margin-top: 2px;
+
+                li {
+                    padding: 5px 8px;
+                    position: relative;
+
+                    &:hover {
+                        background: white;
+
+                        a {
+                            color: red;
+                        }
+                    }
+
+                    a {
+                        font-size: 14px;
+                    }
+
+                    &:after {
+                        position: absolute;
+                        top: 1px;
+                        right: 10px;
+                        color: #fff;
+                        font-family: 'icomoon';
+                        content: '\e920';
+                        font-size: 14px;
+                    }
+                }
+            }
+
+        }
+
+        .navitems {
+            flex: 1;
+
+            ul {
+                height: 45px;
+                display: flex;
+                align-items: center;
+
+                li {
+                    a {
+                        padding: 5px 28px;
+                        font-size: 16px;
+                        color: black;
+                    }
+
+                }
+            }
+        }
+
+
+
+    }
+}
+
+
+.lifeservice ul li i {
+    display: inline-block;
+    width: 24px;
+    height: 28px;
+    background-color: pink;
+    margin-top: 12px;
+    background: url(../images/icons.png) no-repeat -19px -15px;
+}
+
+.main {
+    padding-left: 220px;
+    display: flex;
+
+    .focus {
+        padding-top: 10px;
+
+        li {
+            width: 721px;
+            height: 455px;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    .newsflash {
+        width: 250px;
+        padding-top: 10px;
+        padding-left: 10px;
+
+        .news {
+            border: solid 1px #ccc;
+
+            .news-hd {
+                padding: 5px;
+                display: flex;
+                justify-content: space-between;
+                border-bottom: solid 1px #ccc;
+
+                h5 {
+                    font-size: 14px;
+                }
+
+                a {
+                    color: black;
+
+                    &:after {
+                        font-family: 'icomoon';
+                        content: '\e920';
+                    }
+                }
+            }
+
+            .news-bd {
+                padding: 5px;
+
+                ul {
+                    li {
+
+                        height: 24px;
+                        line-height: 24px;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+
+                        a {
+                            color: black;
+                        }
+                    }
+                }
+            }
+
+        }
+
+    }
+
+    .lifeservice {
+        margin-bottom: 12px;
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            border-right: solid 1px #ccc;
+
+            li {
+                flex: 25%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                border-left: 1px solid #ccc;
+                border-bottom: 1px solid #ccc;
+
+                p {
+                    margin-top: 8px;
+                }
+            }
+        }
+
+    }
+}

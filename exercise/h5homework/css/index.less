@@ -1,0 +1,127 @@
+body {
+    background: #f3f4f8;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.test {
+    border: solid 1px red;
+}
+
+.banner {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+    }
+
+    .search {
+        width: 90%;
+        height: 50px;
+        padding-left: 20px;
+        line-height: 50px;
+        border-radius: 25px;
+        background: white;
+        position: absolute;
+        top: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        .logo {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: block;
+            background: url(../images/search-icon.png) no-repeat center;
+            background-size: 16px 16px;
+        }
+    }
+}
+
+.content {
+    background: white;
+
+    ul {
+        padding-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+            padding-bottom: 10px;
+            flex: 20%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            a {
+                img {
+                    width: 46px;
+                    height: 46px;
+                }
+            }
+        }
+    }
+}
+
+.ship_list {
+    margin-top: 20px;
+
+    li {
+        margin-bottom: 10px;
+
+        .ship_item {
+            background: white;
+            padding: 8px 10px;
+            position: relative;
+
+            .head {
+                margin-bottom: 10px;
+                display: flex;
+                justify-content: space-between;
+
+                .time {
+                    color: red;
+                }
+            }
+
+            .boat {
+                display: flex;
+
+                p {
+                    margin-bottom: 15px;
+                }
+
+                img {
+                    margin-right: 10px;
+                    border-radius: 10px;
+                    width: 100px;
+                    height: 100px;
+                }
+
+                .hot {
+                    position: absolute;
+                    bottom: 5px;
+                    right: 10px;
+                    background: orange;
+                    padding: 3px 6px;
+                    border-radius: 4px;
+                    color: white;
+                }
+            }
+        }
+
+    }
+
+
+
+}

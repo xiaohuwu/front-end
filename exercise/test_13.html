@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<canvas id="myCanvas" width="500" height="200"></canvas>
+
+</body>
+</html>
+
+
+
+<script>
+  var canvas = document.getElementById("myCanvas");
+  var ctx = canvas.getContext("2d");
+
+  var data = [100, 68, 80, 30, 40]; // 示例数据
+  var maxBarHeight = 150; // 柱状图的最大高度
+  var width = 50; // 柱子的宽度
+  var padding = 10; // 柱子之间的间隔
+  var xAxis = canvas.height - 20; // X轴的位置
+
+  // 计算最大数据值用于归一化高度
+  var maxDataValue = Math.max.apply(null, data);
+
+  // 绘制柱状图
+  for (var i = 0; i < data.length; i++) {
+    var barHeight = (data[i] / maxDataValue) * maxBarHeight; // 计算柱子高度
+    ctx.fillStyle = '#007bff'; // 设置柱子颜色
+    ctx.fillRect(padding + i * (width + padding), xAxis - barHeight, width, barHeight); // 绘制柱子
+  }
+
+  // 绘制 X 轴
+  ctx.beginPath();
+  ctx.moveTo(0, xAxis);
+  ctx.lineTo(canvas.width, xAxis);
+  ctx.stroke();
+</script>

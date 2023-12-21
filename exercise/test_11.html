@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="200" height="200"></canvas>
+
+<script>
+  // 获取 canvas 元素
+  var canvas = document.getElementById("myCanvas");
+
+  // 获取绘图上下文
+  var ctx = canvas.getContext("2d");
+
+  // 设置圆的样式
+  ctx.fillStyle = "#FF0000";
+  ctx.lineWidth = 20;
+  ctx.strokeStyle = "#FF0000";
+
+  // 开始一条新的绘图路径
+  ctx.beginPath();
+
+  // 绘制圆形
+  // arc(x, y, radius, startAngle, endAngle, anticlockwise)
+  // x, y 是圆心的坐标
+  // radius 是圆的半径
+  // startAngle 和 endAngle 分别是绘制圆的起始和结束角度，以弧度为单位（例如：0 是圆的最右侧点，Math.PI 是左侧点）
+  // anticlockwise 是布尔值，表示绘制方向，false 为顺时针方向，true 为逆时针方向
+  ctx.arc(100, 100, 50, Math.PI, Math.PI * 2, false);
+
+  // 闭合路径
+  // ctx.closePath();
+  ctx.stroke();
+  // 填充圆
+  // ctx.fill();
+</script>
+
+</body>
+</html>

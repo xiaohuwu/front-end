@@ -1,0 +1,254 @@
+@font-face {
+  font-family: 'icomoon';
+  src: url('../fonts/icomoon.eot?tomleg');
+  src: url('../fonts/icomoon.eot?tomleg#iefix') format('embedded-opentype'), url('../fonts/icomoon.ttf?tomleg') format('truetype'), url('../fonts/icomoon.woff?tomleg') format('woff'), url('../fonts/icomoon.svg?tomleg#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+.arrow-icon::after {
+  content: '\e91e';
+  font-family: 'icomoon';
+  margin-left: 6px;
+}
+.w {
+  width: 1200px;
+  margin: 0px auto;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+.shortcut {
+  background: #f1f1f1;
+  height: 31px;
+}
+.shortcut .w {
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.shortcut .w .fl ul {
+  display: flex;
+  align-items: center;
+}
+.shortcut .w .fl ul li {
+  margin-right: 5px;
+}
+.shortcut .w .fl ul li:last-child a:last-child {
+  color: red;
+}
+.shortcut .w .fr ul {
+  display: flex;
+  align-items: center;
+}
+.shortcut .w .fr ul li:nth-child(even) {
+  width: 1px;
+  height: 12px;
+  background-color: #666;
+  margin: 0 15px 0;
+}
+.header {
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 30px;
+}
+.header .logo a {
+  display: block;
+  width: 171px;
+  height: 61px;
+  background: url(../images/logo.png) no-repeat;
+}
+.header .middle .search {
+  width: 538px;
+  height: 36px;
+  display: flex;
+}
+.header .middle .search input {
+  flex: 1;
+  border: 2px solid #b1191a;
+  padding-left: 10px;
+}
+.header .middle .search button {
+  width: 80px;
+  height: 100%;
+  background: #b1191a;
+  color: white;
+}
+.header .middle .hotwords {
+  padding-top: 8px;
+}
+.header .middle .hotwords a {
+  display: inline-block;
+  padding: 3px 8px;
+}
+.header .middle .hotwords a:first-child {
+  color: #b1191a;
+}
+.header .shopcar {
+  position: relative;
+  width: 140px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  border: 1px solid #dfdfdf;
+  background-color: #f7f7f7;
+}
+.header .shopcar i {
+  position: absolute;
+  top: -10px;
+  border-radius: 6px;
+  background: #b1191a;
+  height: 16px;
+  width: 16px;
+  line-height: 16px;
+  border-bottom-left-radius: 0;
+  color: white;
+  right: 20px;
+}
+.nav {
+  border-bottom: 2px solid red;
+  height: 47px;
+}
+.nav .w {
+  display: flex;
+}
+.nav .w .dropdown {
+  width: 210px;
+  height: 100px;
+  position: relative;
+}
+.nav .w .dropdown .dt {
+  text-align: center;
+  line-height: 45px;
+  font-size: 16px;
+  color: white;
+  background-color: #b1191a;
+}
+.nav .w .dropdown .dd {
+  position: absolute;
+  left: 0px;
+  top: 45px;
+  width: 210px;
+  background: #c81623;
+  margin-top: 2px;
+}
+.nav .w .dropdown .dd li {
+  padding: 5px 8px;
+  position: relative;
+}
+.nav .w .dropdown .dd li:hover {
+  background: white;
+}
+.nav .w .dropdown .dd li:hover a {
+  color: red;
+}
+.nav .w .dropdown .dd li a {
+  font-size: 14px;
+}
+.nav .w .dropdown .dd li:after {
+  position: absolute;
+  top: 1px;
+  right: 10px;
+  color: #fff;
+  font-family: 'icomoon';
+  content: '\e920';
+  font-size: 14px;
+}
+.nav .w .navitems {
+  flex: 1;
+}
+.nav .w .navitems ul {
+  height: 45px;
+  display: flex;
+  align-items: center;
+}
+.nav .w .navitems ul li a {
+  padding: 5px 28px;
+  font-size: 16px;
+  color: black;
+}
+.lifeservice ul li i {
+  display: inline-block;
+  width: 24px;
+  height: 28px;
+  background-color: pink;
+  margin-top: 12px;
+  background: url(../images/icons.png) no-repeat -19px -15px;
+}
+.main {
+  padding-left: 220px;
+  display: flex;
+}
+.main .focus {
+  padding-top: 10px;
+}
+.main .focus li {
+  width: 721px;
+  height: 455px;
+}
+.main .focus li img {
+  width: 100%;
+  height: auto;
+}
+.main .newsflash {
+  width: 250px;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+.main .newsflash .news {
+  border: solid 1px #ccc;
+}
+.main .newsflash .news .news-hd {
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 1px #ccc;
+}
+.main .newsflash .news .news-hd h5 {
+  font-size: 14px;
+}
+.main .newsflash .news .news-hd a {
+  color: black;
+}
+.main .newsflash .news .news-hd a:after {
+  font-family: 'icomoon';
+  content: '\e920';
+}
+.main .newsflash .news .news-bd {
+  padding: 5px;
+}
+.main .newsflash .news .news-bd ul li {
+  height: 24px;
+  line-height: 24px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.main .newsflash .news .news-bd ul li a {
+  color: black;
+}
+.main .lifeservice {
+  margin-bottom: 12px;
+}
+.main .lifeservice ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  border-right: solid 1px #ccc;
+}
+.main .lifeservice ul li {
+  flex: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+.main .lifeservice ul li p {
+  margin-top: 8px;
+}
