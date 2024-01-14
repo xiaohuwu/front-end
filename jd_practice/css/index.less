@@ -1,328 +1,112 @@
-.fl {
-    float: left;
-}
-
-.fr {
-    float: right;
-}
-
-body {
-    margin: 0;
-    background-color: #fff;
-    color: #333;
-    font-size: 12px;
-    font-family: tahoma, arial, "Hiragino Sans GB", "Microsoft Yahei", \5b8b\4f53, sans-serif;
-}
-
-a {
-    color: #333;
-}
-
-.clearfix:after {
-    content: "";
-    /*设置内容为空*/
-    height: 0;
-    /*高度为0*/
-    line-height: 0;
-    /* 行高为0*/
-    display: block;
-    /*将文本转为块级元素*/
-    visibility: hidden;
-    /*将元素隐藏*/
-    clear: both
-        /*清除浮动*/
-    ;
-}
-
-.w {
-    width: 1200px;
-    margin: 0px auto;
-}
-
-.style_red {
-    color: red;
-}
-
-.arr,
-.ctrl3 {
-    font-family: 'icomoon';
-}
-
-.shortcut {
-    height: 30px;
-    line-height: 30px;
-    background-color: #EAEAEA;
-
-    .f-item {
-        float: left;
-    }
-
-    .fr {
-        .space {
-            margin-left: 10px;
-            margin-right: 10px;
-            margin-top: 10px;
-            width: 1px;
-            height: 12px;
-            background-color: #666;
-        }
-    }
-}
-
-.header {
-    height: 105px;
-    display: flex;
-    padding-left: 20px;
-    padding-right: 20px;
-
-    .logo {
-        display: block;
-        margin: 25px auto;
-        width: 175px;
-        height: 55px;
-        background: url(../img/logo.png) no-repeat;
-    }
-
-    .search {
-        padding-top: 30px;
-        flex: 1;
-        padding-left: 100px;
-
-        form {
-            display: flex;
-            width: 572px;
-            height: 32px;
-            border: solid 2px #c81523;
-
-            input {
-                padding-left: 10px;
-                flex: 1;
-            }
-
-            button {
-                border: none;
-                outline: none;
-                width: 70px;
-                height: 100%;
-                color: white;
-                background-color: #c81523;
-            }
-
-        }
-
-        .hotwords {
-            ul {
-                padding-top: 10px;
-                display: flex;
-                gap: 15px;
-            }
-        }
-
-    }
-
-    .cart {
-        position: relative;
-        text-align: center;
-        margin-top: 30px;
-        width: 146px;
-        line-height: 32px;
-        height: 32px;
-        background-color: #f7f7f7;
-        border: 1px solid #dfdfdf;
-
-        .icon-cart {
-            color: #c81523;
-        }
-
-        .number {
-            width: 20px;
-            height: 20px;
-            position: absolute;
-            top: -5px;
-            right: 10px;
-            text-align: center;
-            line-height: 20px;
-            color: white;
-            background-color: #c81523;
-            border-radius: 50%;
-        }
-    }
-}
-
-nav.category {
-    height: 45px;
-    border-bottom: 1px solid #c81523;
-
-    .w {
+.banner {
+    main {
+        margin-left: 220px;
         display: flex;
+        gap: 10px;
 
-        .all_category {
-            text-align: center;
-            line-height: 45px;
-            height: 100%;
-            width: 210px;
-            background-color: #c81523;
-            color: white;
-            position: relative;
+        .news {
+            margin-top: 10px;
+            border: solid 1px #e4e4e4;
+            width: 250px;
 
-            &:hover {
-                ul {
-                    display: block;
+            .news_head {
+                padding-left: 15px;
+                padding-right: 15px;
+                height: 33px;
+                align-items: center;
+                border-bottom: dashed 1px #e4e4e4;
+                display: flex;
+                justify-content: space-between;
+
+                h3 {
+                    font-size: 14px;
+                    font-weight: bolder;
                 }
             }
 
+            .news_body {
+                ul {
+                    padding-top: 5px;
+                    padding-left: 10px;
+                    padding-bottom: 5px;
+
+                    li {
+                        line-height: 23px;
+                        height: 23px;
+                    }
+                }
+
+            }
+
+        }
+
+        .items {
             ul {
-                display: none;
+                display: flex;
+                border: solid 1px #e4e4e4;
+                border-top: none;
+                flex-wrap: wrap;
 
                 li {
-                    line-height: 35px;
+                    flex: 25%;
+                    border-right: solid 1px #e4e4e4;
+                    border-bottom: solid 1px #e4e4e4;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
 
-                    a {
-                        font-size: 14px;
-                        padding-left: 10px;
-                        padding-right: 10px;
-                        color: white;
-                        display: flex;
-                        justify-content: space-between;
+                    i {
+                        display: inline-block;
+                        width: 61px;
+                        height: 40px;
+                        background-image: url(../img/icons.png);
+                        margin-bottom: 5px;
+                    }
 
-                        span:last-child {
-                            font-size: 12px;
-                        }
+                    span {
+                        margin-bottom: 5px;
                     }
                 }
-
             }
-        }
 
-        >ul {
-            flex: 1;
-            display: flex;
-
-            li {
-                padding: 0 22px;
-                font: 16px "微软雅黑";
-                line-height: 45px;
-
-            }
         }
     }
 
 
 }
 
-footer {
-    padding-top: 20px;
-    height: 415px;
-    background-color: #f5f5f5;
+.test {
+    border: solid 1px red;
+}
 
-    .w {
-        >ul {
-            display: flex;
-            padding-bottom: 20px;
-            border-bottom: solid 1px #e6e6e6;
+.ad img {
+    width: 720px;
+}
 
-            li {
-                flex: 1;
+.recommand {
+    margin-top: 10px;
+    display: flex;
 
-                >div {
-                    display: flex;
+    .item_1 {
+        flex-basis: 210px;
+        display: flex;
+        flex-direction: column;
+        background-color: #5c5251;
+        color: white;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        font-weight: bolder;
 
-                    .desc {
-                        p:first-child {
-                            font-weight: bold;
-                            padding-bottom: 5px;
-                        }
-                    }
-                }
-
-                &.first {
-                    .logo {
-                        background-position: -253px -3px;
-                        margin-right: 5px;
-                    }
-                }
-
-                &.second {
-                    .logo {
-                        background-position: -253px -53px;
-                        margin-right: 5px;
-                    }
-                }
-
-                &.third {
-                    .logo {
-                        background-position: -255px -106px;
-                        margin-right: 5px;
-                    }
-                }
-
-                &.four {
-                    .logo {
-                        background-position: -256px -157px;
-                        margin-right: 5px;
-                    }
-                }
-            }
-
-            .logo {
-                width: 52px;
-                height: 50px;
-                background-image: url(../img/icons.png);
-            }
-
+        p {
+            margin-top: 10px;
         }
 
-        .guide {
-            padding-top: 20px;
-            padding-bottom: 20px;
-            border-bottom: solid 1px #e6e6e6;
-            display: flex;
-
-            dl {
-                flex: 1;
-
-                dt {
-                    font-size: 16px;
-                    // font-weight: bold;
-                    padding-bottom: 5px;
-                }
-            }
-        }
-
-        .about {
-            padding-top: 20px;
-            text-align: center;
-
-            ul {
-                list-style-type: none;
-                padding: 0;
-                margin: 0;
-                display: inline-block;
-
-                li:not(.line) {
-                    display: inline;
-                    padding: 8px 10px;
-                }
-
-                .line {
-                    margin-top: -2px;
-                    border-left: 1px solid black;
-                    height: 12px;
-                    display: inline-block;
-                    vertical-align: middle;
-                }
-
-            }
-        }
-
-        p.address {
-            padding-top: 20px;
-            text-align: center;
-        }
-
-        p.beian {
-            padding-top: 20px;
-            text-align: center;
+        img {
+            width: 57px;
+            height: 57px;
         }
     }
+
 }
