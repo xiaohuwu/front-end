@@ -55,6 +55,9 @@
 .banner main .items ul li span {
   margin-bottom: 5px;
 }
+* {
+  box-sizing: border-box;
+}
 .test {
   border: solid 1px red;
 }
@@ -82,4 +85,114 @@
 .recommand .item_1 img {
   width: 57px;
   height: 57px;
+}
+.guess_you_like {
+  padding-top: 20px;
+}
+.guess_you_like .title {
+  display: flex;
+  justify-content: space-between;
+}
+.guess_you_like .title h4 {
+  font-size: 20.04px;
+  line-height: 30.06px;
+  font-weight: bolder;
+}
+.guess_you_like .title a {
+  font-size: 14px;
+  color: lightblue;
+}
+.guess_you_like .content {
+  display: flex;
+  border: solid 1px #e4e4e4;
+}
+.guess_you_like .content .item {
+  flex: 1;
+}
+.guess_you_like .content .item .item_body {
+  padding: 15px;
+  margin-bottom: 25px;
+  border-right: solid 1px #e4e4e4;
+}
+.guess_you_like .content .item .item_body.last {
+  border-right: none;
+}
+.guess_you_like .content .item .item_body p.price {
+  margin-top: 10px;
+  color: red;
+  font-size: 16px;
+  font-weight: bolder;
+}
+.interesting {
+  padding-top: 20px;
+}
+.interesting h3 {
+  font-size: 20.04px;
+  line-height: 30.06px;
+  font-weight: bolder;
+  margin-bottom: 10px;
+}
+.interesting .content {
+  border: solid 1px #e4e4e4;
+  display: flex;
+}
+.interesting .content h6 {
+  font-size: 12px;
+  font-weight: 700;
+  height: 29px;
+  line-height: 29px;
+  text-align: center;
+  border-bottom: solid 1px #e4e4e4;
+  border-right: solid 1px #e4e4e4;
+}
+.interesting .content .top {
+  border-bottom: solid 1px #e4e4e4;
+  border-right: solid 1px #e4e4e4;
+}
+.interesting .content .bottom {
+  border-bottom: solid 1px #e4e4e4;
+  border-right: solid 1px #e4e4e4;
+}
+.interesting .content .item_1 {
+  height: 100%;
+}
+.interesting .content .item_2 {
+  display: flex;
+  flex-direction: column;
+}
+.interesting .content .item_2 .top {
+  flex: 1;
+}
+.interesting .content .item_2 .bottom {
+  flex: 1;
+}
+.interesting .content .item_3 {
+  display: flex;
+  flex-direction: column;
+  border-right: solid 1px #e4e4e4;
+}
+.interesting .content .item_3 .top {
+  flex: 1;
+}
+.interesting .content .item_3 .bottom {
+  flex: 1;
+  display: flex;
+}
+.interesting .content .item_3 .bottom img:not(:last-child) {
+  border-right: solid 1px #e4e4e4;
+}
+.interesting .content .item_4 ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.interesting .content .item_4 ul li {
+  flex: 50%;
+  border-bottom: dashed 1px #e4e4e4;
+}
+.interesting .content .item_4 ul li:nth-child(odd) {
+  border-right: dashed 1px #e4e4e4;
+}
+.interesting .content .item_4 ul li img {
+  width: 100%;
+  height: auto;
 }

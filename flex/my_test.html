@@ -1,42 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <style>
-        .clearfix:after {
-            content: "666666";
-            clear: both;
-            height: 0;
-            display: block;
-            visibility: hidden;
+        .search-bar-container {
+            width: 600px;
+            margin: 0px auto;
+            display: flex;
+            /* 填充 */
+            border: 1px solid #ff0000;
+            /* 边框颜色 */
         }
 
-        .fl {
-            float: left;
+        .search-bar-container form {
+            display: flex;
+            width: 100%;
         }
 
-        .fr {
-            float: right;
+        .search-input {
+            flex: 1;
+            /* 输入框占据剩余空间 */
+            border: none;
+            /* 无边框 */
+            padding: 10px;
+            /* 内边距 */
+        }
+
+        .search-button {
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            /* padding: 9px 20px; */
+            cursor: pointer;
+            height: 39px;
+        }
+
+        /* 确保输入框没有轮廓（在某些浏览器中被激活时出现） */
+        .search-input:focus {
+            outline: none;
+        }
+
+        /* 添加一些悬停效果 */
+        .search-button:hover {
+            opacity: 0.9;
+            /* 鼠标悬停时的透明度变化 */
         }
     </style>
+
 </head>
+
 <body>
-
-<h1>Demo of the ::before selector</h1>
-
-<p>My name is Donald</p>
-<div class="clearfix">
-    <div class="fl">
-        left
+    <div class="search-bar-container">
+        <form action="">
+            <input type="text" class="search-input" placeholder="搜索..." />
+            <button class="search-button">搜索</button>
+        </form>
     </div>
-    <div class="fr">
-        right
-    </div>
-</div>
-
-</body>
-</html>
 
 
 </body>
-</html>
 
+</html>
