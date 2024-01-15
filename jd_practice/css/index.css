@@ -196,3 +196,76 @@
   width: 100%;
   height: auto;
 }
+.goods {
+  margin-top: 20px;
+}
+.goods h3 {
+  font-size: 20.04px;
+  line-height: 30.06px;
+  font-weight: bolder;
+  margin-bottom: 10px;
+}
+.goods .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.goods .title ul {
+  display: flex;
+  align-items: center;
+}
+.goods .title ul li:not(.line) {
+  padding: 8px 10px;
+}
+.goods .title ul li.line {
+  border-left: 1px solid black;
+  height: 12px;
+}
+.goods .content .item_2,
+.goods .content .item_3 {
+  border-right: solid 1px #e4e4e4;
+}
+.goods .content {
+  display: flex;
+  border-top: 2px solid red;
+  padding-bottom: 20px;
+  border-bottom: 1px solid lightgray;
+}
+.goods .content .item_1 {
+  width: 210px;
+  background: #f7f7f7;
+}
+.goods .content .item_1 ul {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.goods .content .item_1 ul li {
+  padding-bottom: 5px;
+  text-align: center;
+  width: 84px;
+  border-bottom: solid 1px #e4e4e4;
+}
+.goods .content .item_1 ul li:nth-child(odd) {
+  margin-right: 20px;
+}
+.goods .content .item_3 .top {
+  border-bottom: solid 1px #e4e4e4;
+}
+.goods .content .item_5 .top {
+  border-bottom: solid 1px #e4e4e4;
+}
+.brand {
+  background: #f7f7f7;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.brand ul {
+  display: flex;
+}
+.brand ul li {
+  background: #f7f7f7;
+  flex: 1;
+}
