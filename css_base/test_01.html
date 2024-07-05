@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icon Layout</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="icon-container">
+    <div class="icon">
+        <img src="phone-icon.png" alt="手机充值">
+        <p>手机充值</p>
+    </div>
+    <div class="icon">
+        <img src="gift-icon.png" alt="企业购">
+        <p>企业购</p>
+    </div>
+    <div class="icon">
+        <img src="f-icon.png" alt="用户通道">
+        <p>用户通道</p>
+    </div>
+    <div class="icon">
+        <img src="building-icon.png" alt="水晶卡">
+        <p>水晶卡</p>
+    </div>
+    <div class="icon">
+        <img src="lock-icon.png" alt="以旧换新">
+        <p>以旧换新</p>
+    </div>
+    <div class="icon">
+        <img src="card-icon.png" alt="话费充值">
+        <p>话费充值</p>
+    </div>
+</div>
+</body>
+</html>
+
+<style>
+    /* styles.css */
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+    }
+
+    .icon-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between; /* 均匀分布每行的图标 */
+        width: 300px; /* 根据实际需要调整容器宽度 */
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .icon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 33%; /* 分配每个图标的宽度，保证一行三个图标 */
+        margin-bottom: 20px; /* 如果需要，添加底部边距 */
+    }
+
+    .icon img {
+        width: 50px; /* 调整为合适的尺寸 */
+        height: 50px; /* 调整为合适的尺寸 */
+    }
+
+    .icon p {
+        margin-top: 8px;
+        color: #333;
+        font-size: 14px;
+        text-align: center;
+    }
+
+</style>

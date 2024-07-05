@@ -40,10 +40,10 @@ $sum = $apple + $pig + $biscuit;
 <form method="post" action="postorder.php">
     <table>
         <tr><td>您的商品</td><td>价格</td><td>小记</td></tr>
-        <tr><td>苹果</td><td>2.6元/斤</td><td><?php echo $apple ?></td></tr>
-        <tr><td>猪肉</td><td>13.2元/斤</td><td><?php echo $pig ?></td></tr>
-        <tr><td>饼干</td><td>21元/盒</td><td><?php echo $biscuit ?></td></tr>
-        <tr><td colspan="3" align="center">一共要支付<?php echo $sum ?> 元[<a href="orderform.php">返回修改</a>]</td></tr>
+        <tr><td>苹果</td><td>2.6元/斤</td><td><?= $apple ?></td></tr>
+        <tr><td>猪肉</td><td>13.2元/斤</td><td><?=  $pig ?></td></tr>
+        <tr><td>饼干</td><td>21元/盒</td><td><?= $biscuit ?></td></tr>
+        <tr><td colspan="3" align="center">一共要支付<?= $sum ?> 元[<a href="orderform.php">返回修改</a>]</td></tr>
     </table>
 </form>
 </body>
