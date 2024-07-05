@@ -168,14 +168,28 @@ nav .nav-common:nth-child(3) {
 .sales-box .sales-hd {
   align-items: center;
   background: white;
+  padding-left: 10px;
+  padding-right: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #ccc;
+  position: relative;
 }
-.sales-box .sales-hd div {
-  margin-left: 10px;
+.sales-box .sales-hd h2 {
+  width: 79px;
+  height: 15px;
+  position: relative;
+  text-indent: -999px;
+  overflow: hidden;
+}
+.sales-box .sales-hd h2::after {
+  z-index: 100;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  content: "";
   width: 79px;
   height: 15px;
   background: url(../images/hot.png) no-repeat 0 -20px;
@@ -185,11 +199,9 @@ nav .nav-common:nth-child(3) {
   padding-left: 10px;
   position: relative;
   display: inline-block;
-  width: 114px;
-  height: 27px;
-  line-height: 27px;
+  padding: 3px 20px 3px 10px;
   color: white;
-  border-radius: 12px;
+  border-radius: 15px;
   background: -webkit-linear-gradient(left, #FF506C, #FF6BC6);
 }
 .sales-box .sales-hd .more::after {
