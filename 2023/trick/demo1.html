@@ -7,8 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        *{margin: 0;padding: 0}
-        #box{height: 140px; border: solid 1px; overflow: hidden;}
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        #box {
+            height: 140px;
+            border: solid 1px;
+            overflow: hidden;
+        }
     </style>
 </head>
 
@@ -46,16 +54,16 @@
         }
 
         function rollStart() {
-            if (box.scrollTop >= ul1.scrollHeight) {
+            if (box.scrollTop >= ul1.offsetHeight) {
                 box.scrollTop = 0;
             } else {
                 box.scrollTop++;
             }
         }
-        add = (a ,b) =>{
+        add = (a, b) => {
             return a + b;
         }
-        console.log("a + b", add(a,b));
+        console.log("a + b", add(a, b));
     </script>
 </body>
 

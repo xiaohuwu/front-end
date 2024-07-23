@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <style>
+        .todo-list {
+            list-style: none;
+            padding: 0;
+        }
+        .todo-list li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="todo-input" placeholder="Enter new todo">
+    <button id="add-todo">Add</button>
+    <ul class="todo-list" id="todo-list"></ul>
+    <script>
+        const todoInput = document.getElementById('todo-input');
+        const addTodoButton = document.getElementById('add-todo');
+        const todoList = document.getElementById('todo-list');
+        addTodoButton.addEventListener('click', function () {
+            let li = document.createElement("li");
+            li.innerHTML = `${todoInput.value}<button class = "delete">删除</button>`;
+            todoList.appendChild(li);
+            todoInput.value = '';
+            document.querySelector(".todo-list").addEventListener("click", function (e) {
+                if (e.target && e.target.classList.contains('delete')) {
+                    console.log(this);
+                    const li = e.target.parentNode;
+                    todoList.removeChild(li);
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <style>
+        .slider {
+            width: 300px;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        .slides {
+            display: flex;
+            transition: transform 1s ease;
+        }
+        .slides img {
+            width: 300px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <div class="slides">
+            <img src="https://via.placeholder.com/300x200?text=1" alt="1">
+            <img src="https://via.placeholder.com/300x200?text=2" alt="2">
+            <img src="https://via.placeholder.com/300x200?text=3" alt="3">
+        </div>
+    </div>
+    <script>
+        const slides = document.querySelector('.slides');
+        const images = document.querySelectorAll('.slides img');
+        let index = 0;
+        function showNextSlide() {
+            index++;
+            if (index >= images.length) {
+                index = 0;
+            }
+            slides.style.transform = `translateX(${-index * 300}px)`;
+        }
+        setInterval(showNextSlide, 2000);
+    </script>
+</body>
+</html>

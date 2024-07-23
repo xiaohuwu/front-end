@@ -1,90 +1,34 @@
-<!doctype html>
-<html lang="zh-CN">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-
-    <title>flex布局</title>
-    <style type="text/css">
-        .container{
-            width: 110px;
-            height: 110px;
-            margin: 0 auto;
-            background-color:blueviolet;
-            display: flex;
-            /* display: inline-flex; */
-
-            /* 垂直方向  从上到下*/
-            /* flex-direction: column; */
-
-            /* 垂直方向  从下到上 */
-            /* flex-direction: column-reverse; */
-
-            /* 水平方向 从右到左 */
-            /* flex-direction: row-reverse; */
-
-            /* 水平方向 从左到右 */
-            /* flex-direction: row; */
-
-            /* 水平轴 水平居中对齐 */
-            /* justify-content: center; */
-
-            /* 水平轴 两端对齐 */
-            /* justify-content: space-between; */
-
-            /* 水平轴 每个item 两侧的间隔相等 */
-            /* justify-content: space-around; */
-
-            /* 水平轴 左对齐 */
-            /* justify-content: flex-start; */
-
-            /* 水平轴 右对齐 */
-            /* justify-content: flex-end; */
-
-
-            /* 垂直轴 占满整个容器的高度 */
-            /* align-items: stretch; */
-
-            /* 垂直轴 与纵轴起点对齐 */
-            /* align-items: flex-start; */
-
-            /* 垂直轴 与纵轴终点对齐 */
-            /* align-items:flex-end */
-
-            /* 垂直轴 与基线对齐 */
-            /* align-items: baseline; */
-
-
-
-
-
-        }
-        .container div {
-            width: 20px;
-            height: 20px;
-
-        }
-        .first{
-            flex: 50%;
-            background-color: beige;
-        }
-        .second{
-            background-color: aqua;
-        }
-        .third{
-            background-color: beige;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery Animate Easing Example</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: relative;
+      margin: 20px;
+    }
+  </style>
 </head>
-
-
 <body>
-<div class="container">
-    <div class="first">1</div>
-    <div><div class="second">2</div>
-        <div class="third">3</div></div>
+  <div class="box" id="linearBox"></div>
+  <div class="box" id="swingBox"></div>
+  <button id="animateButton">Animate</button>
+  <script>
+    $('#animateButton').click(function() {
+      $('#linearBox').animate({
+        left: '+=300'
+      }, 1000, 'linear'); // 使用 'linear' 缓动效果
 
-</div>
-
-
+      $('#swingBox').animate({
+        left: '+=300'
+      }, 1000, 'swing'); // 使用 'swing' 缓动效果
+    });
+  </script>
 </body>
-
 </html>
