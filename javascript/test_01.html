@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complex To-Do List with Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .todo-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+        .todo-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .todo-header input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .todo-header button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .todo-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .todo-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .todo-item:last-child {
+            border-bottom: none;
+        }
+        .todo-item input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .todo-item input[type="text"] {
+            flex: 1;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 5px;
+            display: none;
+        }
+        .todo-item span {
+            flex: 1;
+        }
+        .todo-item button {
+            margin-left: 10px;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .todo-item button.edit {
+            background-color: #ffc107;
+            color: white;
+        }
+        .todo-item button.save {
+            background-color: #28a745;
+            color: white;
+            display: none;
+        }
+        .todo-item button.delete {
+            background-color: #dc3545;
+            color: white;
+        }
+        .todo-footer {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .todo-footer input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .todo-footer button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #6c757d;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .search-container {
+            margin-bottom: 20px;
+        }
+        .search-container input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="todo-container">
+        <div class="search-container">
+            <input type="text" id="searchTodo" placeholder="Search tasks...">
+        </div>
+        <div class="todo-header">
+            <input type="text" id="newTodo" placeholder="Add a new task">
+            <button id="addTodoBtn">Add</button>
+        </div>
+        <ul class="todo-list" id="todoList">
+            <!-- To-Do items will be dynamically inserted here -->
+        </ul>
+        <div class="todo-footer">
+            <div>
+                <input type="checkbox" id="selectAll">
+                <label for="selectAll">Select All</label>
+            </div>
+            <button id="deleteSelectedBtn">Delete Selected</button>
+        </div>
+    </div>
+
+    <script>
+        const newTodoInput = document.getElementById('newTodo');
+        const addTodoBtn = document.getElementById('addTodoBtn');
+        const todoList = document.getElementById('todoList');
+        const selectAllCheckbox = document.getElementById('selectAll');
+        const deleteSelectedBtn = document.getElementById('deleteSelectedBtn');
+        const searchTodoInput = document.getElementById('searchTodo');
+
+        let todos = [];
+
+        function renderTodos(filter = '') {
+            todoList.innerHTML = '';
+            todos
+                .filter(todo => todo.text.toLowerCase().includes(filter.toLowerCase()))
+                .forEach((todo, index) => {
+                    const todoItem = document.createElement('li');
+                    todoItem.className = 'todo-item';
+
+                    const checkbox = document.createElement('input');
+                    checkbox.type = 'checkbox';
+                    checkbox.checked = todo.completed;
+                    checkbox.addEventListener('change', () => {
+                        todo.completed = checkbox.checked;
+                    });
+
+                    const span = document.createElement('span');
+                    span.innerText = todo.text;
+                    span.addEventListener('dblclick', () => {
+                        span.style.display = 'none';
+                        editInput.style.display = 'block';
+                        editBtn.style.display = 'none';
+                        saveBtn.style.display = 'inline';
+                        editInput.focus();
+                    });
+
+                    const editInput = document.createElement('input');
+                    editInput.type = 'text';
+                    editInput.value = todo.text;
+
+                    const editBtn = document.createElement('button');
+                    editBtn.className = 'edit';
+                    editBtn.innerText = 'Edit';
+                    editBtn.addEventListener('click', () => {
+                        span.style.display = 'none';
+                        editInput.style.display = 'block';
+                        editBtn.style.display = 'none';
+                        saveBtn.style.display = 'inline';
+                        editInput.focus();
+                    });
+
+                    const saveBtn = document.createElement('button');
+                    saveBtn.className = 'save';
+                    saveBtn.innerText = 'Save';
+                    saveBtn.addEventListener('click', () => {
+                        todo.text = editInput.value;
+                        span.innerText = editInput.value;
+                        span.style.display = 'block';
+                        editInput.style.display = 'none';
+                        editBtn.style.display = 'inline';
+                        saveBtn.style.display = 'none';
+                    });
+
+                    const deleteBtn = document.createElement('button');
+                    deleteBtn.className = 'delete';
+                    deleteBtn.innerText = 'Delete';
+                    deleteBtn.addEventListener('click', () => {
+                        todos.splice(index, 1);
+                        renderTodos(searchTodoInput.value);
+                    });
+
+                    todoItem.appendChild(checkbox);
+                    todoItem.appendChild(span);
+                    todoItem.appendChild(editInput);
+                    todoItem.appendChild(editBtn);
+                    todoItem.appendChild(saveBtn);
+                    todoItem.appendChild(deleteBtn);
+
+                    todoList.appendChild(todoItem);
+                });
+        }
+
+        addTodoBtn.addEventListener('click', () => {
+            const newTodoText = newTodoInput.value.trim();
+            if (newTodoText !== '') {
+                todos.push({ text: newTodoText, completed: false });
+                newTodoInput.value = '';
+                renderTodos(searchTodoInput.value);
+            }
+        });
+
+        newTodoInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                addTodoBtn.click();
+            }
+        });
+
+        selectAllCheckbox.addEventListener('change', () => {
+            const allChecked = selectAllCheckbox.checked;
+            todos.forEach(todo => {
+                todo.completed = allChecked;
+            });
+            renderTodos(searchTodoInput.value);
+        });
+
+        deleteSelectedBtn.addEventListener('click', () => {
+            todos = todos.filter(todo => !todo.completed);
+            renderTodos(searchTodoInput.value);
+        });
+
+        searchTodoInput.addEventListener('input', () => {
+            renderTodos(searchTodoInput.value);
+        });
+
+        renderTodos();
+    </script>
+</body>
+</html>

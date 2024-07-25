@@ -1,0 +1,21 @@
+<body>
+    <div class="box"></div>
+    <script>
+        /* 本案例需求:  map遍历数组同时生成div标签里面放入商品名称，最后追加给 box盒子
+          (1)请找出下列代码产生的bug (此处有2个bug)
+              如何找出来的?
+              原因分析:
+          (2)如果想要实现正确的需求,应该如何实现
+       */
+        const arr = [
+            { name: '手机', price: 1888 },
+            { name: '电脑', price: 8888 },
+        ]
+
+        // map 遍历 
+        const strArr = arr.map(function (ele) {
+            return `<div>${ele.name}</div>`;
+        })
+        document.querySelector('.box').innerHTML = strArr.join("");
+    </script>
+</body>
