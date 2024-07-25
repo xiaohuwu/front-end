@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pagination Example</title>
+    <style>
+        .pagination {
+            display: flex;
+            list-style: none;
+        }
+
+        .pagination li {
+            margin: 5px;
+        }
+
+        .pagination li a {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Pagination Example</h1>
+    <div id="items"></div>
+    <ul class="pagination" id="pagination"></ul>
+
+    <script>
+
+        let div_items = document.querySelector("#items")
+        let pagination = document.querySelector("#pagination")
+        const items = Array.from({ length: 50 }, (_, i) => `Item ${i + 1}`);
+        const itemsPerPage = 5;
+        let currentPage = 1;
+
+        function displayItems(currentPage) {
+            let start = (currentPage - 1) * itemsPerPage;
+            let end = currentPage * itemsPerPage
+            let subItems = items.slice(start, end);
+            let result = subItems.map((item) => {
+                return `<div>${item}</div>`;
+            }).join('');
+            div_items.innerHTML = result;
+        }
+
+        function displayPage() {
+            let totalPage = items.length / itemsPerPage;
+            let result = '';
+            for (let i = 0; i < totalPage; i++) {
+                result += `<li onclick="displayItems(${i + 1})">${i + 1}</li>`;
+            }
+            pagination.innerHTML = result;
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            displayItems(1);
+            displayPage();
+        });
+
+    </script>
+</body>
+
+</html>

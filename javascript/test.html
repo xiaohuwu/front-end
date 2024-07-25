@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizontal Scroll Navigation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            display: flex;
+            overflow-x: auto;
+            white-space: nowrap;
+            border-bottom: 2px solid #ddd;
+            position: relative;
+        }
+        .navbar-item {
+            padding: 10px 20px;
+            cursor: pointer;
+            position: relative;
+            flex-shrink: 0;
+            /* Prevent items from shrinking */
+        }
+
+        .highlight {
+            position: absolute;
+            left: 0px;
+            width: 80px;
+            bottom: 0;
+            height: 2px;
+            background-color: #007bff;
+            transition: left 0.3s ease, width 0.3s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Horizontal Scroll Navigation Example</h1>
+    <div class="navbar" id="navbar">
+        <div class="navbar-item" data-index="0">Item 1</div>
+        <div class="navbar-item" data-index="1">Item 2</div>
+        <div class="navbar-item" data-index="2">Item 3</div>
+        <div class="navbar-item" data-index="3">Item 4</div>
+        <div class="navbar-item" data-index="4">Item 5</div>
+        <div class="navbar-item" data-index="5">Item 6</div>
+        <div class="navbar-item" data-index="6">Item 7</div>
+        <div class="navbar-item" data-index="7">Item 8</div>
+        <div class="navbar-item" data-index="8">Item 9</div>
+        <div class="navbar-item" data-index="9">Item 10</div>
+        <div class="highlight" id="highlight"></div>
+    </div>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+        const items = document.querySelectorAll('.navbar-item');
+        const highlight = document.getElementById('highlight');
+
+        items.forEach(item => {
+            item.addEventListener('click', function (e) {
+                // Remove active class from all items
+                items.forEach(i => i.classList.remove('active'));
+
+                // Add active class to the clicked item
+                this.classList.add('active');
+                let index = e.target.dataset.index
+
+                const itemOffsetLeft = this.offsetLeft;
+                const itemWidth = this.offsetWidth;
+                const highlightWidth = highlight.offsetWidth;
+                const scrollPosition = itemOffsetLeft - (itemWidth - highlightWidth) / 2;
+                // (itemWidth - highlightWidth) / 2 指示条比item小 这个表达式 算的是在item里面的偏移量
+                // Move the highlight div
+                highlight.style.left = `${scrollPosition}px`;
+            });
+        });
+       
+        document.addEventListener('DOMContentLoaded', function(){
+            highlight.style.left = `${(85 - 80) / 2}px`;
+        })
+       
+    </script>
+</body>
+
+</html>

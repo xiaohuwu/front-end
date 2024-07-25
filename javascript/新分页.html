@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagination Example</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        .pagination {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .pagination button {
+            margin: 0 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pagination Example</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Index</th>
+                <th>Name</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <!-- Dynamic rows will be inserted here -->
+        </tbody>
+    </table>
+    <div class="pagination">
+        <button id="prevBtn" onclick="changePage(-1)">Previous</button>
+        <span id="pageInfo"></span>
+        <button id="nextBtn" onclick="changePage(1)">Next</button>
+    </div>
+
+    <script>
+        // Sample data
+        const data = Array.from({ length: 100 }, (_, i) => ({
+            index: i + 1,
+            name: `Item ${i + 1}`,
+            value: Math.floor(Math.random() * 100)
+        }));
+
+        let currentPage = 1;
+        const itemsPerPage = 10;
+        const totalPages = Math.ceil(data.length / itemsPerPage);
+
+        function renderTable(page) {
+            const start = (page - 1) * itemsPerPage;
+            const end = page * itemsPerPage;
+            const tableBody = document.getElementById('tableBody');
+            tableBody.innerHTML = '';
+
+            const pageData = data.slice(start, end);
+            pageData.forEach(item => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${item.index}</td>
+                    <td>${item.name}</td>
+                    <td>${item.value}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+
+            document.getElementById('pageInfo').innerText = `Page ${page} of ${totalPages}`;
+        }
+
+        function changePage(direction) {
+            currentPage += direction;
+            currentPage = Math.max(1, Math.min(currentPage, totalPages));
+            renderTable(currentPage);
+            updateButtons();
+        }
+
+        function updateButtons() {
+            document.getElementById('prevBtn').disabled = currentPage === 1;
+            document.getElementById('nextBtn').disabled = currentPage === totalPages;
+        }
+
+        // Initial render
+        renderTable(currentPage);
+        updateButtons();
+    </script>
+</body>
+</html>
