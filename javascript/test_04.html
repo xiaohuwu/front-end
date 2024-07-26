@@ -1,0 +1,65 @@
+</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Complex Buggy App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Form with Logic Errors</h1>
+        <form id="myForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username"><br><br>
+            <label for="age">Age:</label>
+            <input type="text" id="age" name="age"><br><br>
+            <button type="submit">Submit</button>
+        </form>
+        <p id="result" class="hidden"></p>
+    </div>
+</body>
+
+</html>
+
+<script>
+class CoffeeMachine {
+  _waterAmount = 0;
+
+
+  get waterAmount() {
+    return this._waterAmount;
+  }
+
+  constructor(power) {
+    this._power = power;
+  }
+
+}
+
+// 创建咖啡机
+let coffeeMachine = new CoffeeMachine(100);
+
+// 加水
+coffeeMachine.waterAmount = -10; // _waterAmount 将变为 0，而不是 -10
+
+</script>
