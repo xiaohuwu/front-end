@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script type="module">
+        import ajax, { console1 } from "./ajax.js";
+        console.log("console1", console1);
+
+        // function request(url) {
+        //     let promise = new Promise(function (resolve, reject) {
+        //         ajax(url, (result) => {
+        //             resolve(result);
+        //         })
+        //     });
+        //     return promise;
+        // }
+
+        async function foo() {
+            let a = await ajax("./static/a.json");
+            let b = await ajax("./static/b.json");
+            let c = await ajax("./static/c.json");
+            console.log("a", a);
+            console.log("b", b);
+            console.log("c", c);
+        }
+        foo()
+
+        class Person {
+            constructor(name) {
+                this.name = name;
+            }
+            setName(name) {
+                this.name = name;
+            }
+            getName() {
+                return this.name;
+            }
+        }
+        let person = new Person("gege");
+        console.log("person", person.getName());
+
+        class Animal {
+            constructor(type) {
+                this.type = type
+            }
+            walk() {
+                console.log(`I am walking`)
+            }
+            static eat() {
+                console.log(`I am eating`)
+            }
+        }
+
+        class Dog extends Animal {
+            constructor(type) {
+                super("dog");
+            }
+            run() {
+                console.log(`I am run`)
+            }
+        }
+        async function request() {
+            let result = await new Promise((reslove) => {
+                reslove("success");
+            });
+            console.log(result);
+        }
+        request();
+
+    </script>
+
+</body>
+
+</html>

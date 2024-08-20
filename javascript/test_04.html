@@ -1,65 +1,137 @@
-</html>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>Complex Buggy App</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-        .container {
-            width: 50%;
-            margin: 0 auto;
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        .error {
-            color: red;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar using HTML CSS & JS </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" refexrrerpolicy="no-referrer" />
 </head>
 
 <body>
-    <div class="container">
-        <h1>Form with Logic Errors</h1>
-        <form id="myForm">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username"><br><br>
-            <label for="age">Age:</label>
-            <input type="text" id="age" name="age"><br><br>
-            <button type="submit">Submit</button>
-        </form>
-        <p id="result" class="hidden"></p>
-    </div>
+    <nav id="navbar">
+        <!-- Use Your Own Logo of Heading Here at src="GeeksHelp.png"-->
+        <img src="GeeksHelp.png" alt="" class="logo">
+        <ul id="links">
+            <li><a href="#"> Home </a></li>
+            <li><a href="#"> About </a></li>
+            <li><a href="#"> Contact </a></li>
+            <li><a href="#"> About </a></li>
+            <li><a href="#"> Services </a></li>
+        </ul>
+        <div id="bars">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+    <ul id="homeMenu">
+        <li><a href="#"> Home </a></li>
+        <li><a href="#"> About </a></li>
+        <li><a href="#"> Contact </a></li>
+        <li><a href="#"> About </a></li>
+        <li><a href="#"> Services </a></li>
+    </ul>
+    
+        
 </body>
 
 </html>
 
-<script>
-class CoffeeMachine {
-  _waterAmount = 0;
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-
-  get waterAmount() {
-    return this._waterAmount;
-  }
-
-  constructor(power) {
-    this._power = power;
-  }
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
 }
 
-// 创建咖啡机
-let coffeeMachine = new CoffeeMachine(100);
+body {
+    overflow: hidden;
+}
 
-// 加水
-coffeeMachine.waterAmount = -10; // _waterAmount 将变为 0，而不是 -10
+#navbar {
+    box-shadow: 5px 5px 24px #a28d8db5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 30px;
+}
 
+#links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+
+#links li a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    color: black;
+    border: 1px solid white;
+}
+
+#links li a:hover {
+    border: 1px solid #f75a00;
+    border-radius: 5px;
+}
+
+#homeMenu {
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    background-color: #f75a00;
+    width: 51%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: -100%;
+    transition: all 0.3s ease-in-out;
+}
+
+#homeMenu li {
+    margin: 20px 0;
+    ;
+}
+
+#homeMenu li a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    color: white;
+}
+
+.active {
+    right: 0 !important;
+}
+
+#bars {
+    display: none;
+}
+
+@media screen and (max-width: 860px) {
+    #links {
+        display: none;
+    }
+
+    #bars {
+        display: block;
+        font-size: 2rem;
+        position: relative;
+        cursor: pointer;
+        z-index: 1000;
+    }
+}
+</style>
+
+<script>
+    document.getElementById('bars').addEventListener('click', function(){
+    document.getElementById('homeMenu').classList.toggle('active');
+})
 </script>

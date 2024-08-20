@@ -4,41 +4,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo List</title>
-    <style>
-        .todo-list {
-            list-style: none;
-            padding: 0;
-        }
-        .todo-list li {
-            margin-bottom: 5px;
-        }
-    </style>
+    <title>Desserts Shop</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <input type="text" id="todo-input" placeholder="Enter new todo">
-    <button id="add-todo">Add</button>
-    <ul class="todo-list" id="todo-list"></ul>
-    <script>
-        const todoInput = document.getElementById('todo-input');
-        const addTodoButton = document.getElementById('add-todo');
-        const todoList = document.getElementById('todo-list');
-        addTodoButton.addEventListener('click', function () {
-            let li = document.createElement("li");
-            li.innerHTML = `${todoInput.value}<button class = "delete">删除</button>`;
-            todoList.appendChild(li);
-            todoInput.value = '';
-            document.querySelector(".todo-list").addEventListener("click", function (e) {
-                if (e.target && e.target.classList.contains('delete')) {
-                    console.log(this);
-                    const li = e.target.parentNode;
-                    todoList.removeChild(li);
-                }
-            });
-        });
-
-    </script>
+    <div class="container">
+        <div class="menu">
+            <h1>Desserts</h1>
+            <div class="items">
+                <div class="item">
+                    <img src="waffle.jpg" alt="Waffle with Berries">
+                    <h2>Waffle with Berries</h2>
+                    <p>$6.50</p>
+                    <button onclick="addToCart('Waffle with Berries', 6.50)">Add to Cart</button>
+                </div>
+                <div class="item">
+                    <img src="creme_brulee.jpg" alt="Vanilla Bean Crème Brûlée">
+                    <h2>Vanilla Bean Crème Brûlée</h2>
+                    <p>$7.00</p>
+                    <button onclick="addToCart('Vanilla Bean Crème Brûlée', 7.00)">Add to Cart</button>
+                </div>
+                <!-- Add other items similarly -->
+            </div>
+        </div>
+        <div class="cart">
+            <h2>Your Cart (<span id="cart-count">0</span>)</h2>
+            <div id="cart-items"></div>
+            <div class="cart-total">
+                <p>Order Total: $<span id="total-amount">0.00</span></p>
+                <button onclick="confirmOrder()">Confirm Order</button>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .container {
+        display: flex;
+        width: 100%;
+        max-width: 1200px;
+    }
+
+    .menu {
+        flex: 3;
+        margin-right: 20px;
+    }
+
+    .menu h1 {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    .items {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .item {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        margin: 10px;
+        padding: 20px;
+        width: calc(33% - 40px);
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .item img {
+        max-width: 100%;
+        border-radius: 10px;
+    }
+
+    .item h2 {
+        font-size: 1.5em;
+        margin: 10px 0;
+    }
+
+    .item p {
+        font-size: 1.2em;
+        color: #555;
+    }
+
+    .item button {
+        background: #f78e1e;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .item button:hover {
+        background: #e07010;
+    }
+
+    .cart {
+        flex: 1;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .cart h2 {
+        margin-top: 0;
+    }
+
+    .cart-total {
+        margin-top: 20px;
+    }
+
+    .cart-total p {
+        font-size: 1.2em;
+    }
+
+    .cart-total button {
+        background: #f78e1e;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .cart-total button:hover {
+        background: #e07010;
+    }
+</style>
+
+
+<script>
+
+    /**
+     * 
+     * 输入: "abcabcbb"
+    输出: 3
+    解释: 无重复字符的最长子串是 "abc"，其长度为 3。
+    **/
+
+    function getSubString(str) {
+        let arr = str.split("");
+        let target = [];
+        for (let k = 0; k < arr.length; k++) {
+            let sub = [arr[k]]
+            for (let j = k + 1; j < arr.length; j++) {
+                let item = arr[j]
+                if (!sub.includes(item)) {
+                    sub.push(arr[j])
+                } else {
+                    break;
+                }
+            }
+            if (sub.length > target.length) {
+                target = sub;
+            }
+        }
+        return target;
+    }
+
+    console.log(getSubString("abcabcbb"))
+
+
+//()[]{}
+function check(str){
+    let map ={"(":")","[":"]","{":"}"}
+    let arr = str.split("")
+    let array = [];
+    for (const element of arr) {
+        if(map[element]){
+            array.push(element);
+        }else{
+            if(array.pop() != element){
+                return false;
+            }
+        }
+        console.log("element",element);
+    }
+    console.log("array",array)
+    return array.length == 0;
+}
+console.log(check("]("))
+
+
+
+
+</script>
