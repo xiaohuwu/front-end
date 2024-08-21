@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function some() {
+        let arr = []
+        function do1(str) {
+            arr.push(()=>{
+                console.log( `${str} is commmited`);
+            })
+            return this
+        }
+
+        function puck(str) {
+            arr.push(()=>{
+                console.log(`${str} is notifying`)
+            })
+            return this
+        }
+        function wait(second) {
+            arr.push(() => new Promise(resolve => {
+                setTimeout(() => { 
+                    console.log("等待" + second) 
+                    resolve();
+            }, second * 1000)
+               
+            }));
+            return this
+        }
+        function waitFirst(second) {
+            arr.unshift(() => new Promise(resolve => {
+                setTimeout(() => { 
+                    console.log("等待" + second)
+                    resolve();
+             }, second* 1000)
+                
+            }))
+            return this
+        }
+
+        return {
+            puck: puck,
+            do1: do1,
+            wait: wait,
+            waitFirst: waitFirst,
+            execute: async function () {
+                for (var i = 0; i < arr.length; i++) {
+                    await arr[i]()
+                }
+            }
+        }
+    }
+    some().
+        puck("willings")
+        .wait(5)
+        .do1("commit")
+        .waitFirst(3)
+        .execute();
+    //等待3秒
+    //willings is notifying
+    //等待5秒
+    //start commmited
+
+</script>
+
+</html>

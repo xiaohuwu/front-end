@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+
+</body>
+
+<script>
+    //https://github.com/cyu/rack-cors rails 项目里面用这个避免跨域
+    //https://www.bilibili.com/video/BV1gb4y157Au 并发请求控制   
+    function concurRequest(urls, maxNumber) {
+        return new Promise((resolve, reject) => {
+            let index = 0;
+            let result = [];
+            function request() {
+                let i = index;
+                let url = urls[index];
+                new Promise((resolve, reject) => {
+                    $.ajax({
+                        url: url, // 请求的 URL
+                        type: 'GET', // 请求的方法，GET 或 POST
+                        data: {}, // 发送的数据（仅用于 GET 或 POST 请求）
+                        headers: { "Client-Key": "db231122139748b79fdd9d9ec2658e18" }, //
+                        dataType: 'json', // 预期的服务器返回的数据类型
+                        success: function (response) {
+                            result[i] = response.responsedata;
+                            resolve();
+                        },
+                        error: function (xhr, status, error) {
+                        }
+                    });
+                }).finally(() => {
+                    index++;
+                    if (index < urls.length) {
+                        request()
+                    }
+                    if (result.filter((item) => {
+                        return !!item
+                    }).length === urls.length) {
+                        resolve(result)
+                    }
+                })
+            }
+            for (let k = 0; k < maxNumber; k++) {
+                request();
+            }
+        })
+    }
+
+    let urls = []; //
+    for (let k = 0; k < 30; k++) {
+        urls.push(`http://localhost:3005/api/v1/test?index=${k}`)
+    }
+
+    concurRequest(urls, 3).then(res => {
+        console.log(res)
+    })
+
+</script>
+
+</html>
