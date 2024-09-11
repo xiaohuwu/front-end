@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>粘性定位示例</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-color: #4CAF50;
+            padding: 10px;
+            color: white;
+            text-align: center;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 0; /* 当滚动到视口顶部时开始粘性 */
+            background-color: #333;
+            padding: 10px 0;
+            color: white;
+            text-align: center;
+            z-index: 1000; /* 确保粘性元素在其他内容之上 */
+        }
+
+        .content {
+            padding: 20px;
+            height: 2000px; /* 增加内容高度以演示滚动效果 */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>粘性定位示例</h1>
+    </div>
+
+    <div class="sticky-nav">
+        我是一个粘性导航栏
+    </div>
+
+    <div class="content">
+        <p>向下滚动查看粘性效果...</p>
+        <p>这里是大量内容，足以让页面滚动。</p>
+        <p>继续滚动，粘性导航栏将会在到达页面顶部时保持固定。</p>
+    </div>
+
+</body>
+</html>
