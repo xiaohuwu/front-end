@@ -1,9 +1,15 @@
 <?php
 include "Html.php";
-use Html\Table;
-$table = new Table();
+$table = new Html\Table();
 $table->title = "elderly";
 $table->numRows = 8;
+
+$cars = ["a", "b", "c"];
+
+for ($k = 0; $k < count($cars); $k++) {
+    echo "" . $cars[$k];
+}
+
 ?>
 
 <html>

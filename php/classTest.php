@@ -1,31 +1,25 @@
 <?php
-
 class Fruit
 {
     public $name;
-    public $color;
+    
+    public function __construct()
+    {
+    }
 
-    public function __construct($name)
+    public function set_color($name)
     {
         $this->name = $name;
     }
 
-    public function set_color($color)
-    {
-        $this->color = $color;
-    }
-    public function get_name()
+    public function get_color()
     {
         return $this->name;
     }
+
 }
 
-$fruit = new Fruit("apple");
-$fruit_1 = new Fruit("orange");
-
-echo $fruit->get_name() . "<br/>";
-
-echo $fruit_1->get_name();
-
-
+$fruit = new Fruit();
+$fruit->set_color("good");
+echo $fruit->get_color();
 
