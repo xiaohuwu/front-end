@@ -48,10 +48,11 @@ a {
   padding-top: 10px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
 }
 .content ul li {
   padding-bottom: 10px;
-  flex: 20%;
+  flex-basis: 20%;
   display: flex;
   flex-direction: column;
   align-items: center;

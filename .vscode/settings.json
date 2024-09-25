@@ -1,1 +1,4 @@
-{"workbench.editor.enablePreview": false}
+{
+    "workbench.editor.enablePreview": false,
+    "liveServer.settings.port": 5501
+}

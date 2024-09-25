@@ -6,6 +6,7 @@
 //$car = array("a","b","c");
 //echo $car[0];
 
+$test = 1;
 
 $fruits = array (
    "fruits"  => array("a" => "orange", "b" => "banana", "c" => "apple"),
@@ -36,4 +37,4 @@ $squared = array_map(function($num) {
 
 // echo "item : " . ($squared[0]);
 
-?>
+

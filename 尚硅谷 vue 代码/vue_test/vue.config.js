@@ -2,7 +2,7 @@ module.exports = {
   pages: {
     index: {
       //入口
-      entry: '27_src_求和案例_mapMutations与mapActions/main.js',
+      entry: '11_src_TodoList_自定义事件/main.js',
     },
   },
 	lintOnSave:false, //关闭语法检查

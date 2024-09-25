@@ -29,7 +29,7 @@
         function wait(second) {
             arr.push(() => new Promise(resolve => {
                 setTimeout(() => { 
-                    console.log("等待" + second) 
+                    console.log("等待" + second)
                     resolve();
             }, second * 1000)
                

@@ -2,7 +2,6 @@
 class Fruit
 {
     public $name;
-    
     public function __construct()
     {
     }

@@ -71,6 +71,7 @@
   white-space: nowrap;/*规定段落中的文本不进行换行 */
   font-size: 16px;
   color: #666;
+
 }
 .choice-box li .title .countdown{
   flex: 1;
