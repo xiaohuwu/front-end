@@ -1,35 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-
-</body>
-<script>
-    // 1000000000000 => 10,000,000,000
-    function split(str) {
-        let len = str.length;
-        let result = "";
-        for (let k = len - 1; k >= 0;) {
-            let start = k - 3;
-            if (start <= 0) {
-                start = 0;
-            }
-            result = str.slice(start, k) + result;
-            if (start > 0) {
-                result = "," + result;
-            }
-            k = k - 3;
+    <title>刮刮乐效果</title>
+    <style>
+        #container {
+            position: relative;
+            width: 300px;
+            height: 150px;
         }
-        return result;
-    }
-    console.log(split("1"));
-    
-</script>
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <canvas id="bottomCanvas" width="300" height="150"></canvas>
+        <canvas id="topCanvas" width="300" height="150"></canvas>
+    </div>
 
+    <script>
+        const bottomCanvas = document.getElementById('bottomCanvas');
+        const topCanvas = document.getElementById('topCanvas');
+        const bottomCtx = bottomCanvas.getContext('2d');
+        const topCtx = topCanvas.getContext('2d');
+
+        // 绘制底层图像（这里用文字代替，您可以使用图片）
+        bottomCtx.fillStyle = 'green';
+        bottomCtx.fillRect(0, 0, 300, 150);
+        bottomCtx.fillStyle = 'white';
+        bottomCtx.font = '24px Arial';
+        bottomCtx.fillText('恭喜您中奖了！', 60, 80);
+
+        // 绘制顶层遮罩
+        topCtx.fillStyle = 'gray';
+        topCtx.fillRect(0, 0, 300, 150);
+
+        // 鼠标/触摸事件处理
+        let isDrawing = false;
+
+        function handleStart(e) {
+            isDrawing = true;
+            handleMove(e);
+        }
+
+        function handleMove(e) {
+            if (!isDrawing) return;
+
+            const rect = topCanvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            topCtx.globalCompositeOperation = 'destination-out';
+            topCtx.beginPath();
+            topCtx.arc(x, y, 10, 0, Math.PI * 2);
+            topCtx.fill();
+        }
+
+        function handleEnd() {
+            isDrawing = false;
+        }
+
+        topCanvas.addEventListener('mousedown', handleStart);
+        topCanvas.addEventListener('mousemove', handleMove);
+        topCanvas.addEventListener('mouseup', handleEnd);
+        topCanvas.addEventListener('mouseout', handleEnd);
+
+        // 触摸事件支持
+        topCanvas.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            handleStart(e.touches[0]);
+        });
+        topCanvas.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+            handleMove(e.touches[0]);
+        });
+        topCanvas.addEventListener('touchend', handleEnd);
+    </script>
+</body>
 </html>

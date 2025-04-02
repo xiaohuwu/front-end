@@ -1,75 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="utf-8">
+    <title>ECharts 双Y轴示例</title>
+    <!-- 引入 ECharts 文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
 </head>
 
 <body>
+    <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+    <div id="main" style="width: 800px;height:400px;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
 
-</body>
-<script>
-    function some() {
-        let arr = []
-        function do1(str) {
-            arr.push(()=>{
-                console.log( `${str} is commmited`);
-            })
-            return this
-        }
-
-        function puck(str) {
-            arr.push(()=>{
-                console.log(`${str} is notifying`)
-            })
-            return this
-        }
-        function wait(second) {
-            arr.push(() => new Promise(resolve => {
-                setTimeout(() => { 
-                    console.log("等待" + second)
-                    resolve();
-            }, second * 1000)
-               
-            }));
-            return this
-        }
-        function waitFirst(second) {
-            arr.unshift(() => new Promise(resolve => {
-                setTimeout(() => { 
-                    console.log("等待" + second)
-                    resolve();
-             }, second* 1000)
-                
-            }))
-            return this
-        }
-
-        return {
-            puck: puck,
-            do1: do1,
-            wait: wait,
-            waitFirst: waitFirst,
-            execute: async function () {
-                for (var i = 0; i < arr.length; i++) {
-                    await arr[i]()
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: '救助情况统计'
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'cross'
                 }
-            }
-        }
-    }
-    some().
-        puck("willings")
-        .wait(5)
-        .do1("commit")
-        .waitFirst(3)
-        .execute();
-    //等待3秒
-    //willings is notifying
-    //等待5秒
-    //start commmited
+            },
+            legend: {
+                data: ['民政救助', '社区快救']
+            },
+            xAxis: {
+                type: 'category',
+                data: ['民政救助', '社区快救']
+            },
+            yAxis: [
+                {
+                    type: 'value',
+                    name: '救助人数',
+                    position: 'left',
+                    axisLabel: {
+                        formatter: '{value} 人'
+                    }
+                },
+                {
+                    type: 'value',
+                    name: '救助金额',
+                    position: 'right',
+                    axisLabel: {
+                        formatter: '{value} 万'
+                    }
+                }
+            ],
+            series: [
+                {
+                    name: '救助人数',
+                    type: 'bar',
+                    data: [120, 80],  // 这里替换成实际的人数数据
+                    yAxisIndex: 0
+                },
+                {
+                    name: '救助金额',
+                    type: 'bar',
+                    data: [50, 30],   // 这里替换成实际的金额数据
+                    yAxisIndex: 1
+                }
+            ]
+        };
 
-</script>
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+</body>
 
 </html>

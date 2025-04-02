@@ -3,14 +3,14 @@
 include("Html.php");
 use Html\Table;
 $table = new Table();
-$table->title = "good";
+$table->title = "xiaohu";
 $table->numRows = 10;
 $table->message();
 
 
 class Fruit
 {
-
+    public $name;
     public function __construct()
     {
         $this->name = ""; // 可以在构造函数中初始化

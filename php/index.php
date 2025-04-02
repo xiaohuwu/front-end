@@ -6,7 +6,7 @@ $table->numRows = 8;
 
 $cars = ["a", "b", "c"];
 
-for ($k = 0; $k < count($cars); $k++) {
+for ($k = 0; $k < count( $cars); $k++) {
     echo "" . $cars[$k];
 }
 

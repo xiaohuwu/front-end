@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: lightgray;
+        }
+        .parent {
+            background-color: white;
+            display: flex;
+            gap: 2px;
+            color: white;
+            width: 1000px;
+            margin-bottom: 20px;
+            .item {
+                font-size: 20px;
+                text-align: center;
+                line-height: 200px;
+                width: 200px;
+                height: 200px;
+                background-color: #ffd200;
+            }
+            .item_2,
+            .item_4 {
+                height: 400px;
+            }
+            .item_2,
+            .item_4 {
+                line-height: 400px;
+            }
+        }
+        .wrap {
+            flex-flow: row wrap;
+            height: 600px;
+            align-content: center;
+        }
+        .justify-content {
+            justify-content: center;
+        }
+        .align-items-demo {
+            height: 400px;
+            align-items: center;
+        }
+        .test {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 600px;
+            background-color: white;
+            width: 1000px;
+        }
+    </style>
+</head>
+
+<body>
+    <h4>1、justify-content属性</h4>
+    <div class="parent justify-content">
+        <div class="item">
+            1
+        </div>
+        <div class="item">
+            2
+        </div>
+        <div class="item">
+            3
+        </div>
+        <div class="item">
+            4
+        </div>
+    </div>
+    <h4>
+        2、flex-wrap属性
+    </h4>
+    <div class="test">
+        <div class="parent wrap">
+            <div class="item">
+                1
+            </div>
+            <div class="item">
+                2
+            </div>
+            <div class="item">
+                3
+            </div>
+            <div class="item">
+                4
+            </div>
+            <div class="item">
+                5
+            </div>
+            <div class="item">
+                6
+            </div>
+            <div class="item">
+                7
+            </div>
+
+        </div>
+    </div>
+    <h4>
+        3、flex-wrap属性
+    </h4>
+    <div class="parent wrap">
+        <div class="item">
+            1
+        </div>
+        <div class="item">
+            2
+        </div>
+        <div class="item">
+            3
+        </div>
+        <div class="item">
+            4
+        </div>
+        <div class="item">
+            5
+        </div>
+        <div class="item">
+            6
+        </div>
+        <div class="item">
+            7
+        </div>
+    </div>
+
+    <h4>
+        align-items属性
+    </h4>
+    <div class="parent align-items-demo">
+        <div class="item">1</div>
+        <div class="item item_2">2</div>
+        <div class="item">3</div>
+        <div class="item item_4">4</div>
+    </div>
+    <h4>
+        6、align-content属性
+    </h4>
+</body>
+
+</html>

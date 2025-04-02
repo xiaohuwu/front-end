@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>background-clip 背景图片示例</title>
+  <style>
+    body {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    .box {
+      width: 200px;
+      height: 150px;
+      padding: 20px;
+      border: 15px dashed rgba(255, 0, 0, 0.3);
+      background-image: url('https://picsum.photos/300/200');
+      background-size: cover;
+      background-repeat: no-repeat;
+      color: white;
+      text-shadow: 0 0 5px black;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .border-box { background-clip: border-box; }
+    .padding-box { background-clip: padding-box; }
+    .content-box { background-clip: content-box; }
+    .text-box {
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 24px;
+      font-weight: bold;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="box border-box">border-box（默认）</div>
+  <div class="box padding-box">padding-box</div>
+  <div class="box content-box">content-box</div>
+  <div class="box text-box">text-box</div>
+</body>
+</html>

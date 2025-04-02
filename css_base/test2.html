@@ -6,23 +6,24 @@
 </head>
 <body>
 <style>
-    .no-repeat{
+    .no-repeat {
         background-repeat: no-repeat;
         background-color: red;
     }
-    .bg{
+
+    .bg {
         height: 200px;
         width: 1000px;
         background: url("https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F59be002fd67e49b0d4a6e4b916febbf88b280be514710-9eRC7D_fw658&refer=http%3A%2F%2Fhbimg.b0.upaiyun.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1643786157&t=d7328e609708b758f61553133720c035");
         background: gray;
     }
 </style>
- <div class="bg no-repeat" id="btn">
+<div class="bg no-repeat" id="btn">
 
-  <div class="select">
+    <div class="select">
 
-  </div>
- </div>
+    </div>
+</div>
 </body>
 </html>
 <script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
@@ -39,43 +40,41 @@
     //     $(this).attr("id",'666')
     // });
 
-    let p = new Promise((resolve, reject) =>{
-        setTimeout(function (){
-            var num = Math.ceil(Math.random()*10);
-            if (num <= 5) {
-                resolve(num);
-            }else{
-                reject(num);
-            }
-        });
+    let p = new Promise((resolve, reject) => {
+        var num = Math.ceil(Math.random() * 10);
+        if (num <= 5) {
+            resolve(num);
+        } else {
+            reject(num);
+        }
     });
 
 
-    p.then((data)=>{
-            console.log('resolved',data);
+    p.then((data) => {
+            console.log('resolved', data);
         },
-        (error)=>{
-            console.log('error',error);
+        (error) => {
+            console.log('error', error);
         })
 
+    function test(...rest) {
+        return rest.reduce((pre, item) => item + pre)
+    }
+
+    var test1 = test(1, 2, 3, 4, 5);
+    console.log("test1:", test1)
+
+    function showName(firstName, lastName, ...titles) {
+        console.log("titles:", titles)
+    }
+
+    showName("Julius", "Caesar", "Consul", "Imperator");
+
+    let options = {
+        title: "Menu",
+        width: 100,
+        height: 200
+    };
 
 
-    // let p = new Promise((resolve, reject) => {
-    //     //做一些异步操作
-    //     setTimeout(function(){
-    //         var num = Math.ceil(Math.random()*10); //生成1-10的随机数
-    //         if(num<=5){
-    //             resolve(num);
-    //         }
-    //         else{
-    //             reject('数字太大了');
-    //         }
-    //     }, 2000);
-    // });
-    // p.then((data) => {
-    //         console.log('resolved',data);
-    //     },(err) => {
-    //         console.log('rejected',err);
-    //     }
-    // );
 </script>
