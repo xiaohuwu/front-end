@@ -1,97 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>轮播 滚动效果</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertical Scroll with Transition</title>
     <style>
         * {
             margin: 0;
             padding: 0;
         }
- 
-        #scroll {
-            margin: 0;
-            padding: 2px 0;
-            list-style: none;
-            width: 300px;
-            height: 200px;
+
+        #box {
+            height: 140px;
+            border: solid 1px;
             overflow: hidden;
-            border: 1px #e5e5e5 solid;
-            font-size: 16px;
-            color: #f0f0f0;
-            background-image: url("../images/p.png");
+            position: relative;
         }
- 
-        #scroll li {
-            margin: 0;
-            padding: 0 4px;
-            font-size: 12px;
-            height: 18px;
-            line-height: 18px;
-            width: 600px;
+
+        .scroll-container:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scrolling {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-50%);
+            }
+        }
+
+        .scroll-content {
+            animation: scrolling 15s linear infinite;
         }
     </style>
-    <script>
-        window.onload = function () {
-            function dMarquee(id) {
-                let speed = 20; //速度
-                let stop = 1000; //停止时间
- 
-                let ul = document.getElementById(id);//获取ul元素
-                let rows = ul.getElementsByTagName('li').length;//获取li个数
-                let height = ul.getElementsByTagName('li')[0].offsetHeight;//取得第一个li的高度
-                ul.innerHTML += ul.innerHTML;//获取所有li
-                let timeID = false;//setTime的时间标示
-                let play = function () { //移动方法
-                    ul.scrollTop++;//移动滚动条
-                    //移动到底的时候恢复为零
-                    if (ul.scrollTop === rows * height) {
-                        ul.scrollTop = 0;
-                    }
-                    //每次滚动
-                    if (ul.scrollTop % height === 0) {
-                        timeID = setTimeout(play, stop);
-                    } else {
-                        timeID = setTimeout(play, speed);
-                    }
-                }
-                timeID = setTimeout(play, stop);
-                ul.onmouseover = function () {
-                    clearTimeout(timeID);
-                }
-                ul.onmouseout = play;
-            }
- 
-            dMarquee('scroll')
-        }
-    </script>
 </head>
+
 <body>
-<ul id="scroll">
-    <li>Lorem ipsum dolor sit amet.</li>
-    <li>Amet hic ipsum offices vitae!</li>
-    <li>Debits quart qua sapient venial.</li>
-    <li>Ilium nobs object oddity sapient?</li>
-    <li>Et laudanum nemo official omnibus.</li>
-    <li>Lorem ipsum dolor sit amet.</li>
-    <li>Dolore hic magnam nemo quasi.</li>
-    <li>Expedita nemo non optio performed?</li>
-    <li>Asperities culpa impedit in quos.</li>
-    <li>Cumque illum performed similique volutes.</li>
-    <li>Lorem ipsum dolor sit amet.</li>
-    <li>Eveniet optio, vitae. Fuga, illum.</li>
-    <li>Diagnosis fugiat laborum officiis quibusdam?</li>
-    <li>Cumque neque qua tempora volutes?</li>
-    <li>Lorem ipsum dolor sit amet.</li>
-    <li>Consecrated incidunt quo rem voluptatem.</li>
-    <li>Culpa distinctio natus pariatur velit.</li>
-    <li>Dolores neque similique sint ut!</li>
-    <li>Accuses esse itaque nihil rescinds.</li>
-    <li>Lorem ipsum dolor sit amet.</li>
-    <li>Fugit iure nesciunt placeat poor.</li>
-    <li>Aperiam atque cupidity numquam rescinds!</li>
-    <li>Illum molest officia sed veniam!</li>
-    <li>Enum fugiat in labore optio?</li>
-</ul>
+    <div id="box">
+        <div class="scroll-container scroll-content">
+            <ul>
+                <li>1111111111111111111111</li>
+                <li>2222222222222222222222</li>
+                <li>3333333333333333333333</li>
+                <li>4444444444444444444444</li>
+                <li>5555555555555555555555</li>
+                <li>6666666666666666666666</li>
+                <li>7777777777777777777777</li>
+                <li>8888888888888888888888</li>
+                <li>9999999999999999999999</li>
+            </ul>
+            <!-- 复制一份列表用于无缝滚动 -->
+            <ul>
+                <li>1111111111111111111111</li>
+                <li>2222222222222222222222</li>
+                <li>3333333333333333333333</li>
+                <li>4444444444444444444444</li>
+                <li>5555555555555555555555</li>
+                <li>6666666666666666666666</li>
+                <li>7777777777777777777777</li>
+                <li>8888888888888888888888</li>
+                <li>9999999999999999999999</li>
+            </ul>
+        </div>
+    </div>
 </body>
+
 </html>
