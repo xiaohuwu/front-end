@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to do list</title>
+</head>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+
+<style>
+    .line-center {
+        text-decoration: line-through;
+        text-decoration-color: blue;
+    }
+
+    button {
+        margin-left: 10px;
+    }
+
+    /* 背景 */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+
+    /* 弹窗背景样式 */
+    .modal {
+        display: none;
+        /* 默认隐藏弹窗 */
+        position: fixed;
+        z-index: 1;
+        /* 确保弹窗在最上面 */
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+        /* 半透明黑色背景 */
+        overflow: auto;
+        padding-top: 60px;
+        /* 弹窗上方的距离 */
+    }
+
+    /* 弹窗内容 */
+    .modal-content {
+        background-color: #fff;
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 500px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* 关闭按钮 */
+    .close-btn {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .close-btn:hover,
+    .close-btn:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+  
+</style>
+
+<body>
+    <input type="text" class="add-input" placeholder="输入要完成的任务"> <button class="add">添加</button>
+    <ul id="parent">
+    </ul>
+
+    <!-- 自定义弹窗 -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h6>编辑</h6>
+            <input type="hidden" class="index"/>
+            <p><input type="text" class="edit-input" placeholder="输入要完成的任务"></p>
+            <button class="confirm">确认</button>
+        </div>
+    </div>
+
+
+</body>
+<script>
+    let index = 0;
+    $(function () {
+         // 获取弹窗元素
+         var modal = document.getElementById("myModal");
+        var confirm = document.getElementsByClassName("confirm")[0];
+        // 获取关闭按钮
+        var closeBtn = document.getElementsByClassName("close-btn")[0];
+
+        $(".add").click(function () {
+            let value = $(".add-input").val()
+            $("ul").append(`<li class="item" data-index = ${index}><span>${value}</span><button class="del">删除</button><button class="edit">编辑</button></li>`)
+            $(".add-input").val("")
+            index += 1
+        })
+
+        $('#parent').on('dblclick', 'li', function () {
+            $(this).find("span").toggleClass("line-center");
+        });
+
+        $('#parent').on('click', '.del', function () {
+            $(this).parent().remove();
+        });
+        $('#parent').on('click', '.edit', function () {
+            let index = $(this).parent().attr("data-index");
+            let content = $(this).parent().find("span").text();
+            $(".edit-input").val(content);
+            modal.style.display = "block";
+            $("input[type='hidden']").val(index);
+        });
+        // 当点击关闭按钮时，关闭弹窗
+        closeBtn.onclick = function () {
+            modal.style.display = "none";
+        }
+        confirm.onclick = function () {
+            modal.style.display = "none";
+            let index = parseInt($("input[type='hidden']").val());
+             $(`[data-index='${index}']`).find("span").text($(".edit-input").val());
+        }
+        // 点击弹窗外部时，关闭弹窗
+        window.onclick = function (event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+
+    })
+
+</script>
+
+</html>
